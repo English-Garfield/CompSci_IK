@@ -1,8 +1,14 @@
 # Imports
 import pygame
+import FEN
+from sys import maxsize
 
 pygame.init()
 
 
-def minimax(position, depth, maxPlayer):
-    print("C")
+
+
+
+
+
+
