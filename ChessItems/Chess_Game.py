@@ -7,6 +7,18 @@ import sys
 import pygame
 
 
+class Piece:
+    def __init__(self, colour, x, y, piece_type):
+        self.colour = colour
+        self.x = x
+        self.y = y
+        self.type = piece_type
+
+    def draw(self, surface):
+        image = pygame.image.load(f"assets/{self.colour}_{self.type}.png")
+        surface.blit(image, (self.x * 75 + 10, self.y * 75 + 10))
+
+
 def game():
     pygame.init()
 
@@ -25,23 +37,6 @@ def game():
             pygame.draw.rect(board, (210, 180, 140), (x * 75, y * 75, 75, 75))
             pygame.draw.rect(board, (210, 180, 140), ((x + 1) * 75, (y + 1) * 75, 75, 75))
 
-    # adding board to screen
-    screen.blit(board, (20, 20))
-
-    pygame.display.flip()
-
-    class Piece:
-        def __init__(self, colour, x, y, piece_type):
-            self.colour = colour
-            self.x = x
-            self.y = y
-            self.type = piece_type
-
-        def draw(self, surface):
-            image = pygame.image.load(f"assets/{self.colour}_{self.type}.png")
-            surface.blit(image, (self.x * 75 + 10, self.y * 75 + 10))
-
-    # Set up pieces
     pieces = []
     for i in range(8):
         pieces.append(Piece("Black", i, 1, "Pawn"))
@@ -79,6 +74,12 @@ def game():
     # Draw the pieces
     for piece in pieces:
         piece.draw(board)
+
+    # adding board to screen
+    screen.blit(board, (20, 20))
+
+    pygame.display.flip()
+
 
     # main loop
     while True:

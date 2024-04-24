@@ -1,6 +1,7 @@
 # created by Isaac Korda #
 #       19/04/2024       #
 
+
 def translater():
     fenArray = []
     fenString = input("What is the FEN code: ")
@@ -24,3 +25,7 @@ def translater():
             print("piece is black")
 
         del (fenArray[0])
+
+
+def extractor(pieces):
+    print("extractor")
