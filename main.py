@@ -60,15 +60,22 @@ pieces.append(Piece("Black", 1, 0, "Knight"))
 pieces.append(Piece("Black", 6, 0, "Knight"))
 
 pieces.append(Piece("White", 1, 7, "Knight"))
-pieces.append(Piece("White",6, 7, "Knight"))
+pieces.append(Piece("White", 6, 7, "Knight"))
 
 # Bishops
 pieces.append(Piece("Black", 2, 0, "Bishop"))
 pieces.append(Piece("Black", 5, 0, "Bishop"))
 
 pieces.append(Piece("White", 2, 7, "Bishop"))
-pieces.append(Piece("White",5, 7, "Bishop"))
+pieces.append(Piece("White", 5, 7, "Bishop"))
 
+# King
+pieces.append(Piece("Black", 3, 0, "King"))
+pieces.append(Piece("White", 3, 7, "King"))
+
+# Queen
+pieces.append(Piece("Black", 4, 0, "Queen"))
+pieces.append(Piece("White", 4, 7, "Queen"))
 
 # Draw the pieces
 for piece in pieces:
@@ -80,6 +87,7 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+
         if event.type == pygame.MOUSEBUTTONDOWN:
             # get the position of the click
             pos = pygame.mouse.get_pos()
