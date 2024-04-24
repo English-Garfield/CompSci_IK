@@ -6,7 +6,6 @@
 import sys
 import pygame
 import FEN
-from sys import maxsize
 
 pygame.init()
 
@@ -29,6 +28,29 @@ for x in range(0, 8, 2):
 screen.blit(board, (20, 20))
 
 pygame.display.flip()
+
+
+class Piece:
+    def __init__(self, colour, x, y, piece_type):
+        self.colour = colour
+        self.x = x
+        self.y = y
+        self.type = piece_type
+
+    def draw(self, surface):
+        image = pygame.image.load(f"assets/{self.colour}_{self.type}.png")
+        surface.blit(image, (self.x * 75 + 10, self.y * 75 + 10))
+
+
+# Set up pieces
+pieces = []
+for i in range(8):
+    pieces.append(Piece("Black", i, 1, "Pawn"))
+    pieces.append(Piece("White", i, 6, "Pawn"))
+
+# Draw the pieces
+for piece in pieces:
+    piece.draw(board)
 
 # main loop
 while True:
