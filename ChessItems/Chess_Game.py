@@ -80,7 +80,6 @@ def game():
 
     pygame.display.flip()
 
-
     # main loop
     while True:
         for event in pygame.event.get():
