@@ -4,6 +4,6 @@
 # Imports
 from ChessItems import FEN as fen
 from ChessItems import Chess_Game as Chess
+
 # Main
-Chess.game()
 
