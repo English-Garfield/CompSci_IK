@@ -1,3 +1,6 @@
+# created by Isaac Korda #
+#       26/04/2024       #
+
 from src.const import *
 from square import Square
 from piece import *

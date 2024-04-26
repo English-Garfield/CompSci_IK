@@ -4,4 +4,4 @@ a chess game and AI opponent
 
 MIT license
 
-time  = 53:21
+time  = 1:20:00

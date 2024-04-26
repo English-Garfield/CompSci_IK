@@ -4,12 +4,14 @@
 import pygame
 from src.const import *
 from board import Board
+from dragger import Drag
 
 
 class Game:
 
     def __init__(self):
         self.board = Board()
+        self.drag = Drag()
 
     # Show methods
 
