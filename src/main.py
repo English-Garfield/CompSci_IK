@@ -5,8 +5,8 @@ import sys
 # Imports
 import pygame
 
-from const import *
-from game import Game
+from src.const import *
+from src.game import Game
 
 
 # Main

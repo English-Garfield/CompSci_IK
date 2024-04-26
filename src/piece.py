@@ -3,14 +3,14 @@ import math
 
 class Piece:
 
-    def __init__(self, name, colour, value, texture, texture_rect=None):
+    def __init__(self, name, colour, value, image=None, texture_rect=None):
         self.name = name
         self.colour = colour
 
         value_sign = 1 if colour == "white" else -1
         self.value = value * value_sign
 
-        self.texture = texture
+        self.texture = image
         self.set_texture()
         self.texture_rect = texture_rect
 

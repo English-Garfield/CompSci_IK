@@ -1,4 +1,4 @@
-from const import *
+from src.const import *
 from square import Square
 
 

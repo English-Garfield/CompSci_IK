@@ -2,7 +2,7 @@
 #       26/04/2024       #
 
 import pygame
-from const import *
+from src.const import *
 
 
 class Game:
