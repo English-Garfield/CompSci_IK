@@ -1,4 +1,5 @@
 import math
+import os
 
 
 class Piece:
@@ -14,8 +15,15 @@ class Piece:
         self.set_texture()
         self.texture_rect = texture_rect
 
-    def set_texture(self):
-        pass
+        self.moves = []
+        self.moved = False
+
+    def set_texture(self, size=80):
+        self.texture = os.path.join(
+            f"assets/images/imgs-{size}px/{self.colour}_{self.name}.png")
+
+    def add_move(self, move):
+        self.moves.append(move)
 
 
 class Pawn(Piece):
