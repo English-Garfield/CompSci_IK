@@ -29,6 +29,9 @@ class Main:
             self.game.showBackground(screen)
             game.show_pieces(screen)
 
+            if drag.dragging:
+                drag.update_blit(screen)
+
             for event in pygame.event.get():
 
                 # Click
@@ -42,14 +45,17 @@ class Main:
                     if board.squares[clicked_row][clicked_colum].has_piece():
                         piece = board.squares[clicked_row][clicked_colum].piece
                         drag.save_initial(event.pos)
+                        drag.drag_piece(piece)
 
                 # Mouse Motion
                 elif event.type == pygame.MOUSEMOTION:
-                    pass
+                    if drag.dragging:
+                        drag.updateMouse(event.pos)
+                        drag.update_blit(screen)
 
                 # mouse release
                 elif event.type == pygame.MOUSEBUTTONUP:
-                    pass
+                    drag.undrag_piece()
 
                 # quit application
                 elif event.type == pygame.QUIT:
