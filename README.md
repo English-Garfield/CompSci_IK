@@ -7,4 +7,4 @@ MIT license
 
 
 # my notes 
-time for video  = 1:30:00
+time for video  = 2:00:04
