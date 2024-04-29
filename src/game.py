@@ -37,8 +37,7 @@ class Game:
 
                     # all but dragged piece
                     if piece is not self.drag.piece:
-
-                    img = pygame.image.load(piece.texture)
-                    img_center = colum * SQUARE_SIZE + SQUARE_SIZE // 2, row * SQUARE_SIZE + SQUARE_SIZE // 2
-                    piece.texture_rect = img.get_rect(center=img_center)
-                    surface.blit(img, piece.texture_rect)
+                        img = pygame.image.load(piece.texture)
+                        img_center = colum * SQUARE_SIZE + SQUARE_SIZE // 2, row * SQUARE_SIZE + SQUARE_SIZE // 2
+                        piece.texture_rect = img.get_rect(center=img_center)
+                        surface.blit(img, piece.texture_rect)
