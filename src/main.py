@@ -1,5 +1,6 @@
 # created by Isaac Korda #
 #       19/04/2024       #
+
 import sys
 
 # Imports
@@ -26,7 +27,9 @@ class Main:
         board = self.game.board
 
         while True:
-            self.game.showBackground(screen)
+            # Show methods
+            game.showBackground(screen)
+            game.show_moves(screen)
             game.show_pieces(screen)
 
             if drag.dragging:
@@ -44,14 +47,23 @@ class Main:
                     # if clicked square has a piece ?
                     if board.squares[clicked_row][clicked_colum].has_piece():
                         piece = board.squares[clicked_row][clicked_colum].piece
+                        board.calc_moves(piece, clicked_row, clicked_colum)
                         drag.save_initial(event.pos)
                         drag.drag_piece(piece)
+
+                        # show methods
+                        game.showBackground(screen)
+                        game.show_moves(screen)
+                        game.show_pieces(screen)
 
                 # Mouse Motion
                 elif event.type == pygame.MOUSEMOTION:
                     if drag.dragging:
                         drag.updateMouse(event.pos)
+
+                        # Show methods
                         game.showBackground(screen)
+                        game.show_moves(screen)
                         drag.update_blit(screen)
                         game.show_pieces(screen)
 
