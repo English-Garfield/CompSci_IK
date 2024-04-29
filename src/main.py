@@ -51,7 +51,9 @@ class Main:
                 elif event.type == pygame.MOUSEMOTION:
                     if drag.dragging:
                         drag.updateMouse(event.pos)
+                        game.showBackground(screen)
                         drag.update_blit(screen)
+                        game.show_pieces(screen)
 
                 # mouse release
                 elif event.type == pygame.MOUSEBUTTONUP:
