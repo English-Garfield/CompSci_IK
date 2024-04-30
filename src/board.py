@@ -93,13 +93,33 @@ class Board:
             knight_moves()
 
         elif isinstance(piece, Rook):
-            straight_line_moves()
+            straight_line_moves([
+                (-1, 0),  # up
+                (0, 1),  # left
+                (1, 0),  # down
+                (-1, 0)  # left
+            ])
 
         elif isinstance(piece, Bishop):
-            straight_line_moves()
+            straight_line_moves([
+                (-1, +1),  # up right
+                (-1, -1),  # up left
+                (1, 1),  # down right
+                (1, -1),  # down left
+            ])
 
         elif isinstance(piece, Queen):
-            straight_line_moves()
+            straight_line_moves([
+                (-1, +1),  # up right
+                (-1, -1),  # up left
+                (1, 1),  # down right
+                (1, -1),  # down left
+
+                (-1, 0),  # up
+                (0, 1),  # left
+                (1, 0),  # down
+                (-1, 0)  # left
+            ])
 
         elif isinstance(piece, King):
             pass
