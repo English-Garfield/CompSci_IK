@@ -18,6 +18,43 @@ class Board:
 
     def calc_moves(self, piece, row, colum):
         # Calculate all possible moves (valid) of a specific piece on a specific position
+        # noinspection PyUnresolvedReferences
+        def pawn_moves():
+            # Steps
+            steps = 1 if piece.moved else 2
+
+            # vertical columns
+            start = row + piece.dir
+            end = row + (piece.dir * (1 + steps))
+            for possible_move_row in range(start, end, piece.dir):
+                if Square.in_range(possible_move_row):
+                    if self.squares[possible_move_row][colum].isEmpty():
+                        # create initial final move squares
+                        initial = Square(row, colum)
+                        final = Square(possible_move_row, colum)
+                        # Create a new move
+                        move = Move(initial, final)
+                        piece.add_move(move)
+                    # Blocked
+                    else:
+                        break
+                # not in range
+                else:
+                    break
+
+            # diagonal columns
+            possible_move_row = row + piece.dir
+            possible_move_colum = [colum - 1, colum + 1]
+            for possible_move_colum in possible_move_colum:
+                if Square.in_range(possible_move_row, possible_move_colum):
+                    if self.squares[possible_move_row][possible_move_colum].has_rival_piece(piece.colour):
+                        # Create initial and final move squares
+                        initial = Square(row, colum)
+                        final = Square(possible_move_row, possible_move_colum)
+                        # Create a new move
+                        move = Move(initial, final)
+                        # Append new move
+                        piece.add_move(move)
 
         def knight_moves():
             # 8 possible moves
@@ -46,20 +83,23 @@ class Board:
                         # append new valid move
                         piece.add_move(move)
 
-        if isinstance(piece, Pawn):
+        def straight_line_moves(increments):
             pass
+
+        if isinstance(piece, Pawn):
+            pawn_moves()
 
         elif isinstance(piece, Knight):
             knight_moves()
 
         elif isinstance(piece, Rook):
-            pass
+            straight_line_moves()
 
         elif isinstance(piece, Bishop):
-            pass
+            straight_line_moves()
 
         elif isinstance(piece, Queen):
-            pass
+            straight_line_moves()
 
         elif isinstance(piece, King):
             pass
