@@ -84,7 +84,29 @@ class Board:
                         piece.add_move(move)
 
         def straight_line_moves(increments):
-            pass
+            for increments in increments:
+                row_increment, colum_increments = increments
+                possible_move_row = row + row_increment
+                possible_move_colum = colum_increments + colum
+
+                # While True
+                if Square.in_range(possible_move_row, possible_move_colum):
+                    # create squares of the possible new move
+                    initial = Square(row, colum)
+                    final = Square(possible_move_row, possible_move_colum)
+
+                    # possible new move
+                    move = Move(initial, final)
+
+                    # Empty
+                    if self.squares[possible_move_row][possible_move_colum].isEmpty():
+                        # append a new move
+                        piece.add_move(move)
+
+                    # has rival piece
+                    if self.squares[possible_move_row][possible_move_colum].has_rival_piece(piece.colour):
+                        # append a new move
+                        piece.add_move(move)
 
         if isinstance(piece, Pawn):
             pawn_moves()
