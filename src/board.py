@@ -18,7 +18,6 @@ class Board:
 
     def calc_moves(self, piece, row, colum):
         # Calculate all possible moves (valid) of a specific piece on a specific position
-        # noinspection PyUnresolvedReferences
         def pawn_moves():
             # Steps
             steps = 1 if piece.moved else 2
@@ -83,30 +82,67 @@ class Board:
                         # append new valid move
                         piece.add_move(move)
 
+        def king_moves():
+            adjacent = [
+                (row - 1, colum + 0),  # Up
+                (row - 1, colum + 1),  # up right
+                (row - 0, colum + 1),  # right
+                (row + 1, colum + 1),  # down right
+                (row + 1, colum + 0),  # down
+                (row + 1, colum - 1),  # down left
+                (row + 0, colum - 1),  # left
+                (row - 1, colum - 1),  # up left
+            ]
+            for possible_move in adjacent:
+                possible_move_row, possible_move_colum = possible_move
+
+                if Square.in_range(possible_move_row, possible_move_colum):
+                    if self.squares[possible_move_row][possible_move_colum].is_empty_or_rival():
+                        # create squares of the move
+                        initial = Square(row, colum)
+                        final = Square(possible_move_row, possible_move_colum)  # piece = piece
+                        # create new move
+                        move = Move(initial, final)
+                        # append new valid move
+                        piece.add_move(move)
+
         def straight_line_moves(increments):
             for increments in increments:
                 row_increment, colum_increments = increments
                 possible_move_row = row + row_increment
                 possible_move_colum = colum_increments + colum
 
-                # While True
-                if Square.in_range(possible_move_row, possible_move_colum):
-                    # create squares of the possible new move
-                    initial = Square(row, colum)
-                    final = Square(possible_move_row, possible_move_colum)
+                while True:
+                    if Square.in_range(possible_move_row, possible_move_colum):
+                        # create squares of the possible new move
+                        initial = Square(row, colum)
+                        final = Square(possible_move_row, possible_move_colum)
 
-                    # possible new move
-                    move = Move(initial, final)
+                        # possible new move
+                        move = Move(initial, final)
 
-                    # Empty
-                    if self.squares[possible_move_row][possible_move_colum].isEmpty():
-                        # append a new move
-                        piece.add_move(move)
+                        # Empty = continue looping
+                        if self.squares[possible_move_row][possible_move_colum].isEmpty():
+                            # append a new move
+                            piece.add_move(move)
 
-                    # has rival piece
-                    if self.squares[possible_move_row][possible_move_colum].has_rival_piece(piece.colour):
-                        # append a new move
-                        piece.add_move(move)
+                        # has rival piece = add move + break
+                        if self.squares[possible_move_row][possible_move_colum].has_rival_piece(piece.colour):
+                            # append a new move
+                            piece.add_move(move)
+                            break
+
+                        # has team piece
+                        if self.squares[possible_move_row][possible_move_colum].has_team_piece(piece.colour):
+                            break
+
+                    # not in range
+                    else:
+                        break
+
+                    # incrementing the increments
+                    possible_move_row = possible_move_row + row_increment
+                    possible_move_colum = possible_move_colum + colum_increments
 
         if isinstance(piece, Pawn):
             pawn_moves()
@@ -117,7 +153,7 @@ class Board:
         elif isinstance(piece, Rook):
             straight_line_moves([
                 (-1, 0),  # up
-                (0, 1),  # left
+                (0, 1),  # right
                 (1, 0),  # down
                 (-1, 0)  # left
             ])
