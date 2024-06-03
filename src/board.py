@@ -17,11 +17,11 @@ class Board:
         self._add_pieces("black")
 
     def move(self, piece, move):
-        inital = move.initial
+        initial = move.initial
         final = move.final
 
         # console board move update
-        self.squares[inital.row][inital.colum].piece = None
+        self.squares[initial.row][initial.colum].piece = None
         self.squares[final.row][final.colum].piece = piece
 
         # move
