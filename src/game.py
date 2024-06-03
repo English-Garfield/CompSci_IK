@@ -12,6 +12,7 @@ class Game:
     def __init__(self):
         self.board = Board()
         self.drag = Drag()
+        self.next_player = 'white'
 
     # Show methods
 
@@ -58,3 +59,7 @@ class Game:
                 # Blit
                 pygame.draw.rect(surface, colour, rectangle)
 
+    # other methods
+
+    def nextTurn(self):
+        self.nextTurn = 'white' if self.nextTurn == 'black' else 'black'
