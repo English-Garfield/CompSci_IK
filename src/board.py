@@ -11,10 +11,30 @@ class Board:
 
     def __init__(self):
         self.squares = [[0, 0, 0, 0, 0, 0, 0, 0, 0] for colum in range(COLUMNS)]
-
+        self.last_move = None
         self.create_()
         self._add_pieces("white")
         self._add_pieces("black")
+
+    def move(self, piece, move):
+        inital = move.initial
+        final = move.final
+
+        # console board move update
+        self.squares[inital.row][inital.colum].piece = None
+        self.squares[final.row][final.colum].piece = piece
+
+        # move
+        piece.moved = True
+
+        # clear valid moves
+        piece.clear_moves()
+
+        # set last move
+        self.last_move = move
+
+    def valid_move(self, piece, move):
+        return move in piece.moves
 
     def calc_moves(self, piece, row, colum):
         # Calculate all possible moves (valid) of a specific piece on a specific position
@@ -93,11 +113,13 @@ class Board:
                 (row + 0, colum - 1),  # left
                 (row - 1, colum - 1),  # up left
             ]
+
+            # normal moves
             for possible_move in adjacent:
                 possible_move_row, possible_move_colum = possible_move
 
                 if Square.in_range(possible_move_row, possible_move_colum):
-                    if self.squares[possible_move_row][possible_move_colum].is_empty_or_rival():
+                    if self.squares[possible_move_row][possible_move_colum].is_empty_or_rival(piece.colour):
                         # create squares of the move
                         initial = Square(row, colum)
                         final = Square(possible_move_row, possible_move_colum)  # piece = piece
@@ -105,6 +127,12 @@ class Board:
                         move = Move(initial, final)
                         # append new valid move
                         piece.add_move(move)
+
+        # castling moves
+
+        # queen
+
+        # king
 
         def straight_line_moves(increments):
             for increments in increments:
@@ -180,7 +208,7 @@ class Board:
             ])
 
         elif isinstance(piece, King):
-            pass
+            king_moves()
 
     def create_(self):
 
