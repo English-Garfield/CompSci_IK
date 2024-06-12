@@ -80,7 +80,7 @@ class Game:
             # rect
             rect = (self.hovered_sqr.colum * SQUARE_SIZE, self.hovered_sqr.row * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE)
             # blit
-            pygame.draw.rect(surface, colour, rect)
+            pygame.draw.rect(surface, colour, rect, width=3)
 
     # other methods
     def nextTurn(self):
