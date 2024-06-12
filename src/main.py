@@ -31,8 +31,11 @@ class Main:
         while True:
             # Show methods
             game.showBackground(screen)
+            game.show_last_move(screen)
             game.show_moves(screen)
             game.show_pieces(screen)
+
+            game.show_hover(screen)
 
             if drag.dragging:
                 drag.update_blit(screen)
@@ -57,19 +60,27 @@ class Main:
 
                             # show methods
                             game.showBackground(screen)
+                            game.show_last_move(screen)
                             game.show_moves(screen)
                             game.show_pieces(screen)
 
                 # Mouse Motion
                 elif event.type == pygame.MOUSEMOTION:
+                    motionRow = event.pos[1] // SQUARE_SIZE
+                    motionColum = event.pos[0] // SQUARE_SIZE
+
+                    game.set_hover(motionRow, motionColum)
+
                     if drag.dragging:
                         drag.updateMouse(event.pos)
 
                         # Show methods
                         game.showBackground(screen)
+                        game.show_last_move(screen)
                         game.show_moves(screen)
-                        drag.update_blit(screen)
                         game.show_pieces(screen)
+                        game.show_hover(screen)
+                        drag.update_blit(screen)
 
                 # mouse release
                 elif event.type == pygame.MOUSEBUTTONUP:
@@ -90,7 +101,11 @@ class Main:
                         board.move(drag.piece, move)
                         # show methods
                         game.showBackground(screen)
+                        game.show_last_move(screen)
                         game.show_pieces(screen)
+
+                        # next turn
+                        game.nextTurn()
 
                     drag.undrag_piece()
 

@@ -11,6 +11,7 @@ class Game:
 
     def __init__(self):
         self.board = Board()
+        self.hovered_sqr = None
         self.drag = Drag()
         self.next_player = 'white'
 
@@ -59,7 +60,32 @@ class Game:
                 # Blit
                 pygame.draw.rect(surface, colour, rectangle)
 
-    # other methods
+    def show_last_move(self, surface):
+        if self.board.last_move:
+            initial = self.board.last_move.initial
+            final = self.board.last_move.final
 
+            for pos in [initial, final]:
+                # colour
+                colour = (244, 247, 116) if (pos.row * pos.colum) % 2 == 0 else (172, 195, 51)
+                # rect
+                rect = (pos.colum * SQUARE_SIZE, pos.row * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE)
+                # blit
+                pygame.draw.rect(surface, colour, rect)
+
+    def show_hover(self, surface):
+        if self.hovered_sqr:
+            # colour
+            colour = (180, 180, 180)
+            # rect
+            rect = (self.hovered_sqr.colum * SQUARE_SIZE, self.hovered_sqr.row * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE)
+            # blit
+            pygame.draw.rect(surface, colour, rect)
+
+    # other methods
     def nextTurn(self):
-        self.nextTurn = 'white' if self.nextTurn == 'black' else 'black'
+        self.next_player = 'white' if self.nextTurn == 'black' else 'black'
+
+    def set_hover(self, row, colum):
+        self.hovered_sqr = self.board.squares[row][colum]
+
