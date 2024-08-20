@@ -1,5 +1,6 @@
 # created by Isaac Korda #
 #       19/04/2024       #
+#    Main running code   #
 
 import sys
 
@@ -34,7 +35,6 @@ class Main:
             game.show_last_move(screen)
             game.show_moves(screen)
             game.show_pieces(screen)
-
             game.show_hover(screen)
 
             if drag.dragging:
@@ -98,7 +98,12 @@ class Main:
 
                     # valid move ?
                     if board.valid_move(drag.piece, move):
+                        captured = board.squares[released_row][released_colum].has_piece()
+
                         board.move(drag.piece, move)
+                        # sounds
+                        game.soundEffect(captured)
+
                         # show methods
                         game.showBackground(screen)
                         game.show_last_move(screen)
@@ -108,6 +113,11 @@ class Main:
                         game.nextTurn()
 
                     drag.undrag_piece()
+
+                # key press
+                elif event.type == pygame.KEYDOWN:
+                    if event.type == pygame.K_t:
+                        game.changeTheme()
 
                 # quit application
                 elif event.type == pygame.QUIT:

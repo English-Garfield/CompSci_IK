@@ -1,9 +1,21 @@
 class Square:
 
+    ALPHACOLS = {
+        0: 'a',
+        1: 'b',
+        2: 'c',
+        3: 'd',
+        4: 'e',
+        5: 'f',
+        6: 'g',
+        7: 'h'
+    }
+
     def __init__(self, row, colum, piece=None):
         self.row = row
         self.colum = colum
         self.piece = piece
+        self.ALPHACOLS = self.ALPHACOLS[colum]
 
     def __eq__(self, other):
         return self.row == other.row and self.colum == other.colum
@@ -30,3 +42,17 @@ class Square:
                 return False
 
         return True
+
+    @staticmethod
+    def get_ALPHACOLS(colum):
+        ALPHACOLS = {
+            0: 'a',
+            1: 'b',
+            2: 'c',
+            3: 'd',
+            4: 'e',
+            5: 'f',
+            6: 'g',
+            7: 'h'
+        }
+        return ALPHACOLS[colum]
