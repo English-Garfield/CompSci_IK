@@ -1,86 +1,83 @@
-# created by Isaac Korda #
-#       26/04/2024       #
-
 import pygame
-from src.const import *
+
+from const import *
 from board import Board
-from dragger import Drag
+from dragger import Dragger
 from config import Config
 from square import Square
-
 
 class Game:
 
     def __init__(self):
-        self.board = Board()
-        self.hovered_sqr = None
-        self.drag = Drag()
         self.next_player = 'white'
+        self.hovered_sqr = None
+        self.board = Board()
+        self.dragger = Dragger()
         self.config = Config()
 
-    # Show methods
+    # blit methods
 
-    def showBackground(self, surface):
+    def show_bg(self, surface):
         theme = self.config.theme
-
+        
         for row in range(ROWS):
-            for colum in range(COLUMNS):
-                # colour
-                colour = theme.bg.light if (row + colum) % 2 == 0 else theme.bg.dark
+            for col in range(COLS):
+                # color
+                color = theme.bg.light if (row + col) % 2 == 0 else theme.bg.dark
                 # rect
-                rect = (colum * SQUARE_SIZE, row * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE)
+                rect = (col * SQSIZE, row * SQSIZE, SQSIZE, SQSIZE)
                 # blit
-                pygame.draw.rect(surface, colour, rect)
+                pygame.draw.rect(surface, color, rect)
 
                 # row coordinates
-                if colum == 0:
-                    # colour
-                    colour = theme.bg.dark if row % 2 == 0 else theme.bg.light
-                    # Label
-                    label = self.config.font.render(str(ROWS - row), 1, colour)
-                    label_pos = (5, 5 + row * SQUARE_SIZE)
-                    # Blit
-                    surface.blit(label, label_pos)
+                if col == 0:
+                    # color
+                    color = theme.bg.dark if row % 2 == 0 else theme.bg.light
+                    # label
+                    lbl = self.config.font.render(str(ROWS-row), 1, color)
+                    lbl_pos = (5, 5 + row * SQSIZE)
+                    # blit
+                    surface.blit(lbl, lbl_pos)
 
-                # Column coordinates
+                # col coordinates
                 if row == 7:
-                    # colour
-                    colour = theme.bg.dark if colum % 2 == 0 else theme.bg.light
-                    # Label
-                    label = self.config.font.render(Square.get_ALPHACOLS(colum), 1, colour)
-                    label_pos = (colum * SQUARE_SIZE * SQUARE_SIZE - 20, HEIGHT - 20)
+                    # color
+                    color = theme.bg.dark if (row + col) % 2 == 0 else theme.bg.light
+                    # label
+                    lbl = self.config.font.render(Square.get_alphacol(col), 1, color)
+                    lbl_pos = (col * SQSIZE + SQSIZE - 20, HEIGHT - 20)
+                    # blit
+                    surface.blit(lbl, lbl_pos)
 
     def show_pieces(self, surface):
         for row in range(ROWS):
-            for colum in range(COLUMNS):
-                # Piece?
-                if self.board.squares[row][colum].has_piece():
-                    piece = self.board.squares[row][colum].piece
-
-                    # all but dragged piece
-                    if piece is not self.drag.piece:
+            for col in range(COLS):
+                # piece ?
+                if self.board.squares[row][col].has_piece():
+                    piece = self.board.squares[row][col].piece
+                    
+                    # all pieces except dragger piece
+                    if piece is not self.dragger.piece:
                         piece.set_texture(size=80)
                         img = pygame.image.load(piece.texture)
-                        img_center = colum * SQUARE_SIZE + SQUARE_SIZE // 2, row * SQUARE_SIZE + SQUARE_SIZE // 2
+                        img_center = col * SQSIZE + SQSIZE // 2, row * SQSIZE + SQSIZE // 2
                         piece.texture_rect = img.get_rect(center=img_center)
                         surface.blit(img, piece.texture_rect)
 
     def show_moves(self, surface):
         theme = self.config.theme
 
-        if self.drag.dragging:
-            piece = self.drag.piece
+        if self.dragger.dragging:
+            piece = self.dragger.piece
 
-            # Loop all valid moves
+            # loop all valid moves
             for move in piece.moves:
-                # colour
-                colour = theme.moves.light if (move.final.row + move.final.colum) % 2 == 0 else theme.moves.dark
-
-                # rectangle
-                rectangle = (move.final.colum * SQUARE_SIZE, move.final.row * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE)
-
-                # Blit
-                pygame.draw.rect(surface, colour, rectangle)
+                # color
+                color = theme.moves.light if (move.final.row + move.final.col) % 2 == 0 else theme.moves.dark
+                # rect
+                rect = (move.final.col * SQSIZE, move.final.row * SQSIZE, SQSIZE, SQSIZE)
+                # blit
+                pygame.draw.rect(surface, color, rect)
 
     def show_last_move(self, surface):
         theme = self.config.theme
@@ -90,34 +87,38 @@ class Game:
             final = self.board.last_move.final
 
             for pos in [initial, final]:
-                # colour
-                colour = theme.trace.light if (pos.row * pos.colum) % 2 == 0 else theme.trace.dark
+                # color
+                color = theme.trace.light if (pos.row + pos.col) % 2 == 0 else theme.trace.dark
                 # rect
-                rect = (pos.colum * SQUARE_SIZE, pos.row * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE)
+                rect = (pos.col * SQSIZE, pos.row * SQSIZE, SQSIZE, SQSIZE)
                 # blit
-                pygame.draw.rect(surface, colour, rect)
+                pygame.draw.rect(surface, color, rect)
 
     def show_hover(self, surface):
         if self.hovered_sqr:
-            # colour
-            colour = (180, 180, 180)
+            # color
+            color = (180, 180, 180)
             # rect
-            rect = (self.hovered_sqr.colum * SQUARE_SIZE, self.hovered_sqr.row * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE)
+            rect = (self.hovered_sqr.col * SQSIZE, self.hovered_sqr.row * SQSIZE, SQSIZE, SQSIZE)
             # blit
-            pygame.draw.rect(surface, colour, rect, width=3)
+            pygame.draw.rect(surface, color, rect, width=3)
 
     # other methods
-    def nextTurn(self):
-        self.next_player = 'white' if self.nextTurn == 'black' else 'black'
 
-    def set_hover(self, row, colum):
-        self.hovered_sqr = self.board.squares[row][colum]
+    def next_turn(self):
+        self.next_player = 'white' if self.next_player == 'black' else 'black'
 
-    def changeTheme(self):
+    def set_hover(self, row, col):
+        self.hovered_sqr = self.board.squares[row][col]
+
+    def change_theme(self):
         self.config.change_theme()
 
-    def soundEffect(self, capture=False):
-        if capture:
-            self.config.capturedSound.play()
+    def play_sound(self, captured=False):
+        if captured:
+            self.config.capture_sound.play()
         else:
-            self.config.moveSound.play()
+            self.config.move_sound.play()
+
+    def reset(self):
+        self.__init__()
