@@ -27,9 +27,12 @@ class Main:
         game = self.game
         screen = self.screen
         drag = self.game.drag
+        print(drag.piece)
         board = self.game.board
+        game_state = "start_menu"
 
         while True:
+
             # Show methods
             game.showBackground(screen)
             game.show_last_move(screen)
@@ -98,6 +101,7 @@ class Main:
 
                     # valid move ?
                     if board.valid_move(drag.piece, move):
+                        # normal capture
                         captured = board.squares[released_row][released_colum].has_piece()
 
                         board.move(drag.piece, move)

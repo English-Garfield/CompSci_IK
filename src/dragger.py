@@ -2,10 +2,12 @@
 #       26/04/2024       #
 
 import pygame
+
 from const import *
 
 
 class Drag:
+
     def __init__(self):
         self.piece = None
         self.dragging = False
@@ -15,23 +17,23 @@ class Drag:
         self.initial_colum = 0
 
     # blit method
+
     def update_blit(self, surface):
+        # texture
         self.piece.set_texture(size=128)
         texture = self.piece.texture
-
-        # Image
+        # img
         img = pygame.image.load(texture)
-
         # rect
         img_center = (self.mouse_x, self.mouse_y)
         self.piece.texture_rect = img.get_rect(center=img_center)
-
-        # blit image
+        # blit
         surface.blit(img, self.piece.texture_rect)
 
     # other methods
+
     def updateMouse(self, pos):
-        self.mouse_x, self.mouse_y = pos  # (mouse_x, mouse_y)
+        self.mouse_x, self.mouse_y = pos  # (xcor, ycor)
 
     def save_initial(self, pos):
         self.initial_row = pos[1] // SQUARE_SIZE
