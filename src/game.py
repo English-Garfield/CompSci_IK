@@ -6,6 +6,7 @@ from dragger import Dragger
 from config import Config
 from square import Square
 
+
 class Game:
 
     def __init__(self):
@@ -19,7 +20,7 @@ class Game:
 
     def show_bg(self, surface):
         theme = self.config.theme
-        
+
         for row in range(ROWS):
             for col in range(COLS):
                 # color
@@ -34,7 +35,7 @@ class Game:
                     # color
                     color = theme.bg.dark if row % 2 == 0 else theme.bg.light
                     # label
-                    lbl = self.config.font.render(str(ROWS-row), 1, color)
+                    lbl = self.config.font.render(str(ROWS - row), 1, color)
                     lbl_pos = (5, 5 + row * SQSIZE)
                     # blit
                     surface.blit(lbl, lbl_pos)
@@ -55,7 +56,7 @@ class Game:
                 # piece ?
                 if self.board.squares[row][col].has_piece():
                     piece = self.board.squares[row][col].piece
-                    
+
                     # all pieces except dragger piece
                     if piece is not self.dragger.piece:
                         piece.set_texture(size=80)
