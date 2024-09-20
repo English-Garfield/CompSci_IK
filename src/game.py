@@ -1,19 +1,22 @@
 import pygame
 
-from const import *
 from board import Board
+from const import *
 from dragger import Dragger
-from config import Config
 from square import Square
+from config import Config
 
 
 class Game:
-
     def __init__(self):
+        self.last_move = None
         self.next_player = 'white'
-        self.hovered_sqr = None
         self.board = Board()
         self.dragger = Dragger()
+        self.next_player = 'white'
+        self.hovered_sqr = None
+        self.game_over = False
+        self.winner = None
         self.config = Config()
 
     # blit methods
@@ -121,5 +124,75 @@ class Game:
         else:
             self.config.move_sound.play()
 
+    def isCheckmate(self, board, colour):
+        if not self.isCheckmate(colour):
+            return False
+
+        for piece in self.get_all_pieces(colour):
+            validMoves = piece.get_valid_moves(board)
+            for move in validMoves:
+                if self.is_valid_move(board, piece, move):
+                    return False
+            return True
+
+    def is_in_check(self, colour):
+        king_pos = self.get_king_pos(colour)
+        opponent_colour = 'white' if colour == 'black' else 'black'
+
+        for piece in self.get_all_pieces(opponent_colour):
+            if king_pos in piece.get_valid_moves(self.board):
+                return True
+        return False
+
+    def get_king_pos(self, colour):
+        for row in range(ROWS):
+            for col in range(COLS):
+                piece = self.board.squares[row][col].piece
+                if piece and piece.name == 'king' and piece.color == colour:
+                    return row, col
+        raise ValueError(f"No {colour} king found on the board")
+
+    def get_all_pieces(self, colour):
+        pieces = []
+        for row in range(ROWS):
+            for col in range(COLS):
+                piece = self.board.squares[row][col].piece
+                if piece and piece.color == colour:
+                    pieces.append(piece)
+        return pieces
+
+    def is_valid_move(self, board, piece, move):
+        tempBoard = self.board.copy()
+        tempBoard.move(piece, move)
+        return not self.is_in_check(piece.colour)
+
     def reset(self):
         self.__init__()
+
+    def move(self, piece, move):
+        initial = move.initial
+        final = move.final
+
+        # console board move update
+        self.board.move(piece, move)
+
+        # move
+        piece.move(move)
+
+        # clear valid moves
+        piece.clear_moves()
+
+        # set last move
+        self.last_move = move
+
+        # check for checkmate
+        self.next_player = 'white' if self.next_player == 'black' else 'black'
+        if self.isCheckmate(self.board, self.next_player):
+            self.game_over = True
+            self.winner = self.next_player
+
+        # Add the checkmate check here
+        opponent_color = 'white' if piece.color == 'black' else 'black'
+        if self.isCheckmate(self.board, opponent_color):
+            self.game_over = True
+            self.winner = piece.color
