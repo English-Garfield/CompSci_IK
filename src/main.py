@@ -11,6 +11,7 @@ from piece import Piece
 class Main:
 
     def __init__(self):
+        self.checkmate_displayed = None
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         pygame.display.set_caption('Chess')
@@ -24,7 +25,6 @@ class Main:
         dragger = self.game.dragger
 
         while True:
-            # show methods
             game.show_bg(screen)
             game.show_last_move(screen)
             game.show_moves(screen)
@@ -34,16 +34,25 @@ class Main:
             if dragger.dragging:
                 dragger.update_blit(screen)
 
+            # Add this block to display the checkmate message
+            if game.isCheckmate:
+                font = pygame.font.Font(None, 36)
+                winner = "White" if game.next_player == 'black' else "Black"
+                text = font.render(f"Checkmate! {winner} wins!", True, (255, 0, 0))
+                text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
+                screen.blit(text, text_rect)
+
+            pygame.display.update()
             for event in pygame.event.get():
 
-                # click
+                # Click
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     dragger.update_mouse(event.pos)
 
                     clicked_row = dragger.mouseY // SQSIZE
                     clicked_col = dragger.mouseX // SQSIZE
 
-                    # if clicked square has a piece ?
+                    # If clicked square has a piece ?
                     if board.squares[clicked_row][clicked_col].has_piece():
                         piece = board.squares[clicked_row][clicked_col].piece
                         # valid piece (color) ?
@@ -51,13 +60,13 @@ class Main:
                             board.calc_moves(piece, clicked_row, clicked_col, bool=True)
                             dragger.save_initial(event.pos)
                             dragger.drag_piece(piece)
-                            # show methods 
+                            # show methods
                             game.show_bg(screen)
                             game.show_last_move(screen)
                             game.show_moves(screen)
                             game.show_pieces(screen)
 
-                # mouse motion
+                # Mouse motion
                 elif event.type == pygame.MOUSEMOTION:
                     motion_row = event.pos[1] // SQSIZE
                     motion_col = event.pos[0] // SQSIZE
@@ -74,7 +83,7 @@ class Main:
                         game.show_hover(screen)
                         dragger.update_blit(screen)
 
-                # click release
+                # Click release
                 elif event.type == pygame.MOUSEBUTTONUP:
 
                     if dragger.dragging:
