@@ -92,6 +92,7 @@ class Board:
                     temp_board.calc_moves(p, row, col, bool=False)
                     for m in p.moves:
                         if isinstance(m.final.piece, King):
+                            print("CHECKmate")
                             return True
 
         return False
@@ -459,3 +460,11 @@ class Board:
 
         # king
         self.squares[row_other][4] = Square(row_other, 4, King(color))
+
+    def get_king(self, color):
+        for row in range(ROWS):
+            for col in range(COLS):
+                piece = self.squares[row][col].piece
+                if isinstance(piece, King) and piece.color == color:
+                    return piece
+        return None

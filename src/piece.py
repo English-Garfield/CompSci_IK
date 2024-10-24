@@ -20,7 +20,6 @@ class Piece:
 
     def add_move(self, move):
         self.moves.append(move)
-        print(self.moves)
 
     def clear_moves(self):
         self.moves = []
