@@ -4,6 +4,7 @@ import os
 from sound import Sound
 from theme import Theme
 
+
 class Config:
 
     def __init__(self):

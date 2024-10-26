@@ -1,141 +1,149 @@
 import pygame
 import sys
-
 from const import *
 from game import Game
 from square import Square
 from move import Move
 from piece import Piece
 
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GRAY = (100, 100, 100)
+GREEN = (0, 200, 0)
+
+# Initialize Pygame
+pygame.init()
+# Set up display
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Main Screen")
+# Fonts
+FONT = pygame.font.Font(None, 40)
+
+# Button dimensions
+BUTTON_WIDTH = 200
+BUTTON_HEIGHT = 80
+
+# Button positions
+start_button_rect = pygame.Rect((WIDTH // 2 - BUTTON_WIDTH // 2, 200), (BUTTON_WIDTH, BUTTON_HEIGHT))
+quit_button_rect = pygame.Rect((WIDTH // 2 - BUTTON_WIDTH // 2, 350), (BUTTON_WIDTH, BUTTON_HEIGHT))
+
 
 class Main:
-
     def __init__(self):
         self.checkmate_displayed = None
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         pygame.display.set_caption('Chess')
         self.game = Game()
+        self.running = True
+        self.in_main_menu = True
 
-    def mainloop(self):
+    def main_screen(self):
+        while self.in_main_menu:
+            self.screen.fill(GRAY)
+            pygame.draw.rect(self.screen, GREEN, start_button_rect)
+            pygame.draw.rect(self.screen, GREEN, quit_button_rect)
 
-        screen = self.screen
-        game = self.game
-        board = self.game.board
-        dragger = self.game.dragger
+            start_text = FONT.render('Start Game', True, WHITE)
+            quit_text = FONT.render('Quit', True, WHITE)
 
-        while True:
-            game.show_bg(screen)
-            game.show_last_move(screen)
-            game.show_moves(screen)
-            game.show_pieces(screen)
-            game.show_hover(screen)
+            start_text_rect = start_text.get_rect(center=start_button_rect.center)
+            quit_text_rect = quit_text.get_rect(center=quit_button_rect.center)
 
-            if dragger.dragging:
-                dragger.update_blit(screen)
-
-            # Add this block to display the checkmate message
-            if game.isCheckmate:
-                font = pygame.font.Font(None, 36)
-                winner = "White" if game.next_player == 'black' else "Black"
-                text = font.render(f"Checkmate! {winner} wins!", True, (255, 0, 0))
-                text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
-                screen.blit(text, text_rect)
+            self.screen.blit(start_text, start_text_rect)
+            self.screen.blit(quit_text, quit_text_rect)
 
             pygame.display.update()
+
             for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.in_main_menu = False
+                    self.running = False
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    if start_button_rect.collidepoint(event.pos):
+                        self.in_main_menu = False
+                    elif quit_button_rect.collidepoint(event.pos):
+                        pygame.quit()
+                        sys.exit()
 
-                # Click
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    dragger.update_mouse(event.pos)
+    def mainloop(self):
+        self.main_screen()
 
-                    clicked_row = dragger.mouseY // SQSIZE
-                    clicked_col = dragger.mouseX // SQSIZE
+        while self.running:
+            self.screen.fill(GRAY)
+            self.game.show_bg(self.screen)
+            self.game.show_last_move(self.screen)
+            self.game.show_moves(self.screen)
+            self.game.show_pieces(self.screen)
+            self.game.show_hover(self.screen)
 
-                    # If clicked square has a piece ?
-                    if board.squares[clicked_row][clicked_col].has_piece():
-                        piece = board.squares[clicked_row][clicked_col].piece
-                        # valid piece (color) ?
-                        if piece.color == game.next_player:
-                            board.calc_moves(piece, clicked_row, clicked_col, bool=True)
-                            dragger.save_initial(event.pos)
-                            dragger.drag_piece(piece)
-                            # show methods
-                            game.show_bg(screen)
-                            game.show_last_move(screen)
-                            game.show_moves(screen)
-                            game.show_pieces(screen)
+            if self.game.dragger.dragging:
+                self.game.dragger.update_blit(self.screen)
 
-                # Mouse motion
+            pygame.display.update()
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.running = False
+
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    self.game.dragger.update_mouse(event.pos)
+                    clicked_row = self.game.dragger.mouseY // SQSIZE
+                    clicked_col = self.game.dragger.mouseX // SQSIZE
+                    if self.game.board.squares[clicked_row][clicked_col].has_piece():
+                        piece = self.game.board.squares[clicked_row][clicked_col].piece
+                        if piece.color == self.game.next_player:
+                            self.game.board.calc_moves(piece, clicked_row, clicked_col, bool=True)
+                            self.game.dragger.save_initial(event.pos)
+                            self.game.dragger.drag_piece(piece)
+                            self.game.show_bg(self.screen)
+                            self.game.show_last_move(self.screen)
+                            self.game.show_moves(self.screen)
+                            self.game.show_pieces(self.screen)
+
                 elif event.type == pygame.MOUSEMOTION:
                     motion_row = event.pos[1] // SQSIZE
                     motion_col = event.pos[0] // SQSIZE
+                    self.game.set_hover(motion_row, motion_col)
+                    if self.game.dragger.dragging:
+                        self.game.dragger.update_mouse(event.pos)
+                        self.game.show_bg(self.screen)
+                        self.game.show_last_move(self.screen)
+                        self.game.show_moves(self.screen)
+                        self.game.show_pieces(self.screen)
+                        self.game.show_hover(self.screen)
+                        self.game.dragger.update_blit(self.screen)
 
-                    game.set_hover(motion_row, motion_col)
-
-                    if dragger.dragging:
-                        dragger.update_mouse(event.pos)
-                        # show methods
-                        game.show_bg(screen)
-                        game.show_last_move(screen)
-                        game.show_moves(screen)
-                        game.show_pieces(screen)
-                        game.show_hover(screen)
-                        dragger.update_blit(screen)
-
-                # Click release
                 elif event.type == pygame.MOUSEBUTTONUP:
-
-                    if dragger.dragging:
-                        dragger.update_mouse(event.pos)
-
-                        released_row = dragger.mouseY // SQSIZE
-                        released_col = dragger.mouseX // SQSIZE
-
-                        # create possible move
-                        initial = Square(dragger.initial_row, dragger.initial_col)
+                    if self.game.dragger.dragging:
+                        self.game.dragger.update_mouse(event.pos)
+                        released_row = self.game.dragger.mouseY // SQSIZE
+                        released_col = self.game.dragger.mouseX // SQSIZE
+                        initial = Square(self.game.dragger.initial_row, self.game.dragger.initial_col)
                         final = Square(released_row, released_col)
                         move = Move(initial, final)
 
-                        # valid move ?
-                        if board.valid_move(dragger.piece, move):
-                            # normal capture
-                            captured = board.squares[released_row][released_col].has_piece()
-                            board.move(dragger.piece, move)
+                        if self.game.board.valid_move(self.game.dragger.piece, move):
+                            captured = self.game.board.squares[released_row][released_col].has_piece()
+                            self.game.board.move(self.game.dragger.piece, move)
+                            self.game.board.set_true_en_passant(self.game.dragger.piece)
+                            self.game.play_sound(captured)
+                            self.game.show_bg(self.screen)
+                            self.game.show_last_move(self.screen)
+                            self.game.show_pieces(self.screen)
+                            self.game.next_turn()
 
-                            board.set_true_en_passant(dragger.piece)
+                    self.game.dragger.undrag_piece()
 
-                            # sounds
-                            game.play_sound(captured)
-                            # show methods
-                            game.show_bg(screen)
-                            game.show_last_move(screen)
-                            game.show_pieces(screen)
-                            # next turn
-                            game.next_turn()
-
-                    dragger.undrag_piece()
-
-                # key press
                 elif event.type == pygame.KEYDOWN:
-
-                    # changing themes
                     if event.key == pygame.K_t:
-                        game.change_theme()
+                        self.game.change_theme()
 
-                    # changing themes
                     if event.key == pygame.K_r:
-                        game.reset()
-                        game = self.game
-                        board = self.game.board
-                        dragger = self.game.dragger
+                        self.game.reset()
+                        self.game = Game()
 
-                # quit application
-                elif event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-
-            pygame.display.update()
+                pygame.display.update()
 
 
 main = Main()
