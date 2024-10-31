@@ -1,3 +1,5 @@
+"""holds the main loop of the game"""
+
 import pygame
 import sys
 from const import *
