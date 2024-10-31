@@ -6,22 +6,11 @@ from square import Square
 from move import Move
 from piece import Piece
 
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-GRAY = (100, 100, 100)
-GREEN = (0, 200, 0)
-
 # Initialize Pygame
 pygame.init()
 # Set up display
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Main Screen")
-# Fonts
-FONT = pygame.font.Font(None, 40)
-
-# Button dimensions
-BUTTON_WIDTH = 200
-BUTTON_HEIGHT = 80
 
 # Button positions
 start_button_rect = pygame.Rect((WIDTH // 2 - BUTTON_WIDTH // 2, 200), (BUTTON_WIDTH, BUTTON_HEIGHT))
@@ -40,9 +29,9 @@ class Main:
 
     def main_screen(self):
         while self.in_main_menu:
-            self.screen.fill(GRAY)
+            self.screen.fill(YELLOW)
             pygame.draw.rect(self.screen, GREEN, start_button_rect)
-            pygame.draw.rect(self.screen, GREEN, quit_button_rect)
+            pygame.draw.rect(self.screen, SALMON, quit_button_rect)
 
             start_text = FONT.render('Start Game', True, WHITE)
             quit_text = FONT.render('Quit', True, WHITE)
@@ -70,7 +59,7 @@ class Main:
         self.main_screen()
 
         while self.running:
-            self.screen.fill(GRAY)
+            self.screen.fill(DARK_GREEN)
             self.game.show_bg(self.screen)
             self.game.show_last_move(self.screen)
             self.game.show_moves(self.screen)
