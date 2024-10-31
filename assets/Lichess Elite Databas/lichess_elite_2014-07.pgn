@@ -1,0 +1,2426 @@
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "Blitzstream-twitch"]
+[Result "1-0"]
+[BlackTitle "LM"]
+[WhiteElo "2477"]
+[BlackElo "2396"]
+[ECO "C50"]
+[Opening "Giuoco Piano"]
+[TimeControl "300+0"]
+[UTCDate "2014.06.30"]
+[UTCTime "22:26:31"]
+[Termination "Normal"]
+[WhiteRatingDiff "+9"]
+[BlackRatingDiff "-9"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. O-O d6 5. d3 Bg4 6. c3 Qf6 7. Be3 Bb6 8.
+Nbd2 Nge7 9. h3 h5 10. Qe1 O-O-O 11. b4 Be6 12. b5 Na5 13. Bg5 Qg6 14. Bxe7
+Rde8 15. Nh4 Qg3 16. Bxe6+ fxe6 17. Kh1 Qxd3 18. Bg5 Qxc3 19. Ndf3 Rhg8 20.
+Qxc3 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "PRESA"]
+[Result "1-0"]
+[WhiteTitle "LM"]
+[WhiteElo "2387"]
+[BlackElo "2486"]
+[ECO "B01"]
+[Opening "Scandinavian Defense"]
+[TimeControl "300+0"]
+[UTCDate "2014.06.30"]
+[UTCTime "22:37:33"]
+[Termination "Normal"]
+[WhiteRatingDiff "+16"]
+[BlackRatingDiff "-15"]
+
+1. e4 d5 2. Nc3 dxe4 3. Nxe4 Qd5 4. Qf3 Nc6 5. c3 Bf5 6. Ng3 Qxf3 7. Nxf3
+Bg4 8. Be2 e5 9. h3 Bd7 10. Bb5 O-O-O 11. O-O f6 12. d4 exd4 13. cxd4 a6
+14. Bc4 Nge7 15. Bf4 Ng6 16. Be3 Na5 17. Be2 Bb5 18. Bxb5 axb5 19. b3 Bd6
+20. Nf5 Bf8 21. Rac1 Nc6 22. Rfd1 Rd5 23. Ng3 Ba3 24. Rc2 Re8 25. Ne2 Nb4
+26. Rcd2 c6 27. Nc3 Rd7 28. Nb1 Nd5 29. Nxa3 Nxe3 30. fxe3 Rxe3 31. d5 Kc7
+32. Nd4 Rxd5 33. Ndxb5+ Rxb5 34. Nxb5+ cxb5 35. Rd7+ Kc6 36. Rxg7 Re2 37.
+a4 b4 38. Rdd7 Rb2 39. Rxb7 Rxb3 40. a5 Rb1+ 41. Kh2 Ra1 42. Rxb4 Rxa5 43.
+Rxh7 Ne5 44. Rh6 Nd7 45. Rd4 Rf5 46. Rd2 Rf1 47. h4 Ne5 48. Rh8 Kc7 49. h5
+Rf4 50. g3 Rf5 51. Kh3 Rf1 52. Rh7+ Kc6 53. Kg2 Rf5 54. h6 Rh5 55. Rd1 Ng4
+56. Rh1 Ne3+ 57. Kg1 Rf5 58. Re7 Rf1+ 59. Kh2 Ng4+ 60. Kg2 Rxh1 61. Kxh1
+Nxh6 62. Re6+ Kd5 63. Rxf6 Ng4 64. Rf4 Ne3 65. Kh2 Ke5 66. Kh3 Nd5 67. Rf1
+Nf6 68. g4 Ne4 69. Re1 Kd5 70. Rxe4 Kxe4 71. Kh4 Ke5 72. Kh5 Ke6 73. Kh6
+Kf7 74. g5 Kg8 75. Kg6 Kh8 76. Kf7 Kh7 77. g6+ Kh6 78. g7 Kg5 79. g8=Q+ Kf5
+80. Qg6+ Ke5 81. Qf6+ Ke4 82. Ke7 Ke3 83. Kd6 Ke4 84. Qe5+ Kd3 85. Kd5 Kd2
+86. Qg3 Ke2 87. Kd4 Kf1 88. Qh2 Ke1 89. Ke3 Kd1 90. Qd2# 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "Matetricks"]
+[Result "1/2-1/2"]
+[BlackTitle "NM"]
+[WhiteElo "2471"]
+[BlackElo "2533"]
+[ECO "B22"]
+[Opening "Sicilian Defense: Alapin Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.06.30"]
+[UTCTime "23:07:16"]
+[Termination "Normal"]
+[WhiteRatingDiff "+2"]
+[BlackRatingDiff "-2"]
+
+1. e4 c5 2. c3 Nf6 3. e5 Nd5 4. Nf3 Nc6 5. d4 cxd4 6. Bc4 Nb6 7. Bb3 g6 8.
+cxd4 Bg7 9. O-O O-O 10. Bf4 d5 11. h3 e6 12. Nc3 a6 13. Qd2 f6 14. Bh6 fxe5
+15. Bxg7 Kxg7 16. Nxe5 Nxe5 17. dxe5 Qh4 18. Rad1 Bd7 19. Qd4 Qxd4 20. Rxd4
+Bc6 21. g3 Rf5 22. f4 g5 23. Bc2 Rf7 24. Bd3 Raf8 25. h4 gxf4 26. gxf4 Kh8
+27. Kh2 Nc8 28. f5 exf5 29. e6 Rf6 30. Nxd5 Rxe6 31. Rxf5 Rxf5 32. Bxf5
+Re2+ 33. Kg3 Nd6 34. Bd3 Rxb2 35. Ne7 Nf7 36. Nxc6 bxc6 37. h5 Rxa2 38. Bc4
+Ra3+ 39. Kf4 Kg7 40. Rd7 Ra4 41. Rxf7+ Kg8 42. Ra7+ Rxc4+ 43. Kg5 Rd4 44.
+Rxa6 Rd6 45. Ra7 c5 46. Rc7 h6+ 47. Kf5 1/2-1/2
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Matetricks"]
+[Black "PRESA"]
+[Result "0-1"]
+[WhiteTitle "NM"]
+[WhiteElo "2531"]
+[BlackElo "2473"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Main Line"]
+[TimeControl "180+0"]
+[UTCDate "2014.06.30"]
+[UTCTime "23:12:27"]
+[Termination "Normal"]
+[WhiteRatingDiff "-18"]
+[BlackRatingDiff "+14"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 c6 5. Nf3 Nf6 6. Bc4 Bf5 7. Bd2 e6
+8. O-O Bb4 9. a3 Bxc3 10. Bxc3 Qc7 11. Ne5 O-O 12. Re1 Nbd7 13. Bd3 Bg6 14.
+Bxg6 hxg6 15. Qf3 Rad8 16. Bb4 Rfe8 17. Nc4 Nb6 18. Nxb6 Qxb6 19. Bc3 Qb5
+20. Re5 Rd5 21. Rae1 Nd7 22. Rxd5 Qxd5 23. Qxd5 cxd5 24. g4 Rc8 25. g5 Nb6
+26. f4 Na4 27. Re3 Kf8 28. Kf2 Ke8 29. Ke2 Kd7 30. Kd2 Rh8 31. h3 Rh4 32.
+Rf3 Nb6 33. Kd3 Nc4 34. Be1 Rh8 35. Bc3 Nd6 36. a4 a6 37. Be1 b5 38. axb5
+axb5 39. Ke2 Nf5 40. c3 Ra8 41. b3 Ra1 42. Bd2 Nd6 43. Kd3 Ne4 44. Re3 Ra2
+45. Re2 Ng3 46. Rg2 Ne4 47. c4 bxc4+ 48. bxc4 Ra3+ 49. Kc2 dxc4 50. Re2
+Ra2+ 51. Kc1 Nxd2 52. Rxd2 Rxd2 53. Kxd2 Kc6 54. Kc3 Kd5 55. h4 f5 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ZibbitVideos"]
+[Black "PRESA"]
+[Result "1/2-1/2"]
+[WhiteTitle "FM"]
+[WhiteElo "2215"]
+[BlackElo "2487"]
+[ECO "A14"]
+[Opening "English Opening: Agincourt Defense, Neo-Catalan Declined"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.01"]
+[UTCTime "22:45:58"]
+[Termination "Normal"]
+[WhiteRatingDiff "+13"]
+[BlackRatingDiff "-8"]
+
+1. c4 e6 2. g3 d5 3. Bg2 Nf6 4. Nf3 Be7 5. O-O c5 6. cxd5 Nxd5 7. d4 O-O 8.
+Nc3 cxd4 9. Nxd5 exd5 10. Nxd4 Nc6 11. Be3 Bf6 12. Rc1 Ne5 13. b3 a6 14. h3
+Re8 15. Nf3 Nc6 16. Bc5 Bf5 17. Re1 Be4 18. Nd4 Rc8 19. Qd2 Bg5 20. e3 Bf6
+21. Nxc6 Rxc6 22. Bd4 Qe7 23. Rxc6 bxc6 24. Bxf6 Qxf6 25. Rc1 Bxg2 26. Kxg2
+h5 27. Qc3 Qxc3 28. Rxc3 Rc8 29. Rc5 Kf8 30. Kf3 Ke7 31. b4 Kd6 32. a3 g6
+33. Kf4 f6 34. Ra5 Ra8 35. Rc5 Kc7 36. g4 hxg4 37. hxg4 Re8 38. Kf3 Rh8 39.
+Ra5 Kb6 40. Rc5 Rh3+ 41. Kg2 Rh4 42. f3 Rh8 43. Rc3 Ra8 44. Kg3 a5 45.
+bxa5+ Rxa5 46. Kf4 Ra4+ 47. Kg3 Kc7 48. f4 Kd6 49. Kh4 c5 50. g5 f5 51. Kg3
+d4 52. exd4 cxd4 53. Rb3 Kc5 54. Kf2 Kc4 55. Rb6 Rxa3 56. Rxg6 Kd5 57. Rg8
+Ke4 58. g6 Rf3+ 59. Ke2 Rg3 60. g7 Kxf4 61. Rd8 Rg2+ 62. Kf1 Rxg7 63. Rxd4+
+Ke3 64. Ra4 Rd7 65. Ra3+ Rd3 66. Rxd3+ Kxd3 67. Kf2 Ke4 68. Ke2 Kf4 69. Kf2
+Kg4 70. Kg2 f4 71. Kf2 Kf5 72. Kf3 Ke5 73. Kf2 Ke4 74. Ke2 f3+ 75. Kf2 Kf4
+76. Kf1 Kg3 77. Kg1 f2+ 78. Kf1 Kf3 1/2-1/2
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "ZibbitVideos"]
+[Result "1-0"]
+[BlackTitle "FM"]
+[WhiteElo "2479"]
+[BlackElo "2228"]
+[ECO "C00"]
+[Opening "French Defense: Steinitz Attack"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.01"]
+[UTCTime "22:52:46"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "+5"]
+[BlackRatingDiff "-8"]
+
+1. e4 e6 2. e5 d5 3. exd6 cxd6 4. d4 Nf6 5. Nf3 d5 6. Bd3 Be7 7. c3 Qc7 8.
+O-O O-O 9. Re1 Nc6 10. Nbd2 Rb8 11. Nf1 b5 12. a3 a5 13. g3 b4 14. axb4
+axb4 15. Bf4 Bd6 16. Bxd6 Qxd6 17. Ne5 Nd7 18. Nf3 Nf6 19. Ne3 Bd7 20. Ra6
+Qc7 21. Ng2 Rfc8 22. Nf4 Na5 23. Ne5 Be8 24. cxb4 Rxb4 25. Qd2 Rcb8 26. Rc1
+Qd8 27. Qc3 Nb3 28. Rd1 Nxd4 29. Bxh7+ Nxh7 30. Rxd4 Rxb2 31. Nc6 Bxc6 32.
+Rxc6 Ng5 33. Nh5 R2b3 34. Rxd5 Nh3+ 35. Kf1 Rb1+ 36. Ke2 R8b2+ 37. Rd2
+Rxd2+ 38. Qxd2 Qxd2+ 39. Kxd2 Nxf2 40. Rc8+ Kh7 41. Rc4 Rb2+ 42. Ke3 Nh3
+43. Rh4 Rxh2 44. Nf4+ Kg8 45. Nxh3 Rg2 46. Kf3 Rc2 47. Nf4 Rc3+ 48. Kg2 Ra3
+49. Kf2 Ra2+ 50. Ne2 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "mecker"]
+[Black "Matetricks"]
+[Result "0-1"]
+[BlackTitle "NM"]
+[WhiteElo "2210"]
+[BlackElo "2516"]
+[ECO "B77"]
+[Opening "Sicilian Defense: Dragon Variation, Yugoslav Attack"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.03"]
+[UTCTime "20:55:05"]
+[Termination "Normal"]
+[WhiteRatingDiff "-3"]
+[BlackRatingDiff "+4"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. f3 Bg7 7. Be3 O-O 8.
+Qd2 Nc6 9. Bc4 Bd7 10. h4 h5 11. O-O-O Rc8 12. Bb3 Ne5 13. Bg5 Rc5 14. Kb1
+b5 15. f4 Nc4 16. Qd3 Qc8 17. Ndxb5 Nxb2 18. Kxb2 Nxe4 19. Qxe4 Bxb5 20.
+Bxe7 Rxc3 21. Kb1 Rxb3+ 22. axb3 Qc3 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Matetricks"]
+[Black "mecker"]
+[Result "1-0"]
+[WhiteTitle "NM"]
+[WhiteElo "2520"]
+[BlackElo "2207"]
+[ECO "B31"]
+[Opening "Sicilian Defense: Nyezhmetdinov-Rossolimo Attack, Fianchetto Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.03"]
+[UTCTime "20:58:47"]
+[Termination "Normal"]
+[WhiteRatingDiff "+5"]
+[BlackRatingDiff "-3"]
+
+1. e4 c5 2. Nf3 Nc6 3. Bb5 g6 4. Bxc6 dxc6 5. O-O Bg7 6. h3 Nf6 7. d3 O-O
+8. a4 b6 9. Nbd2 Nd7 10. Nc4 e5 11. Bd2 Qe7 12. Qc1 Ba6 13. Bh6 Bxc4 14.
+dxc4 Nf6 15. Bxg7 Kxg7 16. Qe3 a5 17. Rfd1 Rfd8 18. Qg5 Re8 19. Qh4 h6 20.
+Rd3 Rad8 21. Rad1 Rxd3 22. Rxd3 Qe6 23. b3 Re7 24. Rd8 Rd7 25. Rxd7 Nxd7
+26. Qd8 f6 27. Nh4 h5 28. c3 Qd6 29. Qe8 Nf8 30. Qxg6+ Nxg6 31. Nf5+ Kf7
+32. Nxd6+ Ke6 33. Nf5 Nf4 34. Kf1 Kd7 35. h4 b5 36. g3 bxa4 37. bxa4 Nd3
+38. g4 hxg4 39. h5 Ke6 40. h6 Kf7 41. h7 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "mecker"]
+[Black "Matetricks"]
+[Result "0-1"]
+[BlackTitle "NM"]
+[WhiteElo "2204"]
+[BlackElo "2525"]
+[ECO "B78"]
+[Opening "Sicilian Defense: Dragon Variation, Yugoslav Attack"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.03"]
+[UTCTime "21:04:20"]
+[Termination "Normal"]
+[WhiteRatingDiff "-3"]
+[BlackRatingDiff "+4"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3 O-O 8.
+Qd2 Nc6 9. Bc4 Bd7 10. O-O-O Rb8 11. h4 b5 12. Bb3 b4 13. Nd5 a5 14. Kb1
+Ne5 15. h5 a4 16. Nxf6+ Bxf6 17. Bd5 e6 18. f4 exd5 19. fxe5 dxe5 20. Nf3
+d4 21. Bh6 Re8 22. hxg6 fxg6 23. Bg5 Bg4 24. Bxf6 Qxf6 25. Rdf1 Bxf3 26.
+Rxf3 Qc6 27. Qh6 Rb7 28. Rhf1 Rg7 29. Qd2 b3 30. axb3 axb3 31. Rxb3 Qxe4
+32. Re1 Qc6 33. Qa5 Rge7 34. Rb6 Qxg2 35. Qb4 Rc7 36. Qb3+ Kg7 37. Rb5 Qd2
+38. Rbxe5 Rxe5 39. Rxe5 Qd1+ 40. Ka2 Ra7+ 41. Qa3 Rxa3+ 42. bxa3 Qxc2+ 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "TrickOrTreat"]
+[Result "0-1"]
+[WhiteElo "2250"]
+[BlackElo "2408"]
+[ECO "C22"]
+[Opening "Center Game: Paulsen Attack Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.04"]
+[UTCTime "17:50:50"]
+[Termination "Normal"]
+[WhiteRatingDiff "-6"]
+[BlackRatingDiff "+12"]
+
+1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Bb4+ 5. Nc3 Nge7 6. Bd2 O-O 7. O-O-O
+d6 8. h4 f5 9. h5 fxe4 10. Nxe4 Bxd2+ 11. Rxd2 Bf5 12. Bd3 Kh8 13. Ng5 Ne5
+14. Bxf5 Nxf5 15. Qf4 Qf6 16. Ne4 Qh6 17. Qxh6 Nxh6 18. f3 Rae8 19. Ne2 Nf5
+20. Nd4 Nxd4 21. Rxd4 Rf5 22. h6 gxh6 23. Rxh6 Rg8 24. Nf6 Rxf6 25. Rxf6
+Rxg2 26. f4 Rg1+ 27. Kd2 Nf3+ 28. Ke3 Nxd4 29. Kxd4 Kg7 30. Re6 Kf7 31. Rh6
+Rg7 32. Ke4 Kg8 33. f5 Rg2 34. f6 Rxc2 35. Kf5 Re2 36. Rh3 Re5+ 37. Kf4 h5
+38. Rg3+ Kf7 39. Rg7+ Kxf6 40. Rxc7 Rb5 41. b3 Rb4+ 42. Kg3 Ke5 43. Rh7 h4+
+44. Kf3 Kd5 45. Ke3 Kc6 46. Kd3 Rg4 47. Kc3 Rg3+ 48. Kc4 h3 49. a4 a6 50.
+a5 Rg4+ 51. Kc3 Rg3+ 52. Kc4 d5+ 53. Kb4 Rg4+ 54. Kc3 Kc5 55. Rc7+ Kd6 56.
+Rxb7 Rh4 57. Rf7 h2 58. Rf1 Kc5 59. Rh1 Rh3+ 60. Kd2 Kb4 61. Ke2 Kxa5 62.
+Kf2 Kb4 63. Rxh2 Rxh2+ 64. Kg3 Re2 65. Kf3 Re4 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "TrickOrTreat"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2420"]
+[BlackElo "2244"]
+[ECO "B33"]
+[Opening "Sicilian Defense: Lasker-Pelikan Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.04"]
+[UTCTime "17:56:03"]
+[Termination "Normal"]
+[WhiteRatingDiff "+10"]
+[BlackRatingDiff "-6"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 h6 7. a4 d6 8.
+Be2 Be7 9. O-O O-O 10. Be3 Be6 11. f3 a6 12. Na3 d5 13. exd5 Nxd5 14. Nxd5
+Bxd5 15. c4 Be6 16. Qxd8 Rfxd8 17. Nc2 Bg5 18. Bxg5 hxg5 19. Rfd1 Bf5 20.
+Ne3 Be6 21. Bd3 Nd4 22. Be4 Rab8 23. b4 b6 24. Kf2 g6 25. Ra2 a5 26. bxa5
+bxa5 27. Rad2 Rdc8 28. Bd5 Rb4 29. Bxe6 fxe6 30. Ng4 Rcxc4 31. Nxe5 Rc2 32.
+Rxc2 Nxc2 33. Rd8+ Kg7 34. Rd7+ Kf6 35. Ng4+ Kf5 36. Rf7# 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "TrickOrTreat"]
+[Result "0-1"]
+[WhiteElo "2238"]
+[BlackElo "2430"]
+[ECO "C22"]
+[Opening "Center Game: Paulsen Attack Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.04"]
+[UTCTime "17:59:56"]
+[Termination "Normal"]
+[WhiteRatingDiff "-5"]
+[BlackRatingDiff "+10"]
+
+1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Bb4+ 5. Nc3 Nge7 6. Bd2 d6 7. Qg3
+O-O 8. h4 f5 9. Bd3 Ne5 10. f4 fxe4 11. Bxe4 Nc4 12. Bxh7+ Kxh7 13. Qd3+
+Nf5 14. Qxc4 Re8+ 15. Nge2 Bc5 16. O-O-O Be6 17. Qd3 Kh8 18. g4 Nh6 19. f5
+Bg8 20. Qg3 b5 21. Nf4 Bf7 22. h5 b4 23. Nce2 Qd7 24. Qf3 Qa4 25. Ng6+ Kg8
+26. Bxh6 gxh6 27. Nd4 Qxa2 28. Qf4 Qa1+ 29. Kd2 Qxb2 30. Ne6 Bxe6 31. fxe6
+Qc3+ 32. Ke2 Rxe6+ 33. Kf1 Rf6 34. Rd3 Rxf4+ 35. Nxf4 Qxc2 36. Rf3 Re8 37.
+Rh2 Qxh2 38. Ng2 Qg1# 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "TrickOrTreat"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2440"]
+[BlackElo "2233"]
+[ECO "B03"]
+[Opening "Alekhine Defense: Exchange Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.04"]
+[UTCTime "18:05:06"]
+[Termination "Normal"]
+[WhiteRatingDiff "+9"]
+[BlackRatingDiff "-6"]
+
+1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. exd6 exd6 6. Nc3 Be7 7. Be3 O-O
+8. Nf3 Bg4 9. h3 Bh5 10. Be2 Bxf3 11. Bxf3 Nc6 12. b3 Bf6 13. O-O Re8 14.
+Qd2 Ne7 15. Ne4 Ng6 16. Rfe1 c6 17. Nxf6+ Qxf6 18. Bg5 Qf5 19. Bg4 Qa5 20.
+Qxa5 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "TrickOrTreat"]
+[Result "1-0"]
+[WhiteElo "2227"]
+[BlackElo "2449"]
+[ECO "C22"]
+[Opening "Center Game: Paulsen Attack Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.04"]
+[UTCTime "18:06:53"]
+[Termination "Normal"]
+[WhiteRatingDiff "+17"]
+[BlackRatingDiff "-29"]
+
+1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Bb4+ 5. Bd2 Bxd2+ 6. Nxd2 Nge7 7.
+O-O-O d6 8. h4 O-O 9. h5 f5 10. h6 Rf6 11. Ngf3 f4 12. Qc3 Be6 13. hxg7
+Kxg7 14. Rxh7+ Kxh7 15. Qxf6 Ng6 16. Qxe6 Qe7 17. Bc4 Qxe6 18. Ng5+ Kh6 19.
+Nxe6 Nge5 20. Nxc7 Rc8 21. Nb5 Nb4 22. Bb3 Nbd3+ 23. Kb1 Nxf2 24. Rf1 Nfg4
+25. Rxf4 Kg5 26. Rf5+ Kg6 27. Nxd6 Rh8 28. a3 Rh1+ 29. Ka2 Rg1 30. Nf3 Nxf3
+31. gxf3 Ne3 32. Rb5 b6 33. Nc4 Ng2 34. a4 Nf4 35. a5 Ne2 36. axb6 Nc1+ 37.
+Ka3 a6 38. Ra5 Ne2 39. Kb4 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "mecker"]
+[Black "amourmonstre"]
+[Result "0-1"]
+[WhiteElo "2201"]
+[BlackElo "2413"]
+[ECO "C76"]
+[Opening "Ruy Lopez: Morphy Defense, Modern Steinitz Defense, Fianchetto Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.05"]
+[UTCTime "12:55:38"]
+[Termination "Normal"]
+[WhiteRatingDiff "-6"]
+[BlackRatingDiff "+9"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 g6 4. c3 a6 5. Ba4 d6 6. d4 Bd7 7. O-O Bg7 8.
+Re1 Nf6 9. Bg5 h6 10. Bh4 g5 11. Bg3 Nh5 12. Bxc6 Bxc6 13. Nxe5 dxe5 14.
+Qxh5 exd4 15. cxd4 Qxd4 16. Nc3 O-O 17. Rad1 Qb6 18. Nd5 Bxd5 19. exd5 Rad8
+20. h4 gxh4 21. Bxh4 Rd7 22. Re3 Qg6 23. Bg3 Qxh5 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "amirkhafan"]
+[Black "TrickOrTreat"]
+[Result "1-0"]
+[WhiteElo "2509"]
+[BlackElo "2414"]
+[ECO "C47"]
+[Opening "Four Knights Game: Scotch Variation, Belgrade Gambit"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.05"]
+[UTCTime "22:57:57"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "+102"]
+[BlackRatingDiff "-11"]
+
+1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. d4 exd4 5. Nd5 Be7 6. Bf4 d6 7. Nxd4 O-O
+8. Nb5 Nxd5 9. exd5 Ne5 10. Be2 a6 11. Nd4 Bg5 12. Bxg5 Qxg5 13. g3 Ng6 14.
+Qd2 Qxd5 15. Nf3 Qxd2+ 16. Kxd2 Re8 17. Rhe1 Bg4 18. Nd4 Bxe2 19. Rxe2 Kf8
+20. Rae1 Rxe2+ 21. Rxe2 Re8 22. Rxe8+ Kxe8 23. f4 Ne7 24. c4 Kd7 25. b3 g6
+26. Kd3 Nc6 27. Nc2 Ke6 28. Ke4 a5 29. a3 f5+ 30. Ke3 Kf6 31. b4 axb4 32.
+axb4 Nd8 33. b5 Ne6 34. Nb4 g5 35. Nd5+ Kg6 36. Ne7+ Kh5 37. Nxf5 gxf4+ 38.
+gxf4 Kg4 39. Ne7 Nxf4 40. Ke4 h5 41. Ng8 Ng6 42. Nf6+ Kh3 43. Nxh5 Kxh2 44.
+Nf6 Kh3 45. Ne8 Kg4 46. Nxc7 Ne7 47. Ne8 Nc8 48. Kd5 Nb6+ 49. Kd4 Nc8 50.
+Kd5 Nb6+ 51. Kxd6 Nxc4+ 52. Kc5 Ne5 53. Kd5 Kf5 54. Nd6+ Kf6 55. Nxb7 Nd7
+56. Nc5 Nb6+ 57. Kc6 Nc4 58. Nd7+ Ke6 59. Nc5+ Ke7 60. Nb3 Na3 61. b6 Nc4
+62. b7 Ne5+ 63. Kc7 Nd7 64. Nd4 Nc5 65. Nc6+ Ke6 66. b8=N Na6+ 67. Nxa6 Kf5
+68. Nc5 Kg4 69. Nd7 Kh3 70. Kd6 Kh2 71. Nce5 Kh1 72. Kd5 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "TrickOrTreat"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2403"]
+[BlackElo "2280"]
+[ECO "B47"]
+[Opening "Sicilian Defense: Paulsen Variation, Bastrikov Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.06"]
+[UTCTime "20:40:30"]
+[Termination "Normal"]
+[WhiteRatingDiff "+12"]
+[BlackRatingDiff "-7"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Qc7 5. Nc3 e6 6. Be2 a6 7. O-O b5 8.
+Nxc6 Qxc6 9. Bf3 Bb7 10. e5 Qc7 11. Ne4 Rb8 12. Bf4 Bc6 13. Re1 Qb7 14. Qd2
+h6 15. h3 g5 16. Bg3 Be7 17. Rad1 Rc8 18. c3 a5 19. Qd4 b4 20. c4 Rh7 21.
+b3 Rg7 22. Bh5 Kf8 23. Nf6 Bxf6 24. exf6 Rh7 25. Qd6+ Ke8 26. Rxe6+ dxe6
+27. Qxe6+ Kf8 28. Bd6+ Ne7 29. fxe7+ Ke8 30. Qf5 Rg7 31. Be5 Bd7 32. Qd3
+Rg6 33. Bxg6 fxg6 34. Qxg6+ Kxe7 35. Bd6+ Kd8 36. Qf6+ Ke8 37. Qe7# 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "TrickOrTreat"]
+[Result "1/2-1/2"]
+[WhiteElo "2273"]
+[BlackElo "2415"]
+[ECO "C22"]
+[Opening "Center Game: Paulsen Attack Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.06"]
+[UTCTime "20:45:07"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "+4"]
+[BlackRatingDiff "-7"]
+
+1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Bb4+ 5. Bd2 Bxd2+ 6. Nxd2 Nge7 7.
+Qg3 O-O 8. O-O-O d6 9. Nc4 f5 10. e5 f4 11. Qg5 d5 12. Nf3 Qe8 13. Ncd2 h6
+14. Qh4 Ng6 15. Qh5 Rf5 16. Qg4 Rxe5 17. Nxe5 Bxg4 18. Nxg4 Qe6 19. f3 h5
+20. Nf2 Nce5 21. Nd3 c6 22. Be2 Re8 23. Rhe1 Qf5 24. Nb3 Qf6 25. c3 Nc4 26.
+Ndc5 Re7 27. Bxc4 dxc4 28. Nd4 b6 29. Ne4 Qh4 30. h3 Ne5 31. Re2 Nd3+ 32.
+Kc2 Rd7 33. Nf5 Qd8 34. Nd4 c5 35. Nb5 Nb4+ 36. cxb4 Rxd1 37. Nf2 Rd5 38.
+Nc3 cxb4 39. Nxd5 Qxd5 40. Rd2 Qe5 41. Ne4 Kh7 42. h4 Qe7 43. Ng5+ Kg6 44.
+Ne4 Qxh4 45. Rd6+ Kh7 46. Rd7 Qe1 47. Rd2 c3 48. bxc3 bxc3 49. Nxc3 Qe5 50.
+Ne4 a6 51. Re2 h4 52. Nc3 Qc5 53. Kd3 b5 54. Ne4 Qc4+ 55. Kd2 b4 56. Kd1 a5
+57. Ng5+ Kg6 58. Ne4 Qd3+ 59. Rd2 Qe3 60. Kc1 a4 61. Kc2 b3+ 62. axb3 Qxb3+
+63. Kc1 a3 64. Rc2 a2 65. Nc3 a1=Q+ 66. Kd2 Qab2 67. Rxb2 Qxb2+ 68. Kd3
+Qxg2 69. Ke4 Qc2+ 70. Kd4 Qd2+ 71. Kc4 Qe3 72. Ne4 Qxf3 73. Nd6 Qe2+ 74.
+Kc5 1/2-1/2
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "TrickOrTreat"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2408"]
+[BlackElo "2277"]
+[ECO "B33"]
+[Opening "Sicilian Defense: Lasker-Pelikan Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.06"]
+[UTCTime "20:52:37"]
+[Termination "Normal"]
+[WhiteRatingDiff "+11"]
+[BlackRatingDiff "-7"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 h6 7. Be2 d6
+8. Be3 a6 9. Na3 b5 10. Nd5 Nxd5 11. exd5 Ne7 12. c4 b4 13. Qa4+ Bd7 14.
+Qxb4 Nf5 15. O-O Nxe3 16. fxe3 Qg5 17. Nc2 Be7 18. Qb7 Bh3 19. Qxa8+ Kd7
+20. Qb7+ Kd8 21. Rf2 Bxg2 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "TrickOrTreat"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2419"]
+[BlackElo "2270"]
+[ECO "B33"]
+[Opening "Sicilian Defense: Lasker-Pelikan Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.06"]
+[UTCTime "20:55:20"]
+[Termination "Normal"]
+[WhiteRatingDiff "+10"]
+[BlackRatingDiff "-6"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 h6 7. Be2 Bb4
+8. O-O O-O 9. a3 Be7 10. a4 d6 11. Be3 Be6 12. Bf3 a6 13. Na3 Nb4 14. Re1
+d5 15. exd5 Nfxd5 16. Nxd5 Nxd5 17. Nc4 f6 18. Bxd5 Qxd5 19. Qxd5 Bxd5 20.
+Nb6 Rad8 21. Nxd5 Rxd5 22. Kf1 Rc8 23. c3 Kf7 24. Red1 Ke6 25. Ke2 Bc5 26.
+Rxd5 Kxd5 27. Rd1+ Ke6 28. Bxc5 Rxc5 29. Rd8 Rc4 30. Rb8 Rc7 31. Kd3 f5 32.
+Re8+ Kd6 33. f3 Rd7 34. b4 b6 35. Kc4 Rc7+ 36. Kb3 b5 37. axb5 axb5 38. Rb8
+Kc6 39. Re8 Kd6 40. h4 Kd5 41. Rd8+ Ke6 42. Rb8 e4 43. fxe4 fxe4 44. Rxb5
+Rd7 45. Ra5 e3 46. Ra2 Ke5 47. b5 Ke4 48. c4 Kd4 49. Kb4 Rc7 50. Rc2 e2 51.
+Rxe2 Rxc4+ 52. Ka5 Rc7 53. b6 Re7 54. Rxe7 Kc5 55. Rc7+ Kd6 56. Rc1 Kd5 57.
+b7 Kd4 58. b8=Q Kd3 59. Qb2 Ke4 60. Qe2+ Kf5 61. Rf1+ Kg6 62. Qe4+ Kh5 63.
+Rf5+ Kg6 64. Rg5+ Kf7 65. Rg6 h5 66. Qe6+ Kf8 67. Qf5+ Ke8 68. Re6+ Kd8 69.
+Qd5+ Kc8 70. Rc6+ Kb8 71. Qb5+ Ka7 72. Ra6# 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "TrickOrTreat"]
+[Result "0-1"]
+[WhiteElo "2264"]
+[BlackElo "2429"]
+[ECO "C22"]
+[Opening "Center Game: Charousek Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.06"]
+[UTCTime "21:01:29"]
+[Termination "Normal"]
+[WhiteRatingDiff "-6"]
+[BlackRatingDiff "+10"]
+
+1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Bb4+ 5. c3 Be7 6. Qg3 Bf6 7. Nf3 d6
+8. Bc4 Be6 9. Bxe6 fxe6 10. O-O e5 11. Na3 Nge7 12. Nc4 O-O 13. Ne3 Qe8 14.
+Qh3 Rd8 15. Re1 Qd7 16. Qg3 Kh8 17. Nh4 Qe8 18. Nhf5 Nxf5 19. Nxf5 Ne7 20.
+Nxe7 Qxe7 21. Be3 a6 22. Red1 c6 23. Qh3 d5 24. exd5 cxd5 25. f3 d4 26.
+cxd4 exd4 27. Bf2 Rfe8 28. Qf5 Qb4 29. b3 d3 30. Rac1 Bd4 31. Rxd3 Qe1+ 32.
+Rxe1 Rxe1# 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "TrickOrTreat"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2439"]
+[BlackElo "2258"]
+[ECO "B03"]
+[Opening "Alekhine Defense: Exchange Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.06"]
+[UTCTime "21:04:52"]
+[Termination "Normal"]
+[WhiteRatingDiff "+8"]
+[BlackRatingDiff "-6"]
+
+1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. exd6 e6 6. Nc3 cxd6 7. Be3 Be7 8.
+Rc1 O-O 9. Nf3 Nc6 10. Bd3 d5 11. b3 dxc4 12. bxc4 Na5 13. Qe2 Bd7 14. O-O
+Rc8 15. c5 Nd5 16. Bb1 Nxc3 17. Rxc3 Bc6 18. Ne5 Bd5 19. Bd2 Nc6 20. Bxh7+
+Kxh7 21. Qh5+ Kg8 22. Rh3 f5 23. Qh7# 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "TrickOrTreat"]
+[Result "0-1"]
+[WhiteElo "2252"]
+[BlackElo "2447"]
+[ECO "A01"]
+[Opening "Nimzo-Larsen Attack: Symmetrical Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.06"]
+[UTCTime "21:06:42"]
+[Termination "Normal"]
+[WhiteRatingDiff "-5"]
+[BlackRatingDiff "+8"]
+
+1. b3 b6 2. Bb2 Bb7 3. c4 Nf6 4. Nf3 g6 5. g3 Bg7 6. Bg2 O-O 7. O-O d6 8.
+d3 Nbd7 9. Nbd2 Re8 10. Qc2 e5 11. Rac1 c6 12. Qb1 Rc8 13. Qa1 Qc7 14. Rc2
+Qb8 15. Rfc1 h5 16. b4 Nh7 17. Nb3 Bh6 18. e3 Ng5 19. Nxg5 Bxg5 20. c5 d5
+21. Nd2 f6 22. Nf3 Bh6 23. Qb1 Kh7 24. Nh4 Nf8 25. d4 e4 26. Bh3 f5 27. Ng2
+Ne6 28. Bc3 Ng7 29. Nf4 g5 30. Ne2 b5 31. Rd2 Rc7 32. Rcc2 Rf7 33. Qf1 a6
+34. Kh1 Rg8 35. f4 exf3 36. Qxf3 g4 37. Qf1 gxh3 38. Qxh3 Bxe3 39. Rd3 Qe8
+40. g4 Qe4+ 41. Qg2 Qxd3 42. Nf4 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "TrickOrTreat"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2455"]
+[BlackElo "2247"]
+[ECO "B47"]
+[Opening "Sicilian Defense: Paulsen Variation, Bastrikov Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.06"]
+[UTCTime "21:10:39"]
+[Termination "Normal"]
+[WhiteRatingDiff "+7"]
+[BlackRatingDiff "-6"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Qc7 5. Nc3 e6 6. Be2 a6 7. O-O b5 8.
+Nxc6 Qxc6 9. Bf3 Bb7 10. e5 Qc7 11. Ne4 Qxe5 12. Re1 Qc7 13. c3 Nf6 14.
+Nxf6+ gxf6 15. Bf4 Qc8 16. Qd4 Be7 17. Bxb7 Qxb7 18. Bd6 Bxd6 19. Qxd6 Qb8
+20. Qd4 Ke7 21. Rad1 d6 22. Qh4 Qc7 23. Rd4 Rag8 24. Qe4 h5 25. Qd3 Rg4 26.
+f4 Rhg8 27. g3 h4 28. Re3 hxg3 29. hxg3 Qc5 30. Kg2 Rh8 31. Qe4 d5 32. Qxd5
+Qxd5+ 33. Rxd5 Rhg8 34. Rd4 f5 35. a4 Kf6 36. axb5 axb5 37. Kf2 Rb8 38. Re5
+Rgg8 39. Rb4 Rgd8 40. Ke2 Rd5 41. Rxd5 exd5 42. Rb3 Ke6 43. Ra3 Rh8 44.
+Ra6+ Ke7 45. Ke3 Rh3 46. Kd4 Rxg3 47. Kxd5 Rg2 48. b4 Rd2+ 49. Ke5 Rc2 50.
+Ra7+ Ke8 51. Rb7 Rxc3 52. Rxb5 Rc4 53. Kxf5 Ke7 54. Rb7+ Ke8 55. Ke5 Rc1
+56. f5 Re1+ 57. Kf6 Rb1 58. Rb8+ Kd7 59. Kxf7 Kd6 60. f6 Kc7 61. Re8 Kd7
+62. Re7+ Kd6 63. Ke8 Rxb4 64. Kf8 Rf4 65. f7 Rg4 66. Ke8 Ra4 67. f8=Q Ra8+
+68. Kf7 Rxf8+ 69. Kxf8 Kd5 70. Kf7 Kd6 71. Kf6 Kc6 72. Kf5 Kc5 73. Ke5 Kc6
+74. Re8 Kc7 75. Kd5 Kd7 76. Re4 Kc7 77. Re6 Kd7 78. Rh6 Kc7 79. Ra6 Kb7 80.
+Rg6 Kc7 81. Rh6 Kd8 82. Rh7 Ke8 83. Ke6 Kf8 84. Re7 Kg8 85. Kf6 Kf8 86.
+Rf7+ Kg8 87. Ke6 Kh8 88. Kf6 Kg8 89. Kg6 Kh8 90. Rf8# 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "TrickOrTreat"]
+[Result "0-1"]
+[WhiteElo "2241"]
+[BlackElo "2462"]
+[ECO "C44"]
+[Opening "Ponziani Opening: Steinitz Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.06"]
+[UTCTime "21:17:07"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "-5"]
+[BlackRatingDiff "+7"]
+
+1. e4 e5 2. Nf3 Nc6 3. c3 d5 4. Qa4 f6 5. Bb5 Ne7 6. exd5 Qxd5 7. d4 e4 8.
+c4 Qh5 9. Nfd2 Bd7 10. Nxe4 Qg4 11. Ng3 Qxd4 12. O-O a6 13. Re1 O-O-O 14.
+Bxa6 bxa6 15. Qxa6+ Kb8 16. Re3 Qd1+ 17. Nf1 Nb4 18. Qa5 Qa4 19. Qh5 g6 20.
+Qe2 Nec6 21. Nc3 Qc2 22. Bd2 Bc5 23. Rc1 Qxb2 24. Rb1 Qc2 25. Rc1 Qf5 26.
+Rf3 Qe6 27. Qd1 Bc8 28. a3 Nd3 29. Rb1+ Bb7 30. Qb3 Na5 31. Qb5 Qa6 32.
+Rxd3 Qxb5 33. Rxd8+ Rxd8 34. Rxb5 Nxc4 35. Rxc5 Nxd2 36. Nxd2 Rxd2 37. h3
+Rc2 38. a4 Kc8 39. Rc4 Bd5 40. Rc5 c6 41. a5 Kd7 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "TrickOrTreat"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2469"]
+[BlackElo "2236"]
+[ECO "B07"]
+[Opening "Pirc Defense #5"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.06"]
+[UTCTime "21:23:35"]
+[Termination "Normal"]
+[WhiteRatingDiff "+7"]
+[BlackRatingDiff "-4"]
+
+1. e4 d6 2. d4 g6 3. Be3 Bg7 4. Qd2 Nc6 5. Nc3 e5 6. Nge2 Nf6 7. f3 exd4 8.
+Nxd4 Bd7 9. O-O-O Qe7 10. g4 O-O-O 11. Nxc6 Bxc6 12. Bxa7 Nd7 13. Bd4 Ne5
+14. Be2 f6 15. f4 Nd7 16. Bf3 Nc5 17. Rhe1 Ne6 18. Nd5 Qf7 19. Be3 g5 20.
+f5 Bxd5 21. exd5 Nf8 22. Qa5 Nd7 23. Qa8+ Nb8 24. Ba7 Kd7 25. Qxb7 Rc8 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "TrickOrTreat"]
+[Result "0-1"]
+[WhiteElo "2232"]
+[BlackElo "2476"]
+[ECO "C22"]
+[Opening "Center Game: Paulsen Attack Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.06"]
+[UTCTime "21:26:10"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "-5"]
+[BlackRatingDiff "+6"]
+
+1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Bb4+ 5. Bd2 Bxd2+ 6. Nxd2 Nge7 7.
+Bc4 d6 8. O-O-O Be6 9. f4 Bxc4 10. Nxc4 Qc8 11. Nf3 O-O 12. f5 f6 13. g4
+Kh8 14. h4 Ng8 15. g5 Re8 16. Qf4 b5 17. Ne3 Qa6 18. Kb1 Qa4 19. Nd2 Nb4
+20. a3 Nc6 21. Nd5 b4 22. Rhg1 bxa3 23. b3 Qd4 24. Nc4 Qxe4 25. gxf6 Nxf6
+26. Qg5 a2+ 27. Ka1 Nh5 28. Qxh5 Qxc2 29. Qg5 Rg8 30. f6 g6 31. f7 Rg7 32.
+Qf6 Rf8 33. Rdf1 Qxb3 34. h5 Qxc4 35. h6 Qd4+ 36. Qxd4 Nxd4 37. hxg7+ Kxg7
+38. Kxa2 c5 39. Nc7 a5 40. Ne8+ Kh8 41. Nxd6 a4 42. Re1 Kg7 43. Re8 Nf5 44.
+Nxf5+ Kxf7 45. Rxf8+ Kxf8 46. Ne3 Ke7 47. Nc4 Ke6 48. Rh1 Kd5 49. Nb2 Ke4
+50. Nxa4 g5 51. Nxc5+ Kd5 52. Nd3 Ke4 53. Nf2+ Kf5 54. Nh3 g4 55. Ng1 Kg5
+56. Ne2 h5 57. Ng3 h4 58. Ne4+ Kf4 59. Nf6 h3 60. Nh5+ Kg5 61. Ng3 Kh4 62.
+Ne4 g3 63. Rf1 Kg4 64. Rf4+ Kxf4 65. Nd2 Ke3 66. Nf1+ Kf2 67. Nd2 Kg1 68.
+Ne4 h2 69. Nxg3 h1=Q 70. Ne2+ Kh2 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "TrickOrTreat"]
+[Black "pacal56"]
+[Result "1/2-1/2"]
+[WhiteElo "2482"]
+[BlackElo "2227"]
+[ECO "B43"]
+[Opening "Sicilian Defense: Kan Variation, Wing Attack"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.06"]
+[UTCTime "21:32:51"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "-9"]
+[BlackRatingDiff "+7"]
+
+1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6 5. Nc3 b5 6. a3 Bb7 7. g3 d6 8.
+Bg2 Qc7 9. O-O Nf6 10. Be3 Be7 11. f4 Nbd7 12. Nb3 O-O 13. Kh1 Rac8 14. Qd3
+Nb6 15. Na5 Ba8 16. Rad1 Rfd8 17. Qd4 Nfd7 18. Qd2 Nf6 19. Qd3 Nfd7 20. Bd4
+Nf6 21. Qe3 Nc4 22. Nxc4 Qxc4 23. Rd2 e5 24. Bb6 Re8 25. f5 b4 26. axb4
+Qxb4 27. Nd5 Bxd5 28. exd5 h6 29. c3 Qb5 30. Qg1 Bd8 31. Be3 Rb8 32. h3 Bb6
+33. g4 Bxe3 34. Qxe3 Nd7 35. g5 hxg5 36. Qxg5 f6 37. Qg6 Nf8 38. Qg3 Rbc8
+39. Rg1 Rc7 40. Bf1 Qc5 41. Bxa6 Ra8 42. Bd3 Qxd5+ 43. Rdg2 Ra2 44. c4 Qc6
+45. Qf2 Rb7 46. Qe2 Rbxb2 47. Be4 Rxe2 48. Bxc6 Rxg2 49. Bd5+ Kh7 50. Rxg2
+Rxg2 51. Kxg2 Kh6 52. Kg3 Kg5 53. h4+ Kh5 54. Kf3 Kh6 55. Kg3 Nh7 56. Be4
+Nf8 57. Kg4 Nd7 58. Kf3 Nc5 59. Ke3 Nxe4 60. Kxe4 Kh5 61. c5 dxc5 62. Kd5
+Kxh4 63. Ke4 Kg5 64. Kd5 Kxf5 65. Kc4 Kf4 66. Kxc5 e4 67. Kc4 Kf3 68. Kc3
+e3 69. Kc2 Kf2 70. Kd1 e2+ 71. Kc2 e1=Q 72. Kb3 Qe3+ 73. Kc4 1/2-1/2
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Horobetz"]
+[Black "Blitzstream-twitch"]
+[Result "0-1"]
+[WhiteTitle "NM"]
+[BlackTitle "LM"]
+[WhiteElo "2297"]
+[BlackElo "2403"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Main Line, Mieses Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.07"]
+[UTCTime "12:08:12"]
+[Termination "Normal"]
+[WhiteRatingDiff "-9"]
+[BlackRatingDiff "+8"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 Nf6 5. Nf3 Nc6 6. Bb5 Ne4 7. Bxc6+
+bxc6 8. Bd2 Nxc3 9. Bxc3 Qd5 10. Qe2 Bg4 11. b3 e6 12. h3 Bxf3 13. Qxf3
+Qxf3 14. gxf3 Bd6 15. Rg1 Rg8 16. O-O-O f6 17. Bd2 Kf7 18. c4 a5 19. a4
+Rgb8 20. Kc2 Bb4 21. Bf4 Bd6 22. Bd2 Ra6 23. Rb1 Rd8 24. Rge1 Bb4 25. Bxb4
+axb4 26. Rbd1 Ra5 27. c5 e5 28. Re4 exd4 29. Rexd4 Rxc5+ 30. Kb2 Rcd5 31.
+Rxd5 cxd5 32. Rc1 Rd7 33. Rc5 Re7 34. Rxd5 Re2+ 35. Kc1 Ke6 36. Rd2 Re1+
+37. Kb2 Rh1 38. Rc2 Kd6 39. a5 Rxh3 40. Rc1 Rxf3 41. a6 Rxf2+ 42. Kb1 Rf5
+43. Rd1+ Kc6 44. Rc1+ Kb6 45. a7 Ra5 46. Rc4 c5 47. a8=Q Rxa8 48. Rg4 Rg8
+49. Re4 Kb5 50. Re6 h5 51. Re3 h4 52. Rh3 g5 53. Kc2 Rh8 54. Kd3 g4 55. Re3
+h3 56. Re7 h2 57. Rb7+ Kc6 58. Rh7 Rxh7 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "mecker"]
+[Black "amourmonstre"]
+[Result "1-0"]
+[WhiteElo "2206"]
+[BlackElo "2449"]
+[ECO "C00"]
+[Opening "St. George Defense"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.07"]
+[UTCTime "17:54:25"]
+[Termination "Normal"]
+[WhiteRatingDiff "+19"]
+[BlackRatingDiff "-27"]
+
+1. e4 e6 2. d4 a6 3. f4 b5 4. Nf3 Bb7 5. Bd3 c5 6. c3 Nf6 7. Qe2 cxd4 8.
+cxd4 Nc6 9. Nc3 b4 10. Na4 Be7 11. b3 d5 12. e5 Ne4 13. Bb2 Nc3 14. Nxc3
+bxc3 15. Bxc3 Qb6 16. O-O g6 17. Kh1 a5 18. Rad1 Kf8 19. f5 gxf5 20. Bxf5
+exf5 21. e6 Nd8 22. Ne5 Qxe6 23. Qh5 Ba6 24. Rxf5 Be2 25. Qxe2 Qxf5 26. Bd2
+Kg7 27. Rf1 Qe4 28. Qh5 f6 29. Bh6+ Kg8 30. Qe8+ 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "mecker"]
+[Black "amourmonstre"]
+[Result "1-0"]
+[WhiteElo "2231"]
+[BlackElo "2422"]
+[ECO "C00"]
+[Opening "St. George Defense"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.07"]
+[UTCTime "18:06:36"]
+[Termination "Normal"]
+[WhiteRatingDiff "+17"]
+[BlackRatingDiff "-25"]
+
+1. e4 e6 2. d4 a6 3. f4 b5 4. Nf3 Bb7 5. Bd3 c5 6. c3 Nf6 7. e5 Nd5 8. O-O
+Nc6 9. f5 cxd4 10. cxd4 Qb6 11. Be4 h6 12. Bxd5 exd5 13. Nc3 Na5 14. Bf4
+Nc4 15. b3 Na5 16. Rc1 Ba3 17. Rc2 O-O 18. f6 gxf6 19. Bxh6 Rfc8 20. Nh4 f5
+21. Nxf5 Qg6 22. Rf3 b4 23. Rg3 bxc3 24. Rxg6+ fxg6 25. Qg4 Kf7 26. Rf2 c2
+27. Nd6+ Ke7 28. Qg5+ Ke6 29. Qf6# 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "Horobetz"]
+[Result "1-0"]
+[WhiteTitle "LM"]
+[BlackTitle "NM"]
+[WhiteElo "2413"]
+[BlackElo "2288"]
+[ECO "B20"]
+[Opening "Sicilian Defense: Kronberger Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.07"]
+[UTCTime "19:03:29"]
+[Termination "Normal"]
+[WhiteRatingDiff "+9"]
+[BlackRatingDiff "-9"]
+
+1. e4 c5 2. Na3 g6 3. Nf3 Bg7 4. c3 Nc6 5. Be2 Nf6 6. d3 O-O 7. O-O d5 8.
+e5 Nd7 9. d4 c4 10. Nc2 Nb6 11. Bg5 Bg4 12. Qd2 Bxf3 13. Bxf3 Qd7 14. Bh6
+e6 15. Bxg7 Kxg7 16. Ne3 Nc8 17. Ng4 f5 18. exf6+ Kh8 19. Qh6 Nd6 20. Rae1
+Nf5 21. Qg5 Qf7 22. h4 h5 23. Ne5 Nxe5 24. dxe5 Rad8 25. Be2 d4 26. Bxc4
+dxc3 27. bxc3 Rc8 28. Re4 b5 29. Bxb5 Rxc3 30. Ba4 Kh7 31. Bb3 Rfc8 32. Qd2
+R8c7 33. Rd1 Nh6 34. Qd6 Rc1 35. Ree1 Rxd1 36. Rxd1 Rb7 37. Qxe6 Qc7 38.
+Qd5 a5 39. e6 Ng4 40. Qd7+ Kh6 41. Qxc7 Rxc7 42. e7 Nxf6 43. Re1 Rxe7 44.
+Rxe7 Ng4 45. Ra7 g5 46. Ra6+ Kg7 47. Rg6+ Kxg6 48. Bc2+ Kh6 49. hxg5+ Kxg5
+50. f3 Ne5 51. Be4 Nd3 52. Bxd3 Kf4 53. Kf2 Ke5 54. Ke3 a4 55. Be4 a3 56.
+f4+ Kf6 57. Kd4 h4 58. Kd5 h3 59. gxh3 Kg7 60. Ke6 Kh6 61. f5 Kg7 62. f6+
+Kh6 63. f7 Kg5 64. Ke7 Kh4 65. f8=Q Kg3 66. Qa8 Kh2 67. Qxa3 Kg1 68. Qf3
+Kh2 69. Qg2# 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Horobetz"]
+[Black "Blitzstream-twitch"]
+[Result "0-1"]
+[WhiteTitle "NM"]
+[BlackTitle "LM"]
+[WhiteElo "2279"]
+[BlackElo "2422"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Main Line, Mieses Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.07"]
+[UTCTime "19:10:04"]
+[Termination "Normal"]
+[WhiteRatingDiff "-8"]
+[BlackRatingDiff "+7"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 Nf6 5. Nf3 Nc6 6. Be2 Bg4 7. O-O
+O-O-O 8. Bd2 Qh5 9. h3 Bxh3 10. gxh3 Qxh3 11. Ng5 Qh4 12. Be3 e5 13. d5 Nd4
+14. Nxf7 Bd6 15. Nxd6+ Rxd6 16. Nb5 Rxd5 17. Nxd4 exd4 18. Bf4 Qxf4 19. Bf3
+0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "Horobetz"]
+[Result "0-1"]
+[WhiteTitle "LM"]
+[BlackTitle "NM"]
+[WhiteElo "2429"]
+[BlackElo "2271"]
+[ECO "B20"]
+[Opening "Sicilian Defense: Kronberger Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.07"]
+[UTCTime "19:13:27"]
+[Termination "Normal"]
+[WhiteRatingDiff "-17"]
+[BlackRatingDiff "+18"]
+
+1. e4 c5 2. Na3 g6 3. c3 Bg7 4. Nf3 d6 5. Be2 Nf6 6. d3 O-O 7. O-O Nc6 8.
+Be3 a6 9. Qd2 Ng4 10. Bf4 e5 11. Bg5 f6 12. Bh4 h5 13. Nc4 b5 14. Ne3 g5
+15. Bg3 h4 16. Bxh4 gxh4 17. Nxh4 Bh6 18. Bxg4 Bxg4 19. f4 f5 20. Nexf5
+Bxf5 21. Nxf5 Bxf4 22. Rxf4 exf4 23. Qxf4 Ra7 24. Re1 Rg7 25. Qh6 Rh7 26.
+Qg6+ Kh8 27. Re3 Ne5 28. Qxd6 Qxd6 29. Nxd6 Rd8 30. Nb7 Rxd3 31. Re2 c4 32.
+Nc5 Rd1+ 33. Kf2 Nd3+ 34. Nxd3 cxd3 35. Re3 Rd2+ 36. Kf3 Rf7+ 37. Kg4 Rff2
+38. g3 Rxh2 39. Rf3 Rhf2 40. Re3 Kg7 41. e5 Kf7 42. e6+ Ke7 43. Re4 Rfe2
+0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Horobetz"]
+[Black "Blitzstream-twitch"]
+[Result "1/2-1/2"]
+[WhiteTitle "NM"]
+[BlackTitle "LM"]
+[WhiteElo "2289"]
+[BlackElo "2412"]
+[ECO "D43"]
+[Opening "Semi-Slav Defense"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.07"]
+[UTCTime "19:19:17"]
+[Termination "Normal"]
+[WhiteRatingDiff "+5"]
+[BlackRatingDiff "-4"]
+
+1. d4 Nf6 2. c4 c6 3. Nc3 d5 4. Nf3 e6 5. cxd5 exd5 6. Bg5 Bd6 7. e3 Qc7 8.
+Bxf6 gxf6 9. Bd3 Bg4 10. h3 Bh5 11. Rc1 Qe7 12. Be2 Rg8 13. Nh4 Bg6 14.
+Nxg6 hxg6 15. a3 f5 16. g3 Nd7 17. b4 a5 18. b5 Bxa3 19. bxc6 bxc6 20. Rc2
+Bb4 21. O-O Qd6 22. Na4 g5 23. Qd3 f4 24. Rfc1 Rg6 25. exf4 gxf4 26. Bg4
+fxg3 27. fxg3 Rc8 28. Kh2 Rc7 29. Rf2 Kf8 30. Bxd7 Rxd7 31. Nc5 Re7 32.
+Rcf1 Kg7 33. Rf3 Bxc5 34. dxc5 Qxc5 35. R1f2 d4 36. Rf5 Qd6 37. Qf3 Qe6 38.
+h4 c5 39. Rxc5 Qe3 40. Qg2 a4 41. Rcf5 a3 42. R5f3 Qe1 43. Rxa3 Rge6 44.
+Raf3 Re2 45. Kh3 Rxf2 46. Rxf2 Qe6+ 47. Kh2 d3 48. Qf3 Qe3 49. Qf6+ Kg8 50.
+Rf4 Qe2+ 51. Kh3 Qe6+ 52. Rg4+ Qxg4+ 53. Kxg4 Re6 54. Qg5+ Rg6 55. Kf3 Rxg5
+56. hxg5 Kg7 57. Ke3 Kg6 58. Kxd3 Kxg5 59. Ke3 Kg4 60. Kf2 f6 61. Kg2 f5
+62. Kf2 f4 63. Kg2 fxg3 64. Kg1 Kf3 65. Kf1 g2+ 66. Kg1 Ke3 67. Kxg2
+1/2-1/2
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "Horobetz"]
+[Result "0-1"]
+[WhiteTitle "LM"]
+[BlackTitle "NM"]
+[WhiteElo "2408"]
+[BlackElo "2294"]
+[ECO "B07"]
+[Opening "Czech Defense"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.07"]
+[UTCTime "19:25:43"]
+[Termination "Normal"]
+[WhiteRatingDiff "-16"]
+[BlackRatingDiff "+16"]
+
+1. e4 d6 2. d4 Nf6 3. Nc3 c6 4. g3 Qa5 5. Bg2 e5 6. Ne2 Be7 7. O-O Nbd7 8.
+h3 O-O 9. Be3 b5 10. a3 Qc7 11. Kh2 Bb7 12. f4 Rfe8 13. fxe5 dxe5 14. d5
+Bc5 15. Qd2 Bxe3 16. Qxe3 cxd5 17. exd5 Nb6 18. Rad1 Rad8 19. d6 Rxd6 20.
+Rxd6 Nc4 21. Qxa7 Nxd6 22. Bxb7 Rb8 23. Rd1 Rxb7 24. Nxb5 Qxc2 25. Qa8+
+Nfe8 26. Nc3 Qb3 27. Rxd6 Rb8 28. Rd8 Rxa8 29. Rxa8 Kf8 30. Rd8 Qxb2 31.
+Rd3 Qxa3 32. Re3 Qe7 33. Kg2 f6 34. Kf3 Qb7+ 35. Kf2 Nd6 36. g4 Nc4 37. Rd3
+Qb6+ 38. Kf3 Nd6 39. Nd5 e4+ 40. Kf4 exd3 41. Nxb6 dxe2 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "shredded"]
+[Result "1-0"]
+[WhiteTitle "LM"]
+[WhiteElo "2334"]
+[BlackElo "2431"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Gubinsky-Melts Defense"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.08"]
+[UTCTime "00:15:35"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "+15"]
+[BlackRatingDiff "-78"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd6 4. g3 Nf6 5. Bg2 h5 6. d3 h4 7. Nge2 h3 8.
+Bf3 Nc6 9. Bf4 e5 10. Be3 Ng4 11. Qd2 Bd7 12. Nb5 Qf6 13. Bxg4 Bxg4 14.
+Nxc7+ Kd8 15. Nxa8 Qf3 16. Rf1 Bb4 17. c3 Bd6 18. Ng1 Qd5 19. f3 Bf5 20.
+Kf2 Kd7 21. d4 e4 22. Bf4 Rxa8 23. Bxd6 Qxd6 24. fxe4 Bxe4 25. Rae1 f5 26.
+Nf3 Re8 27. Qf4 Qd5 28. Ne5+ Nxe5 29. dxe5 Qxa2 30. Rd1+ Kc8 31. Rd2 Qa5
+32. Rfd1 Qc5+ 33. Qe3 Qxe5 34. Qxa7 Bc6 35. Rd8+ Kc7 36. Qb8+ Kb6 37. Rxe8
+Qxe8 38. Qxe8 Bxe8 39. Ke3 Kc5 40. Kf4 g6 41. Rd4 b5 42. Ke5 Bc6 43. Kf6
+Be4 44. Kxg6 Bc2 45. Kg5 Kc6 46. Kf4 Kc5 47. Rd8 Kc4 48. Rd4+ Kc5 49. Rb4
+Bd3 50. Kg5 Kc6 51. Kh4 Bf1 52. g4 fxg4 53. Kxg4 Kc5 54. Kg3 Kc6 55. Rf4
+Bg2 56. Rf2 Be4 57. Kxh3 Kc5 58. Rf4 Bd5 59. Rd4 Be6+ 60. Kg3 Bb3 61. Rb4
+Bc2 62. h4 Kc6 63. Kg4 Kc5 64. h5 Bd1+ 65. Kg5 Bc2 66. h6 Bb1 67. Kf6 Kc6
+68. Kg7 Kc5 69. h7 Bxh7 70. Kxh7 Kc6 71. Kg6 Kc5 72. Kf5 Kd5 73. Kf4 Kc5
+74. Ke3 Kd5 75. Kd3 Kc5 76. Rb3 Kc6 77. Kd4 Kb6 78. Kd5 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "iuytrewq147"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2545"]
+[BlackElo "2223"]
+[ECO "B47"]
+[Opening "Sicilian Defense: Paulsen Variation, Bastrikov Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.08"]
+[UTCTime "15:05:03"]
+[Termination "Normal"]
+
+1. e4 c5 2. Nc3 e6 3. Nf3 Nc6 4. d4 cxd4 5. Nxd4 Qc7 6. Ndb5 Qb8 7. f4 a6
+8. Nd4 Bc5 9. Nb3 Ba7 10. e5 Nge7 11. Ne4 O-O 12. c3 Nf5 13. Qd3 Rd8 14. g4
+d5 15. Ng5 h6 16. Nxf7 Kxf7 17. gxf5 exf5 18. Be3 d4 19. Nxd4 Nxd4 20. cxd4
+Be6 21. Bg2 Qc8 22. d5 Kf8 23. Qa3+ Kg8 24. Rc1 Bxe3 25. Rxc8 Raxc8 26.
+Qxe3 Bxd5 27. Bxd5+ Rxd5 28. Qb3 Rd8 29. O-O Kh8 30. e6 Rd2 31. e7 Re8 32.
+Qf7 Rdd8 33. exd8=Q Rxd8 34. Re1 Rf8 35. Qxf8+ Kh7 36. Qxf5+ Kh8 37. Re8#
+1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "TrickOrTreat"]
+[Black "Gravey4rd"]
+[Result "1-0"]
+[WhiteElo "2473"]
+[BlackElo "2354"]
+[ECO "C01"]
+[Opening "French Defense: Exchange Variation"]
+[TimeControl "300+0"]
+[UTCDate "2014.07.10"]
+[UTCTime "01:19:52"]
+[Termination "Normal"]
+[WhiteRatingDiff "+10"]
+[BlackRatingDiff "-9"]
+
+1. e4 e6 2. d4 d5 3. exd5 exd5 4. Bd3 Bd6 5. Nf3 Nc6 6. O-O Nge7 7. Re1 O-O
+8. c3 Bd7 9. Nbd2 Ng6 10. Nf1 Re8 11. Rxe8+ Bxe8 12. Ng3 Rb8 13. Nf5 Bf4
+14. g3 Bxc1 15. Qxc1 Bd7 16. Ne3 Qf6 17. Ne1 Nce7 18. Qc2 Kh8 19. N1g2 b6
+20. Re1 c5 21. dxc5 bxc5 22. Nf1 Ne5 23. Nd2 Nxd3 24. Qxd3 Rxb2 25. Qe3 Nf5
+26. Qe8+ Bxe8 27. Rxe8# 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Gravey4rd"]
+[Black "TrickOrTreat"]
+[Result "0-1"]
+[WhiteElo "2345"]
+[BlackElo "2483"]
+[ECO "D02"]
+[Opening "Queen's Pawn Game: London System"]
+[TimeControl "300+0"]
+[UTCDate "2014.07.10"]
+[UTCTime "01:25:01"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "-9"]
+[BlackRatingDiff "+9"]
+
+1. Nf3 d5 2. d4 Nf6 3. Bf4 e6 4. e3 Be7 5. Nbd2 Nbd7 6. Bd3 c5 7. dxc5 Nxc5
+8. Bb5+ Bd7 9. Bxd7+ Qxd7 10. O-O O-O 11. Ne5 Qb5 12. b3 Rfd8 13. Ndf3 Nce4
+14. c4 dxc4 15. Nd4 Qa6 16. Nxc4 b5 17. Ne5 Nd5 18. Qh5 g6 19. Qh6 Bf6 20.
+a4 b4 21. Nec6 Rdc8 22. Ne5 Bg7 23. Qh3 Nxf4 24. exf4 Rc3 25. Qh4 Qb7 26.
+Rfd1 Rac8 27. a5 a6 28. f3 Nc5 29. Ng4 Rd3 30. Nf6+ Bxf6 31. Qxf6 Rxd1+ 32.
+Rxd1 Qd7 33. Rd2 Qd8 34. Qxd8+ Rxd8 35. Rc2 Rxd4 36. Rxc5 Rd3 37. Rc6 Rxb3
+38. Kf2 Rb2+ 39. Kg3 Kg7 40. Rxa6 h5 41. Rb6 Kf6 42. a6 Ra2 43. Kh3 b3 44.
+Rxb3 Rxa6 45. g4 Ra4 46. Kg3 h4+ 47. Kxh4 Rxf4 48. Kg3 Ra4 49. f4 g5 50.
+fxg5+ Kxg5 51. h4+ Kg6 52. Re3 Rb4 53. Re5 Kf6 54. Rg5 Rb3+ 55. Kf4 Rb1 56.
+Rg8 Rh1 57. h5 e5+ 58. Ke4 Re1+ 59. Kf3 e4+ 60. Kf2 Rh1 61. Rh8 Kg5 62. Kg3
+Rg1+ 63. Kf2 Rxg4 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "TrickOrTreat"]
+[Black "Gravey4rd"]
+[Result "0-1"]
+[WhiteElo "2492"]
+[BlackElo "2336"]
+[ECO "B84"]
+[Opening "Sicilian Defense: Scheveningen Variation, Classical Variation"]
+[TimeControl "300+0"]
+[UTCDate "2014.07.10"]
+[UTCTime "01:35:35"]
+[Termination "Normal"]
+[WhiteRatingDiff "-20"]
+[BlackRatingDiff "+19"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be2 e6 7. O-O Be7 8.
+Be3 Qc7 9. f4 Nbd7 10. a4 O-O 11. a5 Nc5 12. Bf3 Re8 13. Kh1 e5 14. Nde2
+Bd7 15. f5 Bc6 16. Ng3 b5 17. Re1 Rac8 18. Bxc5 dxc5 19. Nd5 Nxd5 20. exd5
+Rcd8 21. Nh5 Bg5 22. Be4 Qe7 23. Qf3 Bd7 24. Rad1 Qd6 25. g3 g6 26. h4 Be7
+27. f6 Bf8 28. Rf1 Qc7 29. Ng7 Bxg7 30. fxg7 f5 31. d6 Qxa5 32. g4 f4 33.
+h5 Kxg7 34. Kg2 Qb4 35. b3 Bxg4 36. h6+ Kf8 37. Qxg4 Qxe4+ 38. Kh2 Qxc2+
+39. Kg1 Qxb3 40. d7 Re7 41. Rd6 Qe3+ 42. Rf2 Rf7 43. Kf1 f3 44. Rd1 Rdxd7
+0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Gravey4rd"]
+[Black "TrickOrTreat"]
+[Result "0-1"]
+[WhiteElo "2355"]
+[BlackElo "2472"]
+[ECO "C80"]
+[Opening "Ruy Lopez: Open Variations, Open Variation"]
+[TimeControl "300+0"]
+[UTCDate "2014.07.10"]
+[UTCTime "01:44:56"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "-9"]
+[BlackRatingDiff "+9"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Nxe4 6. Re1 Nc5 7. Bxc6
+dxc6 8. Nxe5 Be7 9. d4 Ne6 10. Be3 O-O 11. c4 f6 12. Nf3 f5 13. Qd3 f4 14.
+Bd2 Ng5 15. Nxg5 Bxg5 16. Nc3 f3 17. Bxg5 Qxg5 18. g3 Bf5 19. Qxf3 Bg4 20.
+Re5 Qg6 21. Qe4 Bf5 22. Qe3 Rad8 23. Re7 Rfe8 24. Re1 Rxe7 25. Qxe7 Rd7 26.
+Qe8+ Qxe8 27. Rxe8+ Kf7 28. Rb8 b6 29. Rb7 Re7 30. b4 Bh3 31. f3 h5 32. Ra7
+Re3 33. Ne4 Ke8 34. Ng5 Bd7 35. c5 Ra3 36. Rxc7 bxc5 37. dxc5 Rxa2 38. Ra7
+Ra4 39. Ra8+ Ke7 40. Rg8 Kf6 41. Ne4+ Kf7 42. Rh8 Rxb4 43. Rxh5 a5 44. Rh8
+Kg6 45. Rd8 Bf5 46. Rd6+ Kh5 47. g4+ Bxg4 48. Ng3+ Kh4 49. fxg4 Kh3 50.
+Rxc6 Rb1+ 51. Kf2 Kxh2 52. Rc7 Rb2+ 53. Ne2 Rc2 54. Rxg7 Kh3 55. Kf3 Kh4
+56. Nd4 Rc3+ 57. Kf4 Kh3 58. c6 a4 59. Rh7+ Kg2 60. g5 Rc4 61. Ke5 Rc5+ 62.
+Kf6 a3 63. g6 a2 64. Ra7 Rc4 65. g7 Rxd4 66. g8=Q+ Kf3 67. Ra3+ Kf2 68.
+Qg3+ Ke2 69. Rxa2+ Kf1 70. Qh2 Ke1 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Matetricks"]
+[Black "pacal56"]
+[Result "0-1"]
+[WhiteTitle "NM"]
+[WhiteElo "2533"]
+[BlackElo "2209"]
+[ECO "B43"]
+[Opening "Sicilian Defense: Kan Variation, Knight Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.11"]
+[UTCTime "16:12:10"]
+[Termination "Normal"]
+[WhiteRatingDiff "-28"]
+[BlackRatingDiff "+18"]
+
+1. e4 c5 2. Nc3 e6 3. Nf3 a6 4. d4 cxd4 5. Nxd4 Qc7 6. Be2 Nc6 7. O-O b5 8.
+Re1 Bb7 9. Nxc6 Bxc6 10. e5 Ne7 11. Bf3 Ng6 12. Bxc6 dxc6 13. Qh5 Bb4 14.
+Bd2 Bxc3 15. Bxc3 O-O 16. Rad1 Rad8 17. Qg5 Rd5 18. h4 Rfd8 19. Rxd5 Rxd5
+20. h5 Qe7 21. Qg4 Nh4 22. h6 Nf5 23. hxg7 Qh4 24. Qxh4 Nxh4 25. Re3 Nf5
+26. Rd3 Kxg7 27. Rxd5 cxd5 28. g4 Ne7 29. f4 Kg6 30. Kf2 h5 31. Kf3 hxg4+
+32. Kxg4 Nf5 33. b3 Ne3+ 34. Kf3 Nxc2 35. a4 b4 36. Bd2 Nd4+ 37. Ke3 Nxb3
+38. Bxb4 d4+ 39. Kd3 Kf5 40. Kc4 Nc1 41. Bd2 Ne2 42. a5 Nxf4 43. Kxd4 Ng6
+44. Kc5 Nxe5 45. Bc3 Nd7+ 46. Kc6 Ne5+ 47. Bxe5 Kxe5 48. Kb6 f5 49. Kxa6 f4
+50. Kb6 f3 51. a6 f2 52. a7 f1=Q 53. a8=Q Qb1+ 54. Kc7 Qc2+ 55. Kd8 Qc5 56.
+Qa1+ Kd5 57. Qd1+ Qd4 58. Qa4 Qxa4 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Seredas"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2405"]
+[BlackElo "2218"]
+[ECO "A41"]
+[Opening "Queen's Pawn"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.13"]
+[UTCTime "09:45:45"]
+[Termination "Normal"]
+[WhiteRatingDiff "+38"]
+[BlackRatingDiff "-5"]
+
+1. d4 d6 2. Nf3 g6 3. e3 Bg7 4. c4 Bg4 5. Bd3 Nc6 6. c5 e5 7. Qb3 Qc8 8.
+Ng5 Nh6 9. d5 Ne7 10. Bb5+ Bd7 11. Bxd7+ Qxd7 12. Qxb7 O-O 13. e4 dxc5 14.
+Nf3 Rfb8 15. Bxh6 Bxh6 16. Qa6 Rxb2 17. Nxe5 Qd6 18. Qxd6 cxd6 19. Nc4 Rc2
+20. Nba3 Rc3 21. Rb1 f5 22. f3 fxe4 23. fxe4 Rf8 24. Rf1 Rxf1+ 25. Kxf1 Bf4
+26. Rb7 Kf8 27. g3 Be5 28. Rxa7 Bd4 29. Nxd6 c4 30. Ra8+ Kg7 31. Naxc4 Bc5
+32. Ke2 g5 33. a4 Ng6 34. a5 Ne5 35. Nf5+ Kf6 36. Ra6+ Kf7 37. Nxe5+ Ke8
+38. d6 Bxd6 39. Ra8+ Bb8 40. Rxb8+ 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "jeffforever"]
+[Black "kurton"]
+[Result "1/2-1/2"]
+[WhiteTitle "FM"]
+[WhiteElo "2420"]
+[BlackElo "2295"]
+[ECO "C98"]
+[Opening "Ruy Lopez: Closed Variations, Chigorin Defense #2"]
+[TimeControl "180+1"]
+[UTCDate "2014.07.13"]
+[UTCTime "16:52:47"]
+[Termination "Normal"]
+[WhiteRatingDiff "-8"]
+[BlackRatingDiff "+5"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 d6 8.
+c3 O-O 9. h3 Na5 10. Bc2 c5 11. d4 Qc7 12. Nbd2 Nc6 13. dxc5 dxc5 14. Nf1
+Be6 15. Ne3 Rad8 16. Qe2 c4 17. a4 h6 18. Nf5 Bc5 19. Be3 Bxe3 20. Nxe3 Nd4
+21. cxd4 exd4 22. Nd5 Bxd5 23. exd5 d3 24. Bxd3 cxd3 25. Qxd3 Rxd5 26. Qb3
+Rfd8 27. axb5 Rxb5 28. Qa3 a5 1/2-1/2
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "HydroLux"]
+[Black "baba0"]
+[Result "1-0"]
+[WhiteElo "2250"]
+[BlackElo "2473"]
+[ECO "D33"]
+[Opening "Tarrasch Defense: Prague Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.14"]
+[UTCTime "00:19:24"]
+[Termination "Time forfeit"]
+
+1. c4 e6 2. d4 d5 3. Nc3 c5 4. cxd5 exd5 5. Nf3 Nc6 6. g3 Nf6 7. Bg2 c4 8.
+O-O Be7 9. b3 Qa5 10. Bd2 O-O 11. e3 Bg4 12. Qc2 Qa6 13. Ne5 Nb4 14. Qb2
+Be6 15. bxc4 dxc4 16. a3 Nc6 17. Rfb1 Rab8 18. Bxc6 bxc6 19. Qxb8 Rxb8 20.
+Rxb8+ Bf8 21. Ne2 Bc8 22. Bb4 Bxb4 23. Rxb4 Nd5 24. Rb8 g5 25. e4 Ne7 26.
+Rc1 Kg7 27. Rb4 Be6 28. a4 Qa5 29. Rb2 Qxa4 30. Rbc2 a5 31. Nxc4 Qb3 32.
+Rc3 Qb5 33. R1c2 a4 34. Rb2 Qa6 35. Rb6 Qa8 36. Na3 Qa7 37. Rb2 Qa5 38. Kg2
+Qa6 39. h3 f5 40. d5 cxd5 41. Rc7 Kf8 42. Nd4 fxe4 43. Rb8+ Kf7 44. Nab5
+Bxh3+ 45. Kxh3 Qf6 46. Rbb7 h5 47. Nc6 g4+ 48. Kg2 Qf3+ 49. Kg1 Qd1+ 50.
+Kh2 Kf6 51. Kg2 h4 52. Nd6 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "take-it-ez"]
+[Black "kurton"]
+[Result "1-0"]
+[WhiteElo "2416"]
+[BlackElo "2347"]
+[ECO "A00"]
+[Opening "Grob Opening"]
+[TimeControl "180+1"]
+[UTCDate "2014.07.14"]
+[UTCTime "11:18:50"]
+[Termination "Normal"]
+
+1. g4 e5 2. d4 exd4 3. Nf3 Nc6 4. Nxd4 Nxd4 5. Qxd4 Qf6 6. Qe3+ Ne7 7. Bg2
+c6 8. g5 Qg6 9. c4 d6 10. Nc3 h6 11. Be4 Qxg5 12. Qxg5 hxg5 13. Bxg5 Be6
+14. b3 f6 15. Bf4 O-O-O 16. O-O-O Nf5 17. Kb2 Kc7 18. Bxf5 Bxf5 19. h4 g6
+20. c5 b6 21. cxd6+ Bxd6 22. Rxd6 Rxd6 23. Rd1 Rd8 24. f3 b5 25. b4 a6 26.
+a3 Rd7 27. Rg1 Kd8 28. Bxd6 Rxd6 29. e4 Be6 30. Kc2 Bf7 31. Ne2 f5 32. e5
+Rd5 33. Rd1 Ke7 34. Rxd5 Bxd5 35. f4 Ke6 36. Nd4+ Kd7 37. Kd2 a5 38. bxa5
+Kc7 39. Kc3 Bc4 40. Kb4 Bd5 41. Kc5 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "RPG77"]
+[Black "kurton"]
+[Result "0-1"]
+[WhiteElo "2236"]
+[BlackElo "2401"]
+[ECO "C55"]
+[Opening "Italian Game: Two Knights Defense, Modern Bishop's Opening"]
+[TimeControl "180+1"]
+[UTCDate "2014.07.14"]
+[UTCTime "11:34:56"]
+[Termination "Normal"]
+[WhiteRatingDiff "-82"]
+[BlackRatingDiff "+7"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d3 Be7 5. c3 O-O 6. Nbd2 d5 7. exd5 Nxd5
+8. Nf1 Nb6 9. Bb3 Bf5 10. Bc2 Qd7 11. Ng3 Bg6 12. O-O Rfd8 13. Re1 Bxd3 14.
+Nxe5 Bxc2 15. Qxc2 Nxe5 16. Rxe5 Qd1+ 17. Qxd1 Rxd1+ 18. Nf1 Bd6 19. Re2
+Bf4 20. Bxf4 Rxa1 21. Bxc7 Nd5 22. Bd6 Rxa2 23. Rd2 Nb6 24. Bc5 Nc4 25. Rd4
+Nxb2 26. g3 Na4 27. Bxa7 Nxc3 28. Bc5 Ne2+ 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "kurton"]
+[Black "zergy"]
+[Result "0-1"]
+[WhiteElo "2401"]
+[BlackElo "2295"]
+[ECO "E60"]
+[Opening "King's Indian Defense: Normal Variation, King's Knight Variation"]
+[TimeControl "180+1"]
+[UTCDate "2014.07.14"]
+[UTCTime "11:54:32"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "-18"]
+[BlackRatingDiff "+17"]
+
+1. d4 Nf6 2. Nf3 g6 3. c4 Bg7 4. Nc3 O-O 5. e4 d6 6. h3 e5 7. d5 a5 8. Bg5
+Na6 9. Be2 Qe8 10. Nd2 Nd7 11. g4 f6 12. Be3 f5 13. gxf5 gxf5 14. exf5 Nac5
+15. Rg1 Kh8 16. Qc2 Nb6 17. Bxc5 Bxf5 18. Bd3 Bxd3 19. Qxd3 dxc5 20. O-O-O
+c6 21. d6 Nd7 22. Nde4 Qh5 23. Rg3 Rg8 24. Rdg1 Bh6+ 25. Kb1 Bf4 26. Rg4
+Rxg4 27. hxg4 Qg6 28. Rh1 Rg8 29. Ne2 Rg7 30. Nxf4 exf4 31. f3 Kg8 32. Qc3
+b6 33. b3 Qe6 34. g5 Kf7 35. Rh4 Qe5 36. Qxe5 Nxe5 37. Rxf4+ Ke8 38. Nf6+
+Kd8 39. Ne4 Ke8 40. Rf5 Nd7 41. f4 Rf7 42. Rxf7 Kxf7 43. f5 Ne5 44. g6+
+hxg6 45. fxg6+ Kxg6 46. Kc2 Kf7 47. Kc3 Ke6 48. a3 Nf7 49. b4 cxb4+ 50.
+axb4 Nxd6 51. Ng5+ Kf5 52. Nf3 axb4+ 53. Kxb4 c5+ 54. Kc3 Kf4 55. Nd2 Ne4+
+56. Nxe4 Kxe4 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Matetricks"]
+[Black "Blitzstream-twitch"]
+[Result "1-0"]
+[WhiteTitle "NM"]
+[BlackTitle "LM"]
+[WhiteElo "2505"]
+[BlackElo "2363"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Main Line, Mieses Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.14"]
+[UTCTime "19:35:55"]
+[Termination "Normal"]
+[WhiteRatingDiff "+10"]
+[BlackRatingDiff "-8"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 Nf6 5. Nf3 Nc6 6. d5 Nb4 7. Bc4 Bg4
+8. O-O O-O-O 9. Bd2 Qc5 10. Bb3 Nbxd5 11. h3 Nxc3 12. bxc3 Bxf3 13. gxf3 e6
+14. Qe2 Bd6 15. Rad1 Qf5 16. Kg2 h5 17. h4 Rh6 18. Bxh6 gxh6 19. Rxd6 Qf4
+20. Rxd8+ Kxd8 21. Rd1+ Ke7 22. Qd2 Qxd2 23. Rxd2 Nd7 24. Rxd7+ Kxd7 25. f4
+Kd6 26. Kf3 b5 27. a4 c6 28. axb5 cxb5 29. Ke4 a5 30. f5 a4 31. Ba2 a3 32.
+fxe6 fxe6 33. f4 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "Matetricks"]
+[Result "1-0"]
+[WhiteTitle "LM"]
+[BlackTitle "NM"]
+[WhiteElo "2355"]
+[BlackElo "2515"]
+[ECO "D02"]
+[Opening "Queen's Pawn Game: Zukertort Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.14"]
+[UTCTime "19:44:28"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "+17"]
+[BlackRatingDiff "-22"]
+
+1. d4 d5 2. Nf3 e6 3. c4 Nf6 4. cxd5 exd5 5. Nc3 Be7 6. Bf4 O-O 7. e3 c6 8.
+Bd3 Re8 9. O-O Nbd7 10. Rb1 Nf8 11. b4 a6 12. a4 Ng6 13. Bg3 Bd6 14. b5
+axb5 15. axb5 Ne4 16. Qc2 f5 17. bxc6 bxc6 18. Bxe4 fxe4 19. Nd2 Ba6 20.
+Na4 Bxg3 21. hxg3 Bd3 22. Qd1 Qa5 23. Nc5 Bxb1 24. Ndb3 Qc3 25. Qxb1 Reb8
+26. Rc1 Qb4 27. Qc2 Ra3 28. Rb1 Qc4 29. Qd1 Ne7 30. Rc1 Qb4 31. Rb1 Qc3 32.
+Rc1 Qb2 33. Rb1 Qa2 34. Ra1 Qb2 35. Rb1 Qc3 36. Rc1 Qb4 37. Rb1 Raa8 38.
+Nd2 Qc3 39. Rc1 Qb2 40. Ndb3 Qa2 41. Ra1 Qb2 42. Rb1 Qc3 43. Nd7 Rd8 44.
+Ndc5 Ra2 45. Qe1 Qxe1+ 46. Rxe1 Rb8 47. Rc1 Rb4 48. Rc3 Rb2 49. g4 Rb1+ 50.
+Kh2 Ng6 51. Kg3 h6 52. f4 Ne7 53. f5 g6 54. Kf4 gxf5 55. gxf5 Rf1+ 56. Ke5
+Rxf5+ 57. Kd6 Rf7 58. Na5 Rc4 59. Rxc4 dxc4 60. Nxc4 Ng6 61. Ne6 Rf6 62.
+Kd7 Nf8+ 63. Nxf8 Kxf8 64. Ne5 h5 65. Nxc6 h4 66. Ne5 Rf2 67. d5 Rxg2 68.
+d6 h3 69. Ke6 h2 70. d7 Rg6+ 71. Nxg6+ Kg7 72. d8=Q Kxg6 73. Qf6+ Kh7 74.
+Qf2 Kh8 75. Qxh2+ Kg8 76. Qf4 Kg7 77. Qxe4 Kh6 78. Qf4+ Kg7 79. e4 Kh8 80.
+Ke5 Kg8 81. Qf5 Kg7 82. Kf4 Kh8 83. Kg5 Kg8 84. Qf6 Kh7 85. Kh5 Kg8 86. e5
+Kh7 87. e6 Kg8 88. e7 Kh7 89. Qf7+ 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "amirkhafan"]
+[Result "1/2-1/2"]
+[WhiteTitle "LM"]
+[WhiteElo "2392"]
+[BlackElo "2515"]
+[ECO "B00"]
+[Opening "Nimzowitsch Defense: Scandinavian Variation, Exchange Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.14"]
+[UTCTime "20:06:54"]
+[Termination "Normal"]
+[WhiteRatingDiff "+3"]
+[BlackRatingDiff "-25"]
+
+1. e4 Nc6 2. d4 d5 3. exd5 Qxd5 4. Nf3 Bg4 5. Be2 O-O-O 6. c4 Qh5 7. Be3 e6
+8. Nc3 Nf6 9. Qa4 Kb8 10. O-O-O Qa5 11. Qxa5 Nxa5 12. Ne5 Bxe2 13. Nxe2 Re8
+14. Nxf7 Rg8 15. Ne5 Bd6 16. b3 Ne4 17. f3 Ba3+ 18. Kc2 Nf6 19. Nf4 Rgf8
+20. Nfd3 Bd6 21. Rhe1 Nc6 22. Nxc6+ bxc6 23. Bf4 Kc8 24. Be5 Nd7 25. Rd2 g6
+26. Rde2 Bxe5 27. Nxe5 Nxe5 28. Rxe5 Rf6 29. Kc3 a6 30. Kb4 Re7 31. Kc5 Kd7
+32. d5 cxd5 33. cxd5 Rf5 34. dxe6+ Rxe6 35. Rxf5 Rxe1 36. Rf7+ Kc8 37. Rxh7
+Re2 38. g4 Rxa2 39. h4 Rf2 40. Rf7 Rh2 41. h5 gxh5 42. g5 Rg2 43. f4 h4 44.
+Rh7 Rg4 45. Kc6 Kd8 46. Rh8+ Ke7 47. Kxc7 Rxf4 48. Kb6 Rb4+ 49. Kxa6 Rxb3
+50. Rxh4 Kf7 51. Rc4 Kg6 52. Rc5 Ra3+ 53. Kb6 Ra1 54. Rb5 Rc1 55. Rc5 Rb1+
+56. Kc6 Re1 57. Rb5 Rd1 58. Kb6 Ra1 59. Rc5 Rb1+ 60. Kc6 Rd1 61. Kb6 Rb1+
+1/2-1/2
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "amirkhafan"]
+[Black "Blitzstream-twitch"]
+[Result "1-0"]
+[BlackTitle "LM"]
+[WhiteElo "2490"]
+[BlackElo "2395"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Main Line, Mieses Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.14"]
+[UTCTime "20:12:26"]
+[Termination "Normal"]
+[WhiteRatingDiff "+46"]
+[BlackRatingDiff "-8"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 Nf6 5. Bd2 c6 6. Nf3 Bf5 7. Ne4 Qc7
+8. Nxf6+ gxf6 9. Bc3 e6 10. Bd3 Bxd3 11. Qxd3 Bd6 12. O-O-O Nd7 13. Kb1
+O-O-O 14. h3 f5 15. Rhe1 Rhg8 16. g3 Nf6 17. Qe2 Ne4 18. Nd2 Nxc3+ 19. bxc3
+Be7 20. Nb3 Bf6 21. Qh5 Rg5 22. Qh6 Rdg8 23. Qxf6 R5g6 24. Qe5 Qb6 25. Qa5
+Qxa5 26. Nxa5 f4 27. g4 h5 28. f3 hxg4 29. hxg4 Kc7 30. Nc4 Rh6 31. Rh1
+Rgh8 32. Rxh6 Rxh6 33. Ne5 Rh3 34. Rf1 f6 35. Ng6 Rh2 36. Nxf4 Kd6 37. Re1
+e5 38. dxe5+ fxe5 39. Nd3 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "amirkhafan"]
+[Result "1-0"]
+[WhiteTitle "LM"]
+[WhiteElo "2387"]
+[BlackElo "2536"]
+[ECO "A00"]
+[Opening "Van't Kruijs Opening"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.14"]
+[UTCTime "20:15:58"]
+[Termination "Normal"]
+[WhiteRatingDiff "+15"]
+[BlackRatingDiff "-76"]
+
+1. e3 c5 2. d4 cxd4 3. exd4 d5 4. Nf3 Nf6 5. c4 e6 6. Nc3 Be7 7. Bf4 O-O 8.
+c5 Nc6 9. Bd3 Nd7 10. O-O f5 11. Re1 Nf6 12. Rb1 Ne4 13. Qc2 Nb4 14. Qd1
+Nxd3 15. Qxd3 Bf6 16. Ne5 Bxe5 17. Bxe5 Qh4 18. Nxe4 fxe4 19. Qg3 Qxg3 20.
+hxg3 Bd7 21. b4 a6 22. Re3 Ba4 23. f3 exf3 24. gxf3 Rf7 25. Kg2 Re8 26. Rh1
+g6 27. g4 Bd7 28. g5 Rf5 29. Bf6 Bc6 30. Kg3 Bd7 31. f4 Bc6 32. Re2 Bd7 33.
+Reh2 h5 34. Ra1 Ba4 35. Rc1 Kf7 36. Rh4 Bb5 37. Kf2 Bc6 38. Ke3 Bb5 39. Kd2
+Bc6 40. Kc3 Rc8 41. Kb3 Bb5 42. a4 Bc4+ 43. Kc3 Ke8 44. Rb1 Kf7 45. Be5 Ke8
+46. Rhh1 Kf7 47. Ra1 Ke8 48. b5 axb5 49. axb5 Bxb5 50. Kb4 Bc6 51. Ka5 Ra8+
+52. Kb6 Rxa1 53. Rxa1 h4 54. Rh1 Kd7 55. Rxh4 Kd8 56. Rh6 Rf7 57. Rxg6 Kd7
+58. Rg8 Ke7 59. g6 Rf5 60. Kc7 Be8 61. Kxb7 Rh5 62. c6 Rh2 63. g7 Rb2+ 64.
+Kc7 Bf7 65. Rf8 Rg2 66. Rxf7+ Kxf7 67. Kd7 Rc2 68. c7 Rc1 69. c8=Q Rxc8 70.
+Kxc8 Kg8 71. Kd7 Kf7 72. Kd6 Kg8 73. Kxe6 Kh7 74. Kf7 Kh6 75. g8=Q Kh5 76.
+Qg5# 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "amirkhafan"]
+[Black "JoaBN"]
+[Result "0-1"]
+[BlackTitle "IM"]
+[WhiteElo "2460"]
+[BlackElo "2313"]
+[ECO "C41"]
+[Opening "Philidor Defense: Lion Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.14"]
+[UTCTime "22:32:39"]
+[Termination "Normal"]
+[WhiteRatingDiff "-62"]
+[BlackRatingDiff "+70"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nc3 d6 4. d4 Nbd7 5. dxe5 Nxe5 6. Nxe5 dxe5 7. Qxd8+
+Kxd8 8. Bg5 Be7 9. O-O-O+ Ke8 10. Nb5 Bd8 11. Bxf6 gxf6 12. Bc4 a6 13. Nc3
+c6 14. f4 Be6 15. Bxe6 fxe6 16. fxe5 fxe5 17. Kb1 Rf8 18. Rd6 Ke7 19. Rhd1
+Rf7 20. Rd7+ Ke8 21. Rxf7 Kxf7 22. Rd7+ Kg6 23. Rxb7 Ba5 24. b4 Bd8 25. Na4
+Bg5 26. Nc5 Rd8 27. Nxe6 Rd1+ 28. Kb2 Bc1+ 29. Kb3 Be3 30. Nf8+ Kf6 31.
+Nxh7+ Ke6 32. Kc4 Rc1 33. Nf8+ Kf6 34. Kd3 Bd4 35. Nd7+ Ke6 36. Nc5+ Kf6
+37. Nxa6 Rd1+ 38. Kc4 Rc1 39. Kb3 Rb1+ 40. Kc4 Rc1 41. Kd3 Rd1+ 42. Ke2 Rg1
+43. Kf3 Rf1+ 44. Kg3 Rf4 45. Nc5 Bf2+ 46. Kh3 Rh4# 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "mecker"]
+[Black "kurton"]
+[Result "1-0"]
+[WhiteElo "2241"]
+[BlackElo "2401"]
+[ECO "C75"]
+[Opening "Ruy Lopez: Morphy Defense, Modern Steinitz Defense"]
+[TimeControl "180+1"]
+[UTCDate "2014.07.16"]
+[UTCTime "11:36:04"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "+14"]
+[BlackRatingDiff "-19"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nge7 5. c3 d6 6. d4 Bd7 7. O-O Ng6 8.
+Re1 Be7 9. Nbd2 O-O 10. Nf1 exd4 11. cxd4 Bf6 12. Be3 Re8 13. Bc2 Bg4 14.
+Ng3 Nh4 15. Rc1 Bxf3 16. gxf3 Nxd4 17. Bxd4 Bxd4 18. f4 Qf6 19. Qg4 Ng6 20.
+Nf5 Bxb2 21. Rb1 Bc3 22. Re3 Bd2 23. Rxb7 Bxe3 24. fxe3 Qa1+ 25. Kf2 Qc3
+26. Bb3 Rab8 27. Ra7 Rxe4 28. Qf3 d5 29. Nd4 Rxd4 30. exd4 Qxd4+ 31. Qe3
+Qxe3+ 32. Kxe3 c6 33. Rxa6 Rc8 34. Ba4 Re8+ 35. Kf3 h5 36. Rxc6 Rd8 37. Rc5
+d4 38. Rxh5 d3 39. Bd1 d2 40. Rb5 Ne7 41. Rb2 Nc6 42. Ke3 Na5 43. Rb5 Nc4+
+44. Ke2 Re8+ 45. Kd3 Re1 46. Kxc4 Rxd1 47. Kd3 Rh1 48. Kxd2 Rxh2+ 49. Ke3
+Rxa2 50. Rb8+ Kh7 51. Rb7 Kg6 52. Rb6+ f6 53. Rb7 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Matetricks"]
+[Black "kurton"]
+[Result "1/2-1/2"]
+[WhiteTitle "NM"]
+[WhiteElo "2493"]
+[BlackElo "2360"]
+[ECO "C55"]
+[Opening "Italian Game: Two Knights Defense, Modern Bishop's Opening"]
+[TimeControl "180+1"]
+[UTCDate "2014.07.16"]
+[UTCTime "21:15:33"]
+[Termination "Normal"]
+[WhiteRatingDiff "-5"]
+[BlackRatingDiff "+4"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d3 Be7 5. O-O O-O 6. Re1 d6 7. a4 Be6 8.
+a5 a6 9. Nbd2 Qd7 10. Nf1 Rfe8 11. Bg5 Bxc4 12. dxc4 h6 13. Bxf6 Bxf6 14.
+Ne3 g6 15. Nd5 Bg7 16. b3 Ne7 17. Qd3 Nxd5 18. Qxd5 c6 19. Qd3 Rad8 20.
+Red1 Qe6 21. Rd2 Rd7 22. Rad1 Red8 23. Qc3 f6 24. Qb4 Bf8 25. Qb6 Kf7 26.
+h3 d5 27. cxd5 cxd5 28. Qe3 d4 29. Qd3 Rc7 30. Nh4 Rdc8 31. Qg3 g5 32. Nf5
+Rxc2 33. Qg4 Rxd2 34. Qh5+ Kg8 35. Qg6+ Kh8 36. Rxd2 Rc6 37. Kh2 Qg8 38.
+Qe8 Bb4 39. Qh5 Bxd2 40. Qxh6+ Qh7 41. Qf8+ Qg8 42. Qh6+ Qh7 43. Qf8+ Qg8
+44. Qh6+ Qh7 1/2-1/2
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "zergy"]
+[Black "ttee"]
+[Result "0-1"]
+[WhiteElo "2325"]
+[BlackElo "2416"]
+[ECO "C32"]
+[Opening "King's Gambit, Falkbeer Countergambit, Modern Transfer"]
+[TimeControl "60+3"]
+[UTCDate "2014.07.17"]
+[UTCTime "12:35:17"]
+[Termination "Normal"]
+
+1. e4 e5 2. f4 d5 3. exd5 exf4 4. Bc4 Qh4+ 5. Kf1 Bd6 6. d4 Ne7 7. Nf3 Qh5
+8. Nc3 O-O 9. Kf2 Nd7 10. Ne4 Nb6 11. Nxd6 cxd6 12. Bd3 Nbxd5 13. c4 Ne3
+14. Bxe3 fxe3+ 15. Kxe3 Bg4 16. h3 Qh6+ 17. Kf2 Bxf3 18. Qxf3 Qh4+ 19. Ke3
+Rae8 20. g4 Nd5+ 21. Kd2 Qg5+ 22. Kc2 Nb4+ 23. Kc3 Re3 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "babi123"]
+[Black "kurton"]
+[Result "0-1"]
+[WhiteElo "2528"]
+[BlackElo "2384"]
+[ECO "C47"]
+[Opening "Four Knights Game: Scotch Variation Accepted"]
+[TimeControl "180+1"]
+[UTCDate "2014.07.17"]
+[UTCTime "16:32:09"]
+[Termination "Time forfeit"]
+
+1. e4 e5 2. Nc3 Nf6 3. Nf3 Nc6 4. d4 exd4 5. Nxd4 Bc5 6. Be3 Bb6 7. Nxc6
+bxc6 8. e5 Bxe3 9. exf6 Bh6 10. Qe2+ Kf8 11. fxg7+ Bxg7 12. f4 d5 13. O-O-O
+Bxc3 14. bxc3 Qf6 15. Qe3 Bf5 16. Qd4 Qxd4 17. cxd4 Be4 18. Bd3 f5 19. Rhe1
+Ke7 20. Kd2 Kd6 21. Rb1 Rab8 22. Rb3 Rb6 23. Bxe4 fxe4 24. Ke3 c5 25. dxc5+
+Kxc5 26. Ra3 a6 27. Ra5+ Kc4 28. Ra4+ Kc5 29. Rd1 c6 30. c4 dxc4 31. g4 Rb4
+32. Rxa6 c3 33. Ra5+ Kb6 34. Ra3 c2 35. Rc1 Rc4 36. Rb3+ Kc5 37. Rb2 Ra8
+38. Rbxc2 Ra3+ 39. Ke2 Rxc2+ 40. Rxc2+ Kd5 41. f5 h6 42. f6 Rf3 43. a4 Rxf6
+44. a5 Rf8 45. a6 Ra8 46. Ra2 c5 47. a7 c4 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "Spinaltap"]
+[Result "0-1"]
+[WhiteTitle "LM"]
+[BlackTitle "IM"]
+[WhiteElo "2369"]
+[BlackElo "2410"]
+[ECO "B31"]
+[Opening "Sicilian Defense: Nyezhmetdinov-Rossolimo Attack, Fianchetto Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.21"]
+[UTCTime "20:09:05"]
+[Termination "Normal"]
+[WhiteRatingDiff "-11"]
+[BlackRatingDiff "+11"]
+
+1. e4 c5 2. Nf3 Nc6 3. Bb5 g6 4. O-O Bg7 5. c3 Nf6 6. Re1 O-O 7. d4 cxd4 8.
+cxd4 d5 9. e5 Ne4 10. Nbd2 Nxd2 11. Bxd2 Bg4 12. Be3 Rc8 13. Rc1 Qb6 14.
+Bxc6 Rxc6 15. Rxc6 Qxc6 16. Qc1 Bxf3 17. Qxc6 bxc6 18. gxf3 Rb8 19. b3 Rb6
+20. Rc1 e6 21. Rc2 Kf8 22. Bc1 Ke8 23. Ba3 Bf8 24. Bxf8 Kxf8 25. Kf1 Ke7
+26. Ke2 Kd7 27. Kd3 Rb8 28. Rc5 Kc7 29. Ke3 f6 30. f4 Rf8 31. Rc2 Kb6 32.
+Rc5 a5 33. a3 fxe5 34. fxe5 Rf5 35. f4 Rh5 36. f5 gxf5 37. Rc2 Rh3+ 38. Kf4
+h6 39. Rg2 Rh4+ 40. Ke3 c5 41. Rg6 cxd4+ 42. Kd3 Kc5 43. Rxe6 Rh3+ 44. Kc2
+Rxh2+ 45. Kd3 Rh3+ 46. Kc2 Re3 47. Ra6 d3+ 48. Kd2 Kd4 49. e6 Re2+ 50. Kd1
+Kc3 51. Rxa5 d4 52. Ra4 Rxe6 53. Rc4+ Kxb3 54. Rxd4 Kc3 55. Rd5 f4 56. a4
+Rb6 57. Rc5+ Kd4 58. Rc8 f3 59. Rd8+ Ke3 60. Re8+ Kf2 61. Kd2 Kg2 62. Rg8+
+Kf1 63. Kxd3 f2 64. Rf8 Rd6+ 65. Ke3 Ke1 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Spinaltap"]
+[Black "Blitzstream-twitch"]
+[Result "0-1"]
+[WhiteTitle "IM"]
+[BlackTitle "LM"]
+[WhiteElo "2421"]
+[BlackElo "2366"]
+[ECO "D30"]
+[Opening "Semi-Slav Defense: Quiet Variation #2"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.21"]
+[UTCTime "20:22:46"]
+[Termination "Normal"]
+[WhiteRatingDiff "-15"]
+[BlackRatingDiff "+14"]
+
+1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. e3 e6 5. Nbd2 Bd6 6. Bd3 O-O 7. O-O Qe7 8.
+e4 dxe4 9. Nxe4 Nxe4 10. Bxe4 Nd7 11. Re1 h6 12. Bc2 Rd8 13. b3 b5 14. c5
+Bc7 15. Qe2 a5 16. Qe4 Nf6 17. Qh4 Nd5 18. Bxh6 Qxh4 19. Nxh4 gxh6 20. Nf3
+Nb4 21. Be4 Bb7 22. a3 Nd5 23. g3 b4 24. axb4 axb4 25. Bxd5 cxd5 26. c6
+Bxc6 27. Rac1 Ra6 28. Rc2 Bd6 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "Spinaltap"]
+[Result "1-0"]
+[WhiteTitle "LM"]
+[BlackTitle "IM"]
+[WhiteElo "2380"]
+[BlackElo "2406"]
+[ECO "A45"]
+[Opening "Trompowsky Attack: Classical Defense, Big Center Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.21"]
+[UTCTime "20:25:51"]
+[Termination "Normal"]
+[WhiteRatingDiff "+13"]
+[BlackRatingDiff "-13"]
+
+1. d4 Nf6 2. Bg5 e6 3. e4 h6 4. Bxf6 Qxf6 5. c3 d6 6. Bd3 e5 7. Ne2 g6 8.
+O-O Bg7 9. f4 Qe7 10. Nd2 exf4 11. Nxf4 O-O 12. Nf3 c6 13. Qd2 Nd7 14. Rae1
+Qd8 15. Bc4 Kh7 16. Kh1 Nf6 17. Bb3 d5 18. exd5 cxd5 19. Ne5 Bf5 20. Qe2
+Be4 21. Qb5 Qb6 22. Qxb6 axb6 23. Rxe4 dxe4 24. Bxf7 Rxf7 25. Nxf7 Rxa2 26.
+Rb1 Ng4 27. Kg1 b5 28. Nd6 b4 29. Nxe4 g5 30. Nd5 bxc3 31. bxc3 Ra5 32. h3
+Rxd5 33. hxg4 Rd7 34. Rb6 Re7 35. Nc5 Re3 36. Rxb7 Kg6 37. Rb6+ Kf7 38.
+Rb7+ Kg6 39. Na4 Rxc3 40. Nxc3 Bxd4+ 41. Kh2 Bxc3 42. Kg3 Be5+ 43. Kf3 Bf4
+44. Ke4 h5 45. Rb6+ Kh7 46. gxh5 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2484"]
+[BlackElo "2267"]
+[ECO "B22"]
+[Opening "Sicilian Defense: Alapin Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.22"]
+[UTCTime "20:08:54"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "+5"]
+[BlackRatingDiff "-4"]
+
+1. e4 c5 2. c3 e6 3. d4 cxd4 4. cxd4 d5 5. e5 Qb6 6. Nf3 Bd7 7. Nc3 Bb4 8.
+Be2 Bb5 9. O-O Bxc3 10. Bxb5+ Qxb5 11. bxc3 Nc6 12. a4 Qa6 13. Ba3 Nge7 14.
+Ng5 h6 15. Qh5 g6 16. Qh3 Nf5 17. Rfb1 b6 18. g4 Nfe7 19. Bd6 Qe2 20. Nf3
+Qe4 21. Nd2 Qf4 22. Rb2 h5 23. a5 Nxa5 24. Qg3 Qxg3+ 25. hxg3 hxg4 26. Nb3
+Nec6 27. Nxa5 Nxa5 28. Rba2 Kd7 29. Kg2 Rhc8 30. Bb4 Nc6 31. Bd6 Na5 32.
+Bb4 Nc6 33. Bd6 Rh8 34. Rf1 Rh3 35. f3 Rah8 36. Rff2 gxf3+ 37. Kxf3 Rh1 38.
+Kg4 R8h7 39. Rf6 R1h5 40. Rf1 Rf5 41. Rf4 Rxf4+ 42. gxf4 Rh1 43. Kg5 Rf1
+44. Ra3 a5 45. Kg4 Na7 46. Ra2 Kc6 47. Rc2 b5 48. Bc5 Nc8 49. Ra2 a4 50.
+Rh2 Rg1+ 51. Kf3 Rf1+ 52. Ke3 Rc1 53. Kd2 Ra1 54. Rh8 Nb6 55. Bxb6 Kxb6 56.
+Rb8+ 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "PRESA"]
+[Result "0-1"]
+[WhiteElo "2263"]
+[BlackElo "2489"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Mieses-Kotroc Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.22"]
+[UTCTime "20:15:00"]
+[Termination "Normal"]
+[WhiteRatingDiff "-5"]
+[BlackRatingDiff "+5"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nf3 Nf6 4. d4 c6 5. c4 Qd6 6. Nc3 Bg4 7. Be2 e6 8.
+Be3 Be7 9. a3 O-O 10. Qb3 b6 11. O-O Nbd7 12. Rfd1 Qc7 13. Rac1 Rac8 14. d5
+Nc5 15. Qc2 Bf5 16. Qd2 Nb3 17. Qe1 Nxc1 18. Rxc1 Bc5 19. Nd4 cxd5 20. cxd5
+Bxd4 21. Bxd4 Nxd5 22. Bf3 Nxc3 23. Bxc3 Qf4 24. Bb7 Rc7 25. g3 Qh6 26. Bg2
+Rfc8 27. Rd1 Qg5 28. Qe5 Qf6 29. Qxc7 Rxc7 30. Bxf6 gxf6 31. h4 Kg7 32. Rd2
+Rc2 33. Rxc2 Bxc2 34. Kf1 f5 35. Ke2 Kf6 36. Ke3 Ke5 37. f4+ Kd6 38. Kd4 f6
+39. Bf3 e5+ 40. Ke3 Bb3 41. Be2 h6 42. Bd3 Be6 43. Ba6 Kc5 44. b4+ Kc6 45.
+Bd3 a5 46. Ba6 axb4 47. axb4 b5 48. Kd3 Kb6 49. fxe5 fxe5 50. Bc8 Bxc8 51.
+Ke3 Kc6 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2494"]
+[BlackElo "2258"]
+[ECO "B22"]
+[Opening "Sicilian Defense: Alapin Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.22"]
+[UTCTime "20:19:16"]
+[Termination "Normal"]
+[WhiteRatingDiff "+5"]
+[BlackRatingDiff "-5"]
+
+1. e4 c5 2. c3 e6 3. d4 cxd4 4. cxd4 d5 5. e5 Qb6 6. Nc3 Bd7 7. a3 Nc6 8.
+Nf3 Nge7 9. b4 Nf5 10. Be3 h5 11. Na4 Qc7 12. Bd3 g6 13. O-O Be7 14. Rc1
+Qb8 15. Nc5 Bc8 16. Na6 bxa6 17. Rxc6 Bb7 18. Rc2 Qd8 19. g3 Kf8 20. Bxf5
+gxf5 21. Qd2 h4 22. Bg5 hxg3 23. hxg3 a5 24. Kg2 axb4 25. axb4 Bxg5 26.
+Nxg5 Rc8 27. Rfc1 Rxc2 28. Rxc2 Qb6 29. Qf4 Ba6 30. b5 Bxb5 31. Rc8+ Kg7
+32. Rxh8 Kxh8 33. Qh4+ Kg8 34. Qh7+ Kf8 35. Qxf7# 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Matetricks"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteTitle "NM"]
+[WhiteElo "2493"]
+[BlackElo "2222"]
+[ECO "B43"]
+[Opening "Sicilian Defense: Kan Variation, Knight Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.27"]
+[UTCTime "17:34:39"]
+[Termination "Normal"]
+[WhiteRatingDiff "+5"]
+[BlackRatingDiff "-4"]
+
+1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6 5. Nc3 Qc7 6. Be2 Bb4 7. Qd3 Nf6
+8. O-O Nc6 9. Nxc6 bxc6 10. Bg5 Be7 11. f4 d6 12. Bf3 Rb8 13. b3 O-O 14.
+Rae1 Rd8 15. Kh1 e5 16. f5 Bb7 17. Qe2 Re8 18. Qf2 Qa5 19. Qd2 Rbd8 20. a4
+Qc5 21. Be3 Qb4 22. Rd1 Bf8 23. Nd5 Nxd5 24. exd5 Qxd2 25. Rxd2 c5 26. Be4
+Be7 27. g4 h6 28. Kg2 Bg5 29. Bxg5 hxg5 30. h4 gxh4 31. Rh1 f6 32. Rxh4 Kf7
+33. Kg3 Rh8 34. Rdh2 Rxh4 35. Rxh4 Kg8 36. c4 Rb8 37. Bc2 Bc8 38. g5 fxg5
+39. Rh5 Kf7 40. Rxg5 Bb7 41. Rh5 Rf8 42. Kg4 Ke7 43. Kg5 Bc8 44. Kg6 Bd7
+45. Kxg7 Rf7+ 46. Kg6 Be8 47. Rh7 Rxh7+ 48. Kxh7 Kf6 49. Kh6 Bd7 50. Be4
+Bxf5 51. Bf3 e4 52. Bd1 Ke5 53. Kg5 Bh7 54. Kh6 Bf5 55. Kg5 Bd7 56. Kg6 Kd4
+57. Kf7 Kc3 58. Ke7 Bf5 59. Kxd6 e3 60. Kxc5 Kd2 61. Bh5 Bc2 62. d6 Bf5 63.
+Kc6 Kc3 64. c5 Kxb3 65. d7 Bxd7+ 66. Kxd7 Kxa4 67. c6 Kb4 68. c7 Kc3 69.
+c8=Q+ Kd2 70. Qxa6 e2 71. Qxe2+ Kc3 72. Kc6 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Seredas"]
+[Black "arna"]
+[Result "0-1"]
+[BlackTitle "FM"]
+[WhiteElo "2463"]
+[BlackElo "2201"]
+[ECO "D11"]
+[Opening "Slav Defense: Quiet Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.28"]
+[UTCTime "15:57:57"]
+[Termination "Normal"]
+[WhiteRatingDiff "-98"]
+[BlackRatingDiff "+21"]
+
+1. d4 d5 2. e3 Nf6 3. Nf3 c6 4. c4 a6 5. c5 Bg4 6. Be2 Nbd7 7. O-O Bxf3 8.
+Bxf3 e5 9. Be2 g6 10. Nc3 Bg7 11. Bd2 O-O 12. Qb3 Rb8 13. Rad1 Re8 14. Qc2
+Qc7 15. Rfe1 h6 16. b4 Ra8 17. a4 Re7 18. Qd3 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "MingChang"]
+[Black "pacal56"]
+[Result "0-1"]
+[WhiteElo "2428"]
+[BlackElo "2249"]
+[ECO "B20"]
+[Opening "Sicilian Defense: Mengarini Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.28"]
+[UTCTime "18:26:55"]
+[Termination "Normal"]
+[WhiteRatingDiff "-25"]
+[BlackRatingDiff "+16"]
+
+1. e4 c5 2. a3 g6 3. d4 Bg7 4. dxc5 Na6 5. Bxa6 Qa5+ 6. Bd2 Qxa6 7. Bc3 Nf6
+8. e5 Ne4 9. Nf3 Nxc3 10. Nxc3 O-O 11. Qe2 Qc6 12. Qe3 d6 13. cxd6 exd6 14.
+O-O-O dxe5 15. Nd5 Re8 16. Rhe1 Bf5 17. Qc3 Qa4 18. Qb3 Qxb3 19. cxb3 Rac8+
+20. Nc3 e4 21. Nd4 Bg4 22. f3 exf3 23. Rxe8+ Rxe8 24. Nxf3 Bf5 25. Nd4 Bh6+
+0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteTitle "LM"]
+[WhiteElo "2405"]
+[BlackElo "2266"]
+[ECO "A40"]
+[Opening "Polish Defense"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.28"]
+[UTCTime "20:10:33"]
+[Termination "Normal"]
+[WhiteRatingDiff "+7"]
+[BlackRatingDiff "-7"]
+
+1. d4 b5 2. e4 Bb7 3. Bd3 Nf6 4. Qe2 e6 5. Nf3 c5 6. c3 cxd4 7. cxd4 Nc6 8.
+O-O Nb4 9. e5 Nxd3 10. Qxd3 Nd5 11. Qxb5 Rb8 12. Qe2 Qa5 13. Bd2 Qa4 14.
+Nc3 Nxc3 15. Bxc3 Ba6 16. Qd1 Qc6 17. Re1 Qd5 18. Ng5 Bb7 19. Ne4 f5 20.
+exf6 Rg8 21. Qf3 Kd8 22. Qg3 Rc8 23. Rac1 Qf5 24. d5 exd5 25. Nd6 Bxd6 26.
+Qxd6 gxf6 27. Ba5+ Rc7 28. Qxc7# 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "Blitzstream-twitch"]
+[Result "0-1"]
+[BlackTitle "LM"]
+[WhiteElo "2259"]
+[BlackElo "2412"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Mieses-Kotroc Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.28"]
+[UTCTime "20:16:02"]
+[Termination "Normal"]
+[WhiteRatingDiff "-6"]
+[BlackRatingDiff "+7"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nf3 Bg4 4. Be2 Nc6 5. d4 O-O-O 6. c4 Qh5 7. Be3 e6
+8. a3 Nh6 9. Nbd2 Nf5 10. Bf4 f6 11. Qa4 Nfxd4 12. Nxd4 Rxd4 13. Bxg4 Qxg4
+14. Be3 Rxd2 15. Kxd2 Bd6 16. Rad1 Kb8 17. Kc2 Qxg2 18. Kb1 Qe4+ 19. Ka2 a6
+20. Rhe1 Qf3 21. c5 Bxh2 22. Rd7 g5 23. Rc1 Be5 24. Rc4 h5 25. Qd1 Qxd1 26.
+Rxd1 h4 27. b4 h3 28. a4 h2 29. Rh1 Ne7 30. b5 Nd5 31. Kb3 f5 32. Bd2 g4
+33. Rcc1 Nf6 34. Rce1 Ne4 35. Be3 axb5 36. axb5 Rh3 37. Kc4 Rxe3 38. fxe3
+g3 39. Kd3 Nf2+ 40. Ke2 Nxh1 41. Rxh1 g2 42. Rxh2 Bxh2 43. Kf2 g1=Q+ 44.
+Kf3 Qb1 45. Ke2 Qxb5+ 46. Kf3 Qxc5 47. e4 Qc6 48. Kg2 Qxe4+ 49. Kh3 Qg4+
+50. Kxh2 f4 51. Kh1 f3 52. Kh2 Qg2# 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "Blitzstream-twitch"]
+[Result "1/2-1/2"]
+[BlackTitle "LM"]
+[WhiteElo "2499"]
+[BlackElo "2419"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Mieses-Kotroc Variation"]
+[TimeControl "180+1"]
+[UTCDate "2014.07.28"]
+[UTCTime "20:52:35"]
+[Termination "Normal"]
+[WhiteRatingDiff "-2"]
+[BlackRatingDiff "+3"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nf3 Bg4 4. Be2 Nc6 5. Nc3 Qh5 6. d3 O-O-O 7. Be3
+e5 8. h3 f5 9. Rg1 Bxf3 10. Bxf3 Qg6 11. g4 e4 12. Bg2 exd3 13. cxd3 fxg4
+14. Be4 Qe6 15. hxg4 g6 16. Qa4 a6 17. Bxc6 Qxc6 18. Qxc6 bxc6 19. Ke2 Nf6
+20. Ne4 Nd5 21. Rac1 Kb7 22. Rc4 Re8 23. Rgc1 Nxe3 24. fxe3 Re6 25. R1c3
+Be7 26. Rb3+ Ka7 27. Rbc3 Kb7 28. Nc5+ Bxc5 29. Rxc5 h5 30. Rb3+ Kc8 31.
+gxh5 gxh5 32. Rbc3 Kd7 33. Rc1 h4 34. Rh1 h3 35. Rg5 h2 36. Rg2 Reh6 37.
+Kf2 Kd6 38. Rg3 a5 1/2-1/2
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "PRESA"]
+[Result "0-1"]
+[WhiteTitle "LM"]
+[WhiteElo "2422"]
+[BlackElo "2497"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Main Line, Leonhardt Gambit"]
+[TimeControl "180+1"]
+[UTCDate "2014.07.28"]
+[UTCTime "20:58:54"]
+[Termination "Normal"]
+[WhiteRatingDiff "-9"]
+[BlackRatingDiff "+9"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. b4 Qxb4 5. Rb1 Qd6 6. Rb3 c6 7. d4 Nf6
+8. Nf3 e6 9. Bd3 Qc7 10. O-O Bd6 11. Ng5 Bxh2+ 12. Kh1 Bf4 13. Qf3 Bxc1 14.
+Rxc1 h6 15. Nge4 Nbd7 16. Nxf6+ Nxf6 17. Ne4 Nxe4 18. Qxe4 Bd7 19. c4 g6
+20. c5 h5 21. Rcb1 Rb8 22. Qe3 h4 23. Kg1 h3 24. gxh3 Rh5 25. Be2 Rh4 26.
+Ba6 Bc8 27. Qg5 Rxd4 28. Qf6 Qd8 29. Qg7 Rd1+ 30. Rxd1 Qxd1+ 31. Kh2 Ke7
+32. Qe5 Bd7 33. Qxb8 bxa6 34. Qg3 Qd5 35. Qh4+ g5 36. Qb4 Qe5+ 37. Kg2 Qd5+
+38. Kh2 e5 39. Rg3 f6 40. Qb8 Qxc5 41. Kg1 Qc1+ 42. Kh2 Qc2 43. Kg2 Qe4+
+44. Kh2 c5 45. Qc7 Ke6 46. Qxa7 Bc6 47. Rg1 Qf4+ 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "Blitzstream-twitch"]
+[Result "1-0"]
+[BlackTitle "LM"]
+[WhiteElo "2506"]
+[BlackElo "2413"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Mieses-Kotroc Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.28"]
+[UTCTime "21:06:34"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "+9"]
+[BlackRatingDiff "-9"]
+
+1. e4 d5 2. exd5 Qxd5 3. h3 Nf6 4. Nf3 Bf5 5. Nc3 Qd7 6. Nh4 Bg6 7. Bb5 c6
+8. Bc4 e6 9. Nxg6 hxg6 10. d3 Bd6 11. Qf3 a5 12. a3 Na6 13. Bg5 Be7 14. O-O
+Nc7 15. Rfe1 Ncd5 16. Ne4 Nxe4 17. dxe4 Bxg5 18. exd5 cxd5 19. Bxd5 O-O 20.
+Bxb7 Rab8 21. Bc6 Qc7 22. b3 Rfc8 23. Be4 Bf6 24. Rad1 Qc5 25. a4 Rd8 26.
+Bd3 Bc3 27. Rf1 Bd4 28. Bc4 Rbc8 29. Rd2 Bf6 30. Rfd1 Bd4 31. g3 Qb6 32.
+Kg2 Qc5 33. c3 Bf6 34. Rxd8+ Rxd8 35. Rxd8+ Bxd8 36. Qa8 Qd6 37. b4 Kh7 38.
+bxa5 Bc7 39. a6 Qc5 40. Bb5 Bb6 41. Qf3 f5 42. Qe3 Qxe3 43. fxe3 Bxe3 44.
+Kf3 Ba7 45. g4 Kh6 46. Bd7 e5 47. gxf5 gxf5 48. Bxf5 Kg5 49. Ke4 Kf6 50. c4
+Bb6 51. h4 Ba7 52. h5 Kg5 53. Bg6 Kf6 54. Kd5 Bb8 55. c5 Ba7 56. c6 Ke7 57.
+Kxe5 Kd8 58. Kd6 Bb8+ 59. Ke6 Kc7 60. Kf7 Ba7 61. Kxg7 Bd4+ 62. Kg8 Kxc6
+63. h6 Kb6 64. Bd3 Ka7 65. h7 Kb6 66. h8=R 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "PRESA"]
+[Result "0-1"]
+[WhiteTitle "LM"]
+[WhiteElo "2404"]
+[BlackElo "2515"]
+[ECO "A45"]
+[Opening "Trompowsky Attack: Classical Defense, Big Center Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.28"]
+[UTCTime "21:13:12"]
+[Termination "Normal"]
+[WhiteRatingDiff "-8"]
+[BlackRatingDiff "+8"]
+
+1. d4 Nf6 2. Bg5 e6 3. e4 h6 4. Bxf6 Qxf6 5. c3 d6 6. Nd2 g6 7. Ne2 Bg7 8.
+f4 Qe7 9. Nf3 b6 10. g3 Bb7 11. Qd3 d5 12. e5 c5 13. Bg2 Nc6 14. O-O a5 15.
+Qd2 a4 16. g4 h5 17. h3 hxg4 18. hxg4 Ba6 19. Ng3 Bxf1 20. Bxf1 c4 21. Bg2
+b5 22. a3 O-O-O 23. Kf2 Rh6 24. f5 gxf5 25. gxf5 Qd7 26. f6 Bf8 27. Ne2 Rg6
+28. Rh1 Re8 29. Rh7 Nd8 30. Qf4 Kb8 31. Bh3 Qc6 32. Nh4 Rg8 33. Ng3 b4 34.
+axb4 a3 35. bxa3 Qa4 36. Qd2 Qxa3 37. Nh5 Qa1 38. Nf4 Qb1 39. Rh6 Bxh6 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "Blitzstream-twitch"]
+[Result "0-1"]
+[BlackTitle "LM"]
+[WhiteElo "2523"]
+[BlackElo "2396"]
+[ECO "B01"]
+[Opening "Scandinavian Defense"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.28"]
+[UTCTime "21:18:35"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "-16"]
+[BlackRatingDiff "+16"]
+
+1. e4 d5 2. e5 c5 3. c3 d4 4. Nf3 Nc6 5. h3 d3 6. Qa4 Bf5 7. g4 Qd5 8. Bg2
+Be4 9. c4 Qd7 10. Nc3 Bxf3 11. Bxf3 Nxe5 12. Bxb7 Rb8 13. Qxd7+ Kxd7 14.
+Ba6 Nf6 15. Bb5+ Kc7 16. f4 Nc6 17. Bxc6 Kxc6 18. Kf2 e6 19. Re1 Be7 20. b3
+h5 21. g5 Ne8 22. Ne4 Rd8 23. Bb2 f6 24. h4 Nc7 25. Ng3 Rd6 26. Re3 Na6 27.
+Bc3 Nb4 28. Ne4 Nc2 29. Nxd6 Nxe3 30. dxe3 Bxd6 31. Rd1 e5 32. Kf3 Re8 33.
+fxe5 fxe5 34. Ke4 Rf8 35. Rxd3 Rf2 36. Bxe5 Bxe5 37. Kxe5 Rxa2 38. Rd6+ Kc7
+39. Rg6 Re2 40. Rxg7+ Kb6 41. Rg6+ Ka5 42. e4 Kb4 43. Ra6 Kxb3 44. Kd5 Kb4
+45. e5 Rd2+ 46. Kc6 Kxc4 47. e6 Re2 48. Kd7 Kb5 49. Rd6 c4 50. e7 c3 51.
+Re6 Rd2+ 52. Rd6 Kc4 53. e8=Q Kb3 54. Qe6+ Kc2 55. Qe4+ Kc1 56. Qc4 Kc2 57.
+Rxd2+ Kxd2 58. Qd4+ Kc2 59. Kc6 Kb2 60. Kc5 Kb3 61. Kb5 c2 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Blitzstream-twitch"]
+[Black "PRESA"]
+[Result "0-1"]
+[WhiteTitle "LM"]
+[WhiteElo "2412"]
+[BlackElo "2507"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Main Line"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.28"]
+[UTCTime "21:24:53"]
+[Termination "Normal"]
+[WhiteRatingDiff "-9"]
+[BlackRatingDiff "+9"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 c6 5. Bc4 Nf6 6. Nf3 Bf5 7. Bd2 e6
+8. Nd5 Qd8 9. Nxf6+ gxf6 10. Qe2 Nd7 11. O-O-O Qc7 12. Nh4 Bg6 13. f4 f5
+14. g4 O-O-O 15. gxf5 exf5 16. Qf2 Bd6 17. Kb1 Nf6 18. Bd3 Rhe8 19. Rde1
+Ne4 20. Bxe4 Rxe4 21. Rxe4 fxe4 22. f5 Bh5 23. f6 Bg6 24. Nxg6 hxg6 25. h4
+Bg3 26. Qe2 Rxd4 27. Bc3 Rd5 28. Qxe4 Qd7 29. a3 Rd1+ 30. Rxd1 Qxd1+ 31.
+Ka2 Qd5+ 32. Qxd5 cxd5 33. Kb3 Bxh4 34. Bd4 Be1 35. c4 g5 36. cxd5 g4 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "kurton"]
+[Black "arna"]
+[Result "1/2-1/2"]
+[BlackTitle "FM"]
+[WhiteElo "2422"]
+[BlackElo "2225"]
+[ECO "A46"]
+[Opening "Indian Game: Spielmann-Indian"]
+[TimeControl "180+1"]
+[UTCDate "2014.07.28"]
+[UTCTime "23:00:33"]
+[Termination "Normal"]
+[WhiteRatingDiff "-6"]
+[BlackRatingDiff "+8"]
+
+1. d4 Nf6 2. Nf3 c5 3. e3 e6 4. c3 d5 5. Nbd2 Be7 6. Bd3 Nc6 7. O-O O-O 8.
+Ne5 Nxe5 9. dxe5 Nd7 10. f4 g6 11. g4 f6 12. exf6 Nxf6 13. g5 Nh5 14. Nf3
+Bd6 15. Nh4 Qe7 16. Bxg6 hxg6 17. Nxg6 Qh7 18. Nxf8 Bxf8 19. f5 exf5 20.
+Qxd5+ Kh8 21. e4 Qd7 22. Qxd7 Bxd7 23. exf5 Bc6 24. Be3 Re8 25. Rae1 Kg8
+26. Bd2 Rd8 27. Bc1 Bb5 28. Rf2 Bd3 29. f6 Kf7 30. Rd2 c4 31. b3 Bc5+ 32.
+Kg2 b5 33. bxc4 bxc4 34. Re5 Bd6 35. Rxd3 cxd3 36. Rd5 Bc7 37. c4 Rxd5 38.
+cxd5 Bf4 39. Bxf4 Nxf4+ 40. Kf3 Nxd5 41. h4 Kg6 42. a3 a6 43. a4 a5 44. Kf2
+Nb6 45. Ke3 Nxa4 46. Kxd3 Nb6 47. Kc3 Nd7 48. Kb3 Nb6 49. Ka3 Nd7 50. Kb3
+Ne5 51. Ka4 Nc6 52. Kb5 Ne5 53. Ka4 Nd7 54. Kxa5 Nxf6 55. gxf6 Kxf6 56. h5
+Kg5 57. Ka4 Kh6 58. Ka3 Kh7 59. Ka2 Kg7 60. Ka1 Kh6 61. Kb1 Kxh5 1/2-1/2
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "kurton"]
+[Black "pulkownik1"]
+[Result "1-0"]
+[WhiteElo "2415"]
+[BlackElo "2204"]
+[ECO "D02"]
+[Opening "Queen's Pawn Game: Zukertort Variation"]
+[TimeControl "180+1"]
+[UTCDate "2014.07.29"]
+[UTCTime "10:18:23"]
+[Termination "Normal"]
+[WhiteRatingDiff "+6"]
+[BlackRatingDiff "-5"]
+
+1. d4 d5 2. Nf3 c6 3. e3 Bf5 4. c4 e6 5. Nc3 Nd7 6. Bd3 Bg6 7. e4 dxe4 8.
+Bxe4 Bxe4 9. Nxe4 Ngf6 10. Nxf6+ Nxf6 11. O-O Qc7 12. Re1 Be7 13. Ne5 O-O
+14. Bf4 Qb6 15. Be3 Qc7 16. Qd3 Rad8 17. Rad1 c5 18. Qe2 cxd4 19. Bxd4 Bc5
+20. Bxc5 Qxc5 21. h3 h6 22. a3 a5 23. g3 Qc7 24. b4 axb4 25. axb4 Rxd1 26.
+Rxd1 Rd8 27. Rxd8+ Qxd8 28. Qe3 Qd1+ 29. Kg2 Qc2 30. Qd3 Qxd3 31. Nxd3 Kf8
+32. Nc5 b6 33. Na4 Nd7 34. f4 Ke7 35. Kf3 Kd6 36. Ke4 Kc6 37. Nc3 Nf6+ 38.
+Ke5 Nd7+ 39. Kd4 Nf6 40. b5+ Kd6 41. Na4 Nd7 42. Nxb6 Nxb6 43. c5+ Kc7 44.
+cxb6+ Kxb6 45. Kc4 h5 46. h4 Kc7 47. Kc5 Kb7 48. b6 Kc8 49. Kd6 Kb7 50. Ke7
+Kxb6 51. Kxf7 Kc6 52. Kxe6 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "kurton"]
+[Black "mstfa0"]
+[Result "0-1"]
+[WhiteElo "2400"]
+[BlackElo "2378"]
+[ECO "D02"]
+[Opening "Queen's Pawn Game: Chigorin Variation"]
+[TimeControl "180+1"]
+[UTCDate "2014.07.30"]
+[UTCTime "13:21:50"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "-13"]
+[BlackRatingDiff "+73"]
+
+1. d4 d5 2. Nf3 Nc6 3. c4 e6 4. Nc3 Nf6 5. a3 Na5 6. cxd5 exd5 7. e3 c6 8.
+Bd3 Bd6 9. O-O O-O 10. h3 Re8 11. Qc2 h6 12. b3 Qb6 13. Bb2 Qxb3 14. Qxb3
+Nxb3 15. Rab1 Na5 16. Ne5 Bxe5 17. dxe5 Nd7 18. f4 Nc5 19. Be2 Bf5 20. Rbd1
+Nc4 21. Bxc4 dxc4 22. Rd4 b5 23. Rfd1 Nd3 24. Bc1 Rad8 25. g4 Bh7 26. Kg2
+c5 27. Rxd8 Rxd8 28. Kg3 b4 29. Na4 Rd7 30. Nxc5 Nxc5 31. Rxd7 Nxd7 32.
+axb4 c3 33. Kf3 g5 34. e4 gxf4 35. Kxf4 c2 36. Ke3 Nxe5 37. Kd4 f6 38. b5
+Kg7 39. Kd5 Nd3 40. Be3 c1=Q 41. Bxc1 Nxc1 42. Kc6 Bxe4+ 43. Kc5 Ne2 44. h4
+Bf3 45. g5 hxg5 46. hxg5 fxg5 47. b6 g4 48. Kd6 Ba8 49. Ke7 g3 50. Kd8 g2
+51. Kc8 g1=Q 52. Kb8 Qxb6+ 53. Kc8 Qb7+ 54. Kd8 Qd5+ 55. Kc8 Bc6 0-1
+
+[Event "Rated Classical game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "hashemian"]
+[Black "diogo007"]
+[Result "0-1"]
+[WhiteElo "2271"]
+[BlackElo "2416"]
+[ECO "A29"]
+[Opening "English Opening: King's English Variation, Four Knights Variation, Fianchetto Line"]
+[TimeControl "480+8"]
+[UTCDate "2014.07.30"]
+[UTCTime "15:44:04"]
+[Termination "Normal"]
+[WhiteRatingDiff "-11"]
+[BlackRatingDiff "+13"]
+
+1. c4 e5 2. Nc3 Nc6 3. Nf3 Nf6 4. g3 d5 5. cxd5 Nxd5 6. Bg2 Be6 7. O-O Nb6
+8. a3 Be7 9. b4 O-O 10. d3 f6 11. Bb2 a5 12. b5 Na7 13. Qc1 c6 14. bxc6
+Nxc6 15. Qe3 Rc8 16. Rfc1 Nd7 17. Na4 Bb3 18. Nc3 Nc5 19. Bh3 Ra8 20. Rab1
+Bf7 21. Rd1 Nd4 22. Nd2 b5 23. Rdc1 b4 24. axb4 axb4 25. Nce4 Na4 26. Bxd4
+exd4 27. Qf3 Nc3 28. Rb2 f5 29. Bxf5 Bd5 30. Bxh7+ Kxh7 31. Qh5+ Kg8 32.
+Re1 Ra5 33. Qg4 Qa8 34. f3 Ra1 35. Nb1 b3 36. Ned2 Ra2 37. Rxb3 Bxb3 38.
+Qxd4 Bf6 39. Qc5 Rc8 40. Qb6 Bf7 41. Qf2 Nxb1 42. Nxb1 Qd5 43. Kf1 Bd4 44.
+Qg2 Rcc2 45. h4 Qe5 46. Nd2 Rxd2 47. f4 Qe3 48. Rb1 Rdb2 49. Rd1 Rxe2 50.
+f5 Rxg2 51. Re1 Raf2# 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "mstfa0"]
+[Black "kurton"]
+[Result "1-0"]
+[WhiteElo "2451"]
+[BlackElo "2353"]
+[ECO "C45"]
+[Opening "Scotch Game"]
+[TimeControl "180+1"]
+[UTCDate "2014.07.30"]
+[UTCTime "16:03:59"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "+43"]
+[BlackRatingDiff "-9"]
+
+1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qf6 5. Nf3 Bb4+ 6. c3 Bc5 7. Be2
+Nge7 8. O-O O-O 9. b4 Bb6 10. Bg5 Qe6 11. Nbd2 h6 12. Bh4 Ng6 13. Bg3 d6
+14. Nc4 Qxe4 15. a4 a5 16. Bd3 Qe6 17. Re1 Qf6 18. Bxg6 Qxg6 19. Nxb6 cxb6
+20. b5 Ne5 21. Nxe5 dxe5 22. Bxe5 Be6 23. Qd6 Qg5 24. Qxb6 Bd5 25. Bg3 Qd2
+26. c4 Bxc4 27. Qxb7 Rae8 28. Red1 Qxf2+ 29. Bxf2 Re1+ 30. Bxe1 Be2 31. Rd7
+Bf1 32. Kxf1 Re8 33. Rxf7 Rxe1+ 34. Rxe1 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2516"]
+[BlackElo "2278"]
+[ECO "B22"]
+[Opening "Sicilian Defense: Alapin Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.30"]
+[UTCTime "22:31:29"]
+[Termination "Normal"]
+[WhiteRatingDiff "+4"]
+[BlackRatingDiff "-4"]
+
+1. e4 c5 2. c3 e6 3. d4 cxd4 4. cxd4 d5 5. e5 Qb6 6. Nf3 Bd7 7. Nc3 Bb4 8.
+a4 Nc6 9. Be2 Nge7 10. O-O Nf5 11. Be3 Be7 12. Qd2 Na5 13. Rab1 Rc8 14. Bd3
+Nc4 15. Qe2 g6 16. Nb5 a6 17. Bxc4 Rxc4 18. b3 Rc8 19. Nd6+ Nxd6 20. exd6
+Bxd6 21. Bg5 Be7 22. Bxe7 Kxe7 23. Rfe1 Qd6 24. Qe3 h6 25. Ne5 Rcg8 26.
+Rbc1 Be8 27. Rc3 f6 28. Nd3 Bd7 29. Nc5 Bc8 30. Rec1 Kf7 31. Nxb7 Bxb7 32.
+Rc7+ Kf8 33. Rxb7 Rg7 34. Rc8+ Qd8 35. Rxd8# 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "PRESA"]
+[Result "0-1"]
+[WhiteElo "2274"]
+[BlackElo "2520"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Mieses-Kotroc Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.30"]
+[UTCTime "22:35:29"]
+[Termination "Normal"]
+[WhiteRatingDiff "-4"]
+[BlackRatingDiff "+5"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nf3 Nf6 4. d4 c6 5. c4 Qd6 6. Nc3 Bg4 7. Be3 e6 8.
+Be2 Be7 9. a3 O-O 10. Qb3 Qc7 11. O-O Nbd7 12. Rfd1 Bh5 13. Rac1 Ng4 14. h3
+Nxe3 15. fxe3 Nf6 16. Ne5 Bd6 17. Nd3 Bg6 18. Nf2 Bh2+ 19. Kh1 Bg3 20. Rf1
+b6 21. Bf3 Rad8 22. Nfe4 Bh4 23. Nxf6+ Bxf6 24. Be4 Bg5 25. Rce1 Bh4 26.
+Re2 c5 27. d5 Qe5 28. Bxg6 fxg6 29. e4 Rxf1# 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2525"]
+[BlackElo "2270"]
+[ECO "B02"]
+[Opening "Alekhine Defense: Maroczy Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.30"]
+[UTCTime "22:38:07"]
+[Termination "Normal"]
+[WhiteRatingDiff "+4"]
+[BlackRatingDiff "-4"]
+
+1. e4 Nf6 2. d3 e5 3. Nf3 Nc6 4. c3 Bc5 5. Be2 d5 6. Nbd2 dxe4 7. Nxe4 Nxe4
+8. dxe4 Qe7 9. O-O Be6 10. b4 Bb6 11. a4 a5 12. b5 Nb8 13. Nxe5 O-O 14. Bf4
+Bc8 15. Qc2 Re8 16. Bc4 Be6 17. Rae1 Qf6 18. Bg3 Nd7 19. Nxd7 Bxd7 20. e5
+Qe7 21. Qe4 c6 22. Bd3 g6 23. c4 Rad8 24. Qf3 Be6 25. Be2 Qc5 26. h3 Rd2
+27. Bf4 Rd7 28. Be3 Qxe5 29. Bxb6 Rd2 30. Bxa5 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "PRESA"]
+[Result "0-1"]
+[WhiteElo "2266"]
+[BlackElo "2529"]
+[ECO "A01"]
+[Opening "Nimzo-Larsen Attack: Modern Variation #4"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.30"]
+[UTCTime "22:41:56"]
+[Termination "Normal"]
+[WhiteRatingDiff "-5"]
+[BlackRatingDiff "+5"]
+
+1. b3 e5 2. Bb2 Nc6 3. e3 Nf6 4. Bb5 d6 5. d4 exd4 6. Qxd4 Bd7 7. Bxc6 Bxc6
+8. Nf3 Be7 9. Nc3 Qd7 10. O-O-O b6 11. Ng5 h6 12. Nge4 O-O-O 13. Nd5 Nxd5
+0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2534"]
+[BlackElo "2261"]
+[ECO "B03"]
+[Opening "Alekhine Defense: Exchange Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.30"]
+[UTCTime "22:43:20"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "+4"]
+[BlackRatingDiff "-3"]
+
+1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 d6 5. exd6 cxd6 6. Be3 g6 7. Nf3 Bg7 8.
+Be2 Bg4 9. Nbd2 Nc6 10. h3 Bxf3 11. Nxf3 O-O 12. Rc1 e5 13. d5 Ne7 14. O-O
+Nf5 15. Bg5 Bf6 16. Bd2 Nh4 17. Nxh4 Bxh4 18. f4 exf4 19. Bxf4 Bg5 20. Bg3
+Bxc1 21. Qxc1 Re8 22. Bf3 Qf6 23. b3 Qd4+ 24. Kh2 Rad8 25. Bf2 Qe5+ 26. Bg3
+Qe7 27. Qc3 Nd7 28. Qd4 b6 29. Re1 Ne5 30. Bd1 Qf6 31. Re4 Qe7 32. Bh4 f6
+33. Be2 Qf7 34. Rf4 Nd7 35. Bg4 f5 36. Bxd8 Rxd8 37. Rf1 Ne5 38. Be2 Qf6
+39. Qf4 Re8 40. Bd1 Nd3 41. Qg3 Qe5 42. Qxe5 Nxe5 43. Bc2 Kg7 44. Kg3 Re7
+45. Kf2 Nd7 46. a4 Nc5 47. b4 Nd7 48. a5 Kf6 49. Ba4 Ne5 50. c5 bxc5 51. b5
+Nd3+ 52. Kg1 Nb4 53. b6 axb6 54. axb6 Rb7 55. Re1 Rxb6 56. Re6+ Kg5 57. Re7
+Nxd5 58. Rxh7 Nf4 59. h4+ Kf6 60. Be8 Rb1+ 61. Kf2 Rb2+ 62. Kf3 Nxg2 63.
+Rf7+ Ke5 64. Re7+ Kd5 65. h5 gxh5 66. Bf7+ Kc6 67. Kg3 Ne1 68. Be8+ 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "PRESA"]
+[Result "0-1"]
+[WhiteElo "2258"]
+[BlackElo "2538"]
+[ECO "B01"]
+[Opening "Scandinavian Defense"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.30"]
+[UTCTime "22:49:37"]
+[Termination "Normal"]
+[WhiteRatingDiff "-4"]
+[BlackRatingDiff "+4"]
+
+1. e4 d5 2. Nc3 dxe4 3. Nxe4 Qd5 4. Qf3 Nc6 5. Ne2 f5 6. Ng5 Nf6 7. Nf4
+Qe5+ 8. Be2 Nd4 9. Qe3 Nxc2+ 10. Kd1 Nxe3+ 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2542"]
+[BlackElo "2254"]
+[ECO "B03"]
+[Opening "Alekhine Defense: Exchange Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.30"]
+[UTCTime "22:50:43"]
+[Termination "Normal"]
+[WhiteRatingDiff "+4"]
+[BlackRatingDiff "-4"]
+
+1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. exd6 exd6 6. h3 Be7 7. Nf3 O-O 8.
+Bd3 Nc6 9. a3 Bf6 10. Be3 d5 11. c5 Nc4 12. Qc2 Nxe3 13. fxe3 Re8 14. Kf2
+g6 15. Nc3 Ne7 16. Rad1 Bf5 17. g4 Bxd3 18. Qxd3 Bg7 19. h4 c6 20. h5 f5
+21. g5 Nc8 22. hxg6 hxg6 23. Rh3 b6 24. b4 bxc5 25. bxc5 Rb8 26. Ne2 Ne7
+27. Nf4 Kf7 28. Rh7 Rh8 29. Ne5+ Kg8 30. Rxg7+ Kxg7 31. Ne6+ Kg8 32. Nxd8
+Rxd8 33. Qa6 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "pacal56"]
+[Black "PRESA"]
+[Result "0-1"]
+[WhiteElo "2250"]
+[BlackElo "2546"]
+[ECO "B00"]
+[Opening "Nimzowitsch Defense: Kennedy Variation, Paulsen Attack"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.30"]
+[UTCTime "22:53:35"]
+[Termination "Normal"]
+[WhiteRatingDiff "-4"]
+[BlackRatingDiff "+4"]
+
+1. e4 e5 2. d4 Nc6 3. dxe5 Nxe5 4. Nf3 Ng6 5. Bc4 d6 6. Nc3 Nf6 7. O-O Be7
+8. Nd4 O-O 9. h3 c6 10. a4 d5 11. exd5 cxd5 12. Bd3 a6 13. Re1 Bc5 14. Be3
+Qc7 15. Qf3 Be6 16. Nf5 Bxf5 17. Qxf5 d4 18. Ne4 Nxe4 19. Bxe4 dxe3 20.
+fxe3 Qe5 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "pacal56"]
+[Result "1-0"]
+[WhiteElo "2550"]
+[BlackElo "2246"]
+[ECO "B22"]
+[Opening "Sicilian Defense: Alapin Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.30"]
+[UTCTime "22:55:06"]
+[Termination "Time forfeit"]
+[WhiteRatingDiff "+3"]
+[BlackRatingDiff "-3"]
+
+1. e4 c5 2. c3 e6 3. d4 cxd4 4. cxd4 d5 5. e5 Qb6 6. Nf3 Bd7 7. Nc3 Bb4 8.
+a4 Ne7 9. Bd3 Nbc6 10. Be3 Nf5 11. Bxf5 exf5 12. O-O Be6 13. Ne2 Be7 14. h4
+Rc8 15. Nf4 Na5 16. Rc1 O-O 17. h5 Nc4 18. h6 g6 19. Nxe6 fxe6 20. b3 1-0
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "JoaBN"]
+[Black "PRESA"]
+[Result "0-1"]
+[WhiteTitle "IM"]
+[WhiteElo "2258"]
+[BlackElo "2553"]
+[ECO "D60"]
+[Opening "Queen's Gambit Declined: Orthodox Defense"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.30"]
+[UTCTime "23:05:26"]
+[Termination "Normal"]
+[WhiteRatingDiff "-12"]
+[BlackRatingDiff "+4"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 d5 4. Nf3 Be7 5. Bg5 O-O 6. e3 Nbd7 7. Ne5 h6 8.
+Bh4 c6 9. f4 Ne4 10. Bxe7 Qxe7 11. Nxe4 dxe4 12. Be2 Qb4+ 13. Qd2 Qxd2+ 14.
+Kxd2 Nb8 15. c5 b5 16. a4 f6 17. Ng4 b4 18. Nf2 f5 19. g4 Kf7 20. h4 Ba6
+21. Bxa6 Nxa6 22. b3 Nc7 23. g5 h5 24. g6+ Ke7 25. Nd1 Nd5 26. Nb2 Nf6 27.
+Nc4 Ng4 28. a5 Rab8 29. a6 Kf6 30. Rhg1 Rfd8 31. Ne5 Nxe5 32. fxe5+ Ke7 33.
+Rg5 Rh8 34. Ke2 Kd7 35. Kf2 Ke7 36. Kg3 Rb5 37. Kf4 Ke8 38. Rg2 Ke7 39. Ra4
+Rbb8 40. Rc2 Rb5 41. Rc4 Rhb8 42. Kg5 Kd7 43. Kxh5 Ke8 44. Kg5 Ke7 45. h5
+Kf8 46. h6 Kg8 47. Rc2 gxh6+ 48. Kxh6 f4 49. exf4 Rf8 50. Rf2 Rf5 51. Ra1
+Rb8 52. Rg1 Rbf8 53. Rg4 e3 54. Rf3 e2 55. Rg1 Rxf4 56. Rxf4 Rxf4 57. Re1
+Rf2 58. d5 exd5 59. e6 Rh2+ 60. Kg5 Kf8 61. Kf6 Ke8 62. g7 Rf2+ 63. Ke5 Rg2
+64. Kd6 d4 65. Kxc6 d3 66. Rh1 Rxg7 67. Kd6 Rg8 68. Rh7 e1=Q 69. Re7+ Kd8
+70. Rd7+ Kc8 71. Rxa7 Kb8 72. Rb7+ Ka8 73. e7 Re8 74. Rd7 Rxe7 75. Rd8+ Ka7
+76. c6 Qe5# 0-1
+
+[Event "Rated Blitz game"]
+[Date "????.??.??"]
+[Round "?"]
+[White "PRESA"]
+[Black "JoaBN"]
+[Result "1-0"]
+[BlackTitle "IM"]
+[WhiteElo "2557"]
+[BlackElo "2246"]
+[ECO "B22"]
+[Opening "Sicilian Defense: Alapin Variation"]
+[TimeControl "180+0"]
+[UTCDate "2014.07.30"]
+[UTCTime "23:14:07"]
+[Termination "Normal"]
+[WhiteRatingDiff "+4"]
+[BlackRatingDiff "-10"]
+
+1. e4 c5 2. c3 Nf6 3. e5 Nd5 4. Nf3 Nc6 5. d4 cxd4 6. Bc4 e6 7. cxd4 d6 8.
+O-O Be7 9. a3 O-O 10. b4 dxe5 11. dxe5 Nb6 12. Bd3 g6 13. Bb2 Re8 14. Nc3
+Bf8 15. Ne4 Nd5 16. Qd2 Bg7 17. Rad1 Qb6 18. Nf6+ Nxf6 19. exf6 Bf8 20. Bc4
+Bd7 21. Qf4 Rad8 22. Qh4 Bc8 23. h3 Rxd1 24. Rxd1 Rd8 25. Re1 a5 26. b5 a4
+27. Ng5 h6 28. Nxe6 Bxe6 29. Bxe6 fxe6 30. f7+ Kxf7 31. Qf6+ Ke8 32. bxc6
+Rd6 33. Qxg6+ Kd8 34. Bf6+ Be7 35. Qg8+ Kc7 36. Bxe7 1-0
+
