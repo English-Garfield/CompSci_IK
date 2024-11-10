@@ -27,7 +27,7 @@
 
  <!--- ABOUT THE PROJECT -->
 # About the project
-this is my attempt at building a chess game that allows a user to play against another user in a  pass and play style or
+This is my attempt at building a chess game that allows a user to play against another user in a  pass and play style or
 against a engine using a deep learning neural network for my A level computing NEA.
 
 ## Built with
@@ -48,8 +48,8 @@ inset instructions here on how to get started with the project
 # Installation
 
 # Usage
-
-# Contact
+I don't mid how you use this as it was made for fun and for my A level computing NEA
+Coding should be accessible and open so if my work is of help to you then all i ask is that you credit me in your work
 
 # Documentation
 ![image](https://img.shields.io/badge/Microsoft_Word-2B579A?style=for-the-badge&logo=microsoft-word&logoColor=white)
