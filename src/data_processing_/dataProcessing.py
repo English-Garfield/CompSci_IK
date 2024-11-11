@@ -27,7 +27,6 @@ def storingData(data):
     file = open("ProcessedChessData.txt", "a")
     file.write(data)
     file.close()
-
     print("Data written to file")
 
 
@@ -36,21 +35,19 @@ Program_start_time = time.time()
 
 files = [file for file in os.listdir(file_path) if file.endswith('.pgn')]
 games = []
-
+"""
 for file in tqdm(files, colour='green'):
     games.extend(load_pgn_files(f"{file_path}/{file}"))
     i += 1
 
 storingData(str(games))  # storing the data in a text file
+"""
 
 for file in tqdm(files, colour='blue'):
     games.extend(load_pgn_files(f"{Large_file_path}/{file}"))
     i += 1
-
 storingData(str(games))  # storing the data in a text file
 
 end_time = time.time()
 print("\n")
 print(f"End of file parsing. Time taken: {end_time - Program_start_time} seconds")
-
-
