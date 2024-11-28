@@ -1,5 +1,7 @@
 """
 processing the Data pre NN
+this file changes as the amount of ram need is larger than I have access to
+thus data has to bee parsed in segments and stored in a text file to save system memory
 """
 import os
 import time
@@ -8,7 +10,6 @@ from chess import pgn
 from tqdm import tqdm
 
 file_path = '../../assets/ChessData'
-Large_file_path = '../assets/ChessData/LargeData'
 i = 1
 
 
@@ -24,7 +25,7 @@ def load_pgn_files(file_path):
 
 
 def storingData(data):
-    file = open("ProcessedChessData.txt", "a")
+    file = open("ProcessedChessData.pgn", "a")
     file.write(data)
     file.close()
     print("Data written to file")
@@ -34,19 +35,14 @@ print("Start of file parsing")
 Program_start_time = time.time()
 
 files = [file for file in os.listdir(file_path) if file.endswith('.pgn')]
-games = []
-"""
-for file in tqdm(files, colour='green'):
-    games.extend(load_pgn_files(f"{file_path}/{file}"))
-    i += 1
 
-storingData(str(games))  # storing the data in a text file
-"""
 
 for file in tqdm(files, colour='blue'):
-    games.extend(load_pgn_files(f"{Large_file_path}/{file}"))
+    games = []
+    games.extend(load_pgn_files(f"{file_path}/{file}"))
     i += 1
-storingData(str(games))  # storing the data in a text file
+    storingData(str(games))  # storing the data in a text file
+
 
 end_time = time.time()
 print("\n")

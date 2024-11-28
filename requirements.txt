@@ -1,0 +1,9 @@
+pygame>=2.6.1
+board>=1.0
+chess>=1.10.0
+tqdm>=4.66.6
+numpy>=1.26.1
+keras>=3.6.0
+keras-nightly>=3.7.0.dev2024110103
+numpy>=1.26.1
+tensorflow>=2.7.0

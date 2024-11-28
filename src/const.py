@@ -23,4 +23,5 @@ BUTTON_WIDTH = 200
 BUTTON_HEIGHT = 80
 
 # Fonts
-FONT = pygame.font.Font(None, 40)
+FONT = pygame.font.Font(None, 40
+                        )
