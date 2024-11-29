@@ -46,6 +46,10 @@ this project utilises the following technologies:
 inset instructions here on how to get started with the project
 
 # Installation
+the `requirements.txt` should first be installed to ensure that all the dependencies are met
+```
+pip install -r requirements.txt
+```
 
 # Usage
 I don't mid how you use this as it was made for fun and for my A level computing NEA

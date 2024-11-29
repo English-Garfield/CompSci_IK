@@ -9,7 +9,7 @@ import time
 from chess import pgn
 from tqdm import tqdm
 
-file_path = '../../assets/ChessData'
+file_path = '../assets/ChessData'
 i = 1
 
 
