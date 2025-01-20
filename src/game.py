@@ -5,6 +5,7 @@ from board import Board
 from dragger import Dragger
 from config import Config
 from square import Square
+from ai_player import AIPlayer
 
 
 class Game:
@@ -15,6 +16,7 @@ class Game:
         self.board = Board()
         self.dragger = Dragger()
         self.config = Config()
+        self.ai_player = AIPlayer()
 
     # blit methods
 

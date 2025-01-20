@@ -1,5 +1,8 @@
-"""holds the main loop of the game"""
+"""
+Main module for the chess game.
+"""
 
+# Add other necessary imports
 import pygame
 import sys
 from const import *
@@ -9,8 +12,7 @@ from move import Move
 from piece import Piece
 
 # Initialize Pygame
-pygame.init()
-# Set up display
+pygame.init()  # Set up display
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Main Screen")
 
@@ -71,6 +73,33 @@ class Main:
             if self.game.dragger.dragging:
                 self.game.dragger.update_blit(self.screen)
 
+            if self.game.next_player == 'black':
+                ai_move = self.game.ai_player.get_move(self.game.board)
+                if ai_move:
+                    print(f"AI Move: {ai_move}")
+
+                    if isinstance(ai_move, Move):
+                        piece = ai_move.piece
+                        move = ai_move
+
+                        # Validate the move data
+                        if isinstance(piece, Piece) and isinstance(move, Move):
+                            self.game.board.move(piece, move)  # Perform the move
+                            self.game.next_turn()
+                            print(f"AI moved {piece} to {move.final.row}, {move.final.col}")
+
+                            # Update the display after the AI move
+                            self.game.show_bg(self.screen)
+                            self.game.show_last_move(self.screen)
+                            self.game.show_pieces(self.screen)
+                            pygame.display.update()
+                        else:
+                            print("Invalid piece or move object returned by AI!")
+                    else:
+                        print(f"Unexpected AI move format: {ai_move}")
+                else:
+                    print("AI did not return a valid move.")
+
             pygame.display.update()
 
             for event in pygame.event.get():
@@ -112,7 +141,7 @@ class Main:
                         released_col = self.game.dragger.mouseX // SQSIZE
                         initial = Square(self.game.dragger.initial_row, self.game.dragger.initial_col)
                         final = Square(released_row, released_col)
-                        move = Move(initial, final)
+                        move = Move(initial, final, self.game.dragger.piece)  # Pass the piece
 
                         if self.game.board.valid_move(self.game.dragger.piece, move):
                             captured = self.game.board.squares[released_row][released_col].has_piece()

@@ -8,6 +8,8 @@ from tqdm import tqdm
 from tensorflow.keras.models import load_model
 from tensorflow.keras.utils import to_categorical
 
+os.environ['TF_METAL'] = '1'
+
 
 def load_pgn(file_path):
     with open(file_path, 'r') as pgn_file:
@@ -30,15 +32,19 @@ def board_to_matrix(board: Board):
 
 
 def create_input_for_nn(games):
-    X = []
-    y = []
-    for game in games:
-        board = game.board()
-        for move in game.mainline_moves():
-            X.append(board_to_matrix(board))
-            y.append(move.uci())
-            board.push(move)
-    return X, y
+    X, y = [], []
+    chunk_size = 1000
+
+    for i in range(0, len(games), chunk_size):
+        chunk = games[i:i + chunk_size]
+        for game in chunk:
+            board = game.board()
+            for move in game.mainline_moves():
+                X.append(board_to_matrix(board))
+                y.append(move.uci())
+                board.push(move)
+
+    return np.array(X, dtype=np.float32), np.array(y)
 
 
 def encode_moves(moves):
@@ -46,15 +52,39 @@ def encode_moves(moves):
     return [move_to_int[move] for move in moves], move_to_int
 
 
-def train_existing_model(model_path, X, y, batch_size=32, epochs=50):
+def data_generator(X, y, batch_size):
+    dataset_size = len(X)
+    while True:
+        for i in range(0, dataset_size, batch_size):
+            end = min(i + batch_size, dataset_size)
+            yield X[i:end], y[i:end]
+
+
+def train_existing_model(model_path, X, y, batch_size=32, epochs=25):
     print(f"\nLoading existing model from {model_path}")
     model = load_model(model_path)
 
+    # Convert to TensorFlow tensors
+    X = np.array(X, dtype=np.float32)
+    X = tf.convert_to_tensor(X, dtype=tf.float32)
+
+    y = np.array(y, dtype=np.int32)
+    y = tf.convert_to_tensor(y, dtype=tf.int32)
+
+    # Create data generator
+    train_gen = data_generator(X, y, batch_size)
+
+    # Use legacy optimizer for M1/M2
+    model.compile(
+        optimizer=tf.keras.optimizers.legacy.Adam(),
+        loss=model.loss,
+        metrics=model.metrics
+    )
+
     print("\nContinuing training...")
     history = model.fit(
-        X, y,
+        train_gen,
         validation_split=0.1,
-        batch_size=batch_size,
         epochs=epochs,
         verbose=1
     )
@@ -70,11 +100,14 @@ def main():
     # Configuration
     MODEL_PATH = '../assets/chessModel.keras'
     FILE_PATH = '../assets/ChessData'
-    LIMIT_OF_FILES = 5
-    GAMES_LIMIT = 25000
+    LIMIT_OF_FILES = 3
+    GAMES_LIMIT = 50000
 
-    print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
-
+    physical_devices = tf.config.list_physical_devices('GPU')
+    if physical_devices:
+        for device in physical_devices:
+            tf.config.experimental.set_memory_growth(device, False)
+        tf.config.set_visible_devices(physical_devices[0], 'GPU')
     # Load games
     print("\nLoading games...")
     files = [file for file in os.listdir(FILE_PATH) if file.endswith('.pgn')]

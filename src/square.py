@@ -9,6 +9,10 @@ class Square:
         self.piece = piece
         self.alphacol = self.ALPHACOLS[col]
 
+    def __hash__(self):
+        # Create a unique hash based on the row and column
+        return hash((self.row, self.col))
+
     def __eq__(self, other):
         return self.row == other.row and self.col == other.col
 

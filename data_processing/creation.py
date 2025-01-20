@@ -1,18 +1,14 @@
 import os
 import tensorflow as tf
 import numpy as np
+import random as rdm
 import time
-
-from chess import pgn
+from chess import pgn, Board
 from tqdm import tqdm
-from chess import Board
-from tensorflow.keras import Sequential
-from tensorflow.keras.layers import Conv2D, Flatten, Dense
-from tensorflow.keras.optimizers.legacy import Adam
+from tensorflow.keras.models import load_model
 from tensorflow.keras.utils import to_categorical
 
-# Start time
-start_time = time.time()
+os.environ['TF_METAL'] = '1'
 
 
 def load_pgn(file_path):
@@ -36,15 +32,19 @@ def board_to_matrix(board: Board):
 
 
 def create_input_for_nn(games):
-    X = []
-    y = []
-    for game in games:
-        board = game.board()
-        for move in game.mainline_moves():
-            X.append(board_to_matrix(board))
-            y.append(move.uci())
-            board.push(move)
-    return X, y
+    X, y = [], []
+    chunk_size = 1000
+
+    for i in range(0, len(games), chunk_size):
+        chunk = games[i:i + chunk_size]
+        for game in chunk:
+            board = game.board()
+            for move in game.mainline_moves():
+                X.append(board_to_matrix(board))
+                y.append(move.uci())
+                board.push(move)
+
+    return np.array(X, dtype=np.float32), np.array(y)
 
 
 def encode_moves(moves):
@@ -52,115 +52,99 @@ def encode_moves(moves):
     return [move_to_int[move] for move in moves], move_to_int
 
 
-def predict_next_move(board):
-    board_matrix = board_to_matrix(board).reshape(1, 8, 8, 12)
-    predictions = model.predict(board_matrix)[0]
-    legal_moves = list(board.legal_moves)
-    legal_moves_uci = [move.uci() for move in legal_moves]
-    sorted_indices = np.argsort(predictions)[::-1]
-    for move_index in sorted_indices:
-        move = int_to_move[move_index]
-        if move in legal_moves_uci:
-            return move
-    return None
+def data_generator(X, y, batch_size):
+    dataset_size = len(X)
+    while True:
+        for i in range(0, dataset_size, batch_size):
+            end = min(i + batch_size, dataset_size)
+            yield X[i:end], y[i:end]
 
 
-# Main execution
-print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
-print("Loading model...")
+def train_existing_model(model_path, X, y, batch_size=32, epochs=25):
+    print(f"\nLoading existing model from {model_path}")
+    model = load_model(model_path)
 
-# Record time for loading model
-model_load_start = time.time()
+    # Convert to TensorFlow tensors
+    X = np.array(X, dtype=np.float32)
+    X = tf.convert_to_tensor(X, dtype=tf.float32)
 
-files = [file for file in os.listdir('../assets/ChessData') if file.endswith('.pgn')]
-print(files)
-model_load_end = time.time()
-print(f"Model loading time: {(model_load_end - model_load_start) / 60:.2f} minutes")
-print("\nLoading games...")
+    y = np.array(y, dtype=np.int32)
+    y = tf.convert_to_tensor(y, dtype=tf.int32)
 
-LIMIT_OF_FILES = min(len(files), 10)
-file_path = '../assets/ChessData'
-games = []
+    # Create data generator
+    train_gen = data_generator(X, y, batch_size)
 
-# Record time for loading games
-games_load_start = time.time()
-for i, file in enumerate(tqdm(files)):
-    games.extend(load_pgn(f"{file_path}/{file}"))
-    if i >= LIMIT_OF_FILES - 1:
-        break
-games_load_end = time.time()
-print(f"Games loading time: {(games_load_end - games_load_start) / 60:.2f} minutes")
+    # Use legacy optimizer for M1/M2
+    model.compile(
+        optimizer=tf.keras.optimizers.legacy.Adam(),
+        loss=model.loss,
+        metrics=model.metrics
+    )
 
-print("\nGames loaded:", len(games))
-print("Building and training neural network...")
+    print("\nContinuing training...")
+    history = model.fit(
+        train_gen,
+        validation_split=0.1,
+        epochs=epochs,
+        verbose=1
+    )
 
-# Limit the number of games processed
-LIMITED_GAMES = games[:75000]  # Adjust the limit as needed
+    print("\nSaving updated model...")
+    model.save(model_path)
+    return model, history
 
-# Record time for creating input
-input_creation_start = time.time()
-X, y = create_input_for_nn(LIMITED_GAMES)
-y, move_to_int = encode_moves(y)
-y = to_categorical(y, num_classes=len(move_to_int))
-X = np.array(X)
-input_creation_end = time.time()
-print(f"Input creation time: {(input_creation_end - input_creation_start) / 60:.2f} minutes")
 
-print("\nX shape:", X.shape)
-print("y shape:", y.shape)
+def main():
+    start_time = time.time()
 
-# Record time for model building
-model_build_start = time.time()
-model = Sequential([
-    Conv2D(64, (3, 3), activation='relu', input_shape=(8, 8, 12)),
-    Conv2D(128, (3, 3), activation='relu'),
-    Flatten(),
-    Dense(256, activation='relu'),
-    Dense(len(move_to_int), activation='softmax')
-])
-model.compile(optimizer=Adam(),
-              loss='categorical_crossentropy',
-              metrics=['accuracy'])
-model.summary()
-model_build_end = time.time()
-print(f"Model building time: {(model_build_end - model_build_start) / 60:.2f} minutes")
+    # Configuration
+    MODEL_PATH = '../assets/chessModel.keras'
+    FILE_PATH = '../assets/ChessData'
+    LIMIT_OF_FILES = 3
+    GAMES_LIMIT = 50000
 
-# Record time for model training
-training_start = time.time()
-model.fit(X, y, epochs=50,
-          validation_split=0.1,
-          batch_size=64)
-training_end = time.time()
-print(f"Model training time: {(training_end - training_start) / 60:.2f} minutes")
+    physical_devices = tf.config.list_physical_devices('GPU')
+    if physical_devices:
+        for device in physical_devices:
+            tf.config.experimental.set_memory_growth(device, True)
+        tf.config.set_visible_devices(physical_devices[0], 'GPU')
 
-# Record time for model saving
-model_save_start = time.time()
-model.save('../assets/chessModelV2.keras')
-model_save_end = time.time()
-print(f"Model saving time: {(model_save_end - model_save_start) / 60:.2f} minutes")
+    # Load games
+    print("\nLoading games...")
+    files = [file for file in os.listdir(FILE_PATH) if file.endswith('.pgn')]
+    games = []
 
-int_to_move = dict(zip(move_to_int.values(), move_to_int.keys()))
+    for i, file in enumerate(tqdm(files)):
+        games.extend(load_pgn(f"{FILE_PATH}/{file}"))
+        if i >= LIMIT_OF_FILES - 1:
+            break
 
-# Test prediction
-print("\nPredicting next move...")
-board = Board()
-print("Board before prediction:")
-print(board)
+    print(f"\nTotal games loaded: {len(games)}")
+    LIMITED_GAMES = games[:GAMES_LIMIT]
 
-# Record time for prediction
-prediction_start = time.time()
-next_move = predict_next_move(board)
-prediction_end = time.time()
-print(f"Prediction time: {(prediction_end - prediction_start) / 60:.2f} minutes")
+    # Prepare training data
+    print("\nPreparing training data...")
+    X, y = create_input_for_nn(LIMITED_GAMES)
+    y, move_to_int = encode_moves(y)
+    y = to_categorical(y, num_classes=len(move_to_int))
+    X = np.array(X)
 
-board.push_uci(next_move)
+    print(f"\nTraining data shapes:")
+    print(f"X shape: {X.shape}")
+    print(f"y shape: {y.shape}")
 
-print("\nPredicted move:", next_move)
-print("Board after prediction:")
-print(board)
-print(str(pgn.Game.from_board(board)))
+    # Train model
+    model, history = train_existing_model(MODEL_PATH, X, y)
 
-# End time
-end_time = time.time()
-total_time = end_time - start_time
-print(f"\nTotal run time: {total_time / 60:.2f} minutes")
+    # Create move mapping for predictions
+    int_to_move = dict(zip(move_to_int.values(), move_to_int.keys()))
+
+    # Print training time
+    end_time = time.time()
+    print(f"\nTotal training time: {(end_time - start_time) / 60:.2f} minutes")
+
+    return model, history, int_to_move
+
+
+if __name__ == "__main__":
+    main()

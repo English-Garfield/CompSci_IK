@@ -3,8 +3,8 @@ board>=1.0
 chess>=1.10.0
 tqdm>=4.66.6
 numpy>=1.26.1
-keras>=3.6.0
-keras-nightly>=3.7.0.dev2024110103
+keras==2.15.0
 numpy>=1.26.1
-tensorflow>=2.7.0
-
+tensorflow==2.15.0
+tensorflow-metal>=1.1.0
+tensorflow-macos>=2.15.0
