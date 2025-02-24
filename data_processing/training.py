@@ -2,9 +2,12 @@ import os
 import tensorflow as tf
 import numpy as np
 import time
+import json
 from chess import pgn, Board
 from tqdm import tqdm
-from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model, Model
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.utils import to_categorical
 from concurrent.futures import ThreadPoolExecutor
 from queue import Queue
@@ -31,6 +34,23 @@ def board_to_matrix(board: Board):
         piece_color = 0 if piece.color else 6
         matrix[row, col, piece_type + piece_color] = 1
     return matrix
+
+
+def encode_moves(moves, save_path="move_map.json"):
+    unique_moves = sorted(set(moves))
+    num_classes = len(unique_moves)
+    move_to_int = {move: i for i, move in enumerate(unique_moves)}
+
+    with open(save_path, "w") as f:
+        json.dump({"move_to_int": move_to_int, "num_classes": num_classes}, f)
+
+    return np.array([move_to_int[move] for move in moves]), move_to_int, num_classes
+
+
+def load_move_mapping(save_path="move_map.json"):
+    with open(save_path, "r") as f:
+        data = json.load(f)
+    return data["move_to_int"], data["num_classes"]
 
 
 def process_game_chunk(game_chunk):
@@ -95,33 +115,43 @@ def load_games_threaded(file_path, limit_of_files):
     return all_games
 
 
-def data_generator(X, y, batch_size):
-    dataset_size = len(X)
-    indices = np.arange(dataset_size)
+def data_generator(X, y, batch_size, num_classes):
+    num_samples = len(X)
     while True:
-        np.random.shuffle(indices)
-        for i in range(0, dataset_size, batch_size):
-            batch_indices = indices[i:i + batch_size]
-            X_batch = tf.convert_to_tensor(X[batch_indices], dtype=tf.float32)
-            y_batch = tf.convert_to_tensor(y[batch_indices], dtype=tf.float32)
-            yield X_batch, y_batch
+        for offset in range(0, num_samples, batch_size):
+            X_batch = X[offset:offset + batch_size]
+            y_batch = y[offset:offset + batch_size]
+            yield X_batch, to_categorical(y_batch, num_classes=num_classes)
 
-def train_existing_model(model_path, X, y, batch_size=32, epochs=50):
+
+def train_existing_model(model_path, X, y, num_classes, batch_size=32, epochs=50):
     print(f"\nLoading existing model from {model_path}")
     model = load_model(model_path)
 
-    # Calculate steps per epoch
+    model_output_classes = model.output_shape[-1]
+
+    if model_output_classes != num_classes:
+        print(f"Model output shape mismatch: Model outputs {model_output_classes}, but num_classes is {num_classes}.")
+        print("Rebuilding the output layer to match the new number of classes...")
+
+        # Use the output of the second-to-last layer as input for our new output layer.
+        intermediate_layer = model.layers[-2].output
+
+        # Create a new output layer with a unique name
+        new_output = Dense(num_classes, activation="softmax", name="dense_output")(intermediate_layer)
+        model = Model(inputs=model.input, outputs=new_output)
+
+        # Recompile model
+        model.compile(
+            optimizer=Adam(),
+            loss="categorical_crossentropy",
+            metrics=["accuracy"]
+        )
+
+        print("\nNew model structure created.")
+
     steps_per_epoch = len(X) // batch_size
-
-    # Create data generator
-    train_generator = data_generator(X, y, batch_size)
-
-    # Use legacy optimizer for M1/M2
-    model.compile(
-        optimizer=tf.keras.optimizers.legacy.Adam(),
-        loss=model.loss,
-        metrics=model.metrics
-    )
+    train_generator = data_generator(X, y, batch_size, num_classes)
 
     print("\nContinuing training...")
     history = model.fit(
@@ -134,104 +164,48 @@ def train_existing_model(model_path, X, y, batch_size=32, epochs=50):
     print("\nSaving updated model...")
     model.save(model_path)
     return model, history
-  def encode_moves(moves):
-      unique_moves = sorted(set(moves))
-      num_classes = len(unique_moves)
-      move_to_int = {move: i for i, move in enumerate(unique_moves)}
 
-      def encode_chunk(move_chunk):
-          return [move_to_int[move] for move in move_chunk]
 
-      chunk_size = 10000
-      chunks = [moves[i:i + chunk_size] for i in range(0, len(moves), chunk_size)]
+def main():
+    start_time = time.time()
 
-      encoded_moves = []
-      with ThreadPoolExecutor(max_workers=8) as executor:
-          results = list(tqdm(
-              executor.map(encode_chunk, chunks),
-              total=len(chunks),
-              desc="Encoding moves",
-              colour="blue"
-          ))
+    MODEL_PATH = '../assets/chessModel.keras'
+    FILE_PATH = '../assets/ChessData'
+    LIMIT_OF_FILES = 2
+    GAMES_LIMIT = 50000
 
-      for chunk in results:
-          encoded_moves.extend(chunk)
+    print("\nLoading games...")
+    games = load_games_threaded(FILE_PATH, LIMIT_OF_FILES)
+    if not games:
+        print("No games were loaded. Check the file path and try again.")
+        return
 
-      return np.array(encoded_moves), move_to_int, num_classes
+    print(f"\nTotal games loaded: {len(games)}")
+    LIMITED_GAMES = games[:GAMES_LIMIT]
 
-  def train_existing_model(model_path, X, y, num_classes, batch_size=32, epochs=50):
-      print(f"\nLoading existing model from {model_path}")
-      model = load_model(model_path)
+    print("\nPreparing training data...")
+    X, y = create_input_for_nn(LIMITED_GAMES)
+    if len(X) == 0 or len(y) == 0:
+        print("\nNo training data available.")
+        return
 
-      steps_per_epoch = len(X) // batch_size
-      train_generator = data_generator(X, y, batch_size, num_classes)
+    y, move_to_int, num_classes = encode_moves(y)
+    X = np.array(X)
 
-      model.compile(
-          optimizer=tf.keras.optimizers.legacy.Adam(),
-          loss=model.loss,
-          metrics=model.metrics
-      )
+    move_to_int, num_classes = load_move_mapping()
 
-      print("\nContinuing training...")
-      history = model.fit(
-          train_generator,
-          steps_per_epoch=steps_per_epoch,
-          epochs=epochs,
-          verbose=1
-      )
+    print(f"\nTraining data shapes:")
+    print(f"X shape: {X.shape}")
+    print(f"y shape: {y.shape}")
 
-      print("\nSaving updated model...")
-      model.save(model_path)
-      return model, history
+    try:
+        model, history = train_existing_model(MODEL_PATH, X, y, num_classes)
+    except ValueError as e:
+        print(e)
+        return
 
-  def data_generator(X, y, batch_size, num_classes):
-      dataset_size = len(X)
-      indices = np.arange(dataset_size)
-      while True:
-          np.random.shuffle(indices)
-          for i in range(0, dataset_size, batch_size):
-              batch_indices = indices[i:i + batch_size]
-              X_batch = tf.convert_to_tensor(X[batch_indices], dtype=tf.float32)
-              y_batch = tf.convert_to_tensor(to_categorical(y[batch_indices], num_classes=num_classes), dtype=tf.float32)
-              yield X_batch, y_batch
+    int_to_move = {v: k for k, v in move_to_int.items()}
 
-  def main():
-      start_time = time.time()
-
-      # Configuration
-      MODEL_PATH = '../assets/chessModel.keras'
-      FILE_PATH = '../assets/ChessData'
-      LIMIT_OF_FILES = 2
-      GAMES_LIMIT = 50000
-
-      # Load games with proper initialization
-      print("\nLoading games...")
-      games = load_games_threaded(FILE_PATH, LIMIT_OF_FILES)
-
-      if not games:  # Check if games were loaded
-          print("No games were loaded. Check the file path and try again.")
-          return
-
-      print(f"\nTotal games loaded: {len(games)}")
-      LIMITED_GAMES = games[:GAMES_LIMIT]
-
-      # Prepare training data
-      print("\nPreparing training data...")
-      X, y = create_input_for_nn(LIMITED_GAMES)
-      y, move_to_int, num_classes = encode_moves(y)
-      X = np.array(X)
-
-      print(f"\nTraining data shapes:")
-      print(f"X shape: {X.shape}")
-      print(f"y shape: {y.shape}")
-
-      # Train model
-      model, history = train_existing_model(MODEL_PATH, X, y, num_classes)
-
-      # Create move mapping for predictions
-      int_to_move = dict(zip(move_to_int.values(), move_to_int.keys()))
-
-      # Print training time
     end_time = time.time()
     print(f"\nTotal training time: {(end_time - start_time) / 60:.2f} minutes")
 
