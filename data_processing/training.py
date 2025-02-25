@@ -6,9 +6,10 @@ import json
 from chess import pgn, Board
 from tqdm import tqdm
 from tensorflow.keras.models import load_model, Model
-from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Dense, BatchNormalization, Dropout
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.callbacks import ReduceLROnPlateau, EarlyStopping
 from concurrent.futures import ThreadPoolExecutor
 from queue import Queue
 import threading
@@ -124,7 +125,7 @@ def data_generator(X, y, batch_size, num_classes):
             yield X_batch, to_categorical(y_batch, num_classes=num_classes)
 
 
-def train_existing_model(model_path, X, y, num_classes, batch_size=32, epochs=50):
+def train_existing_model(model_path, X, y, num_classes, batch_size=64, epochs=50):
     print(f"\nLoading existing model from {model_path}")
     model = load_model(model_path)
 
@@ -134,31 +135,34 @@ def train_existing_model(model_path, X, y, num_classes, batch_size=32, epochs=50
         print(f"Model output shape mismatch: Model outputs {model_output_classes}, but num_classes is {num_classes}.")
         print("Rebuilding the output layer to match the new number of classes...")
 
-        # Use the output of the second-to-last layer as input for our new output layer.
         intermediate_layer = model.layers[-2].output
 
-        # Create a new output layer with a unique name
-        new_output = Dense(num_classes, activation="softmax", name="dense_output")(intermediate_layer)
+        x = BatchNormalization()(intermediate_layer)
+        x = Dropout(0.2)(x)
+        new_output = Dense(num_classes, activation="softmax", name="dense_output")(x)
+
         model = Model(inputs=model.input, outputs=new_output)
 
-        # Recompile model
+        optimizer = Adam(clipnorm=1.0)
         model.compile(
-            optimizer=Adam(),
+            optimizer=optimizer,
             loss="categorical_crossentropy",
             metrics=["accuracy"]
         )
 
-        print("\nNew model structure created.")
-
     steps_per_epoch = len(X) // batch_size
     train_generator = data_generator(X, y, batch_size, num_classes)
+
+    lr_scheduler = ReduceLROnPlateau(monitor='loss', factor=0.2, patience=5, min_lr=1e-6)
+    early_stopping = EarlyStopping(monitor='loss', patience=10, restore_best_weights=True)
 
     print("\nContinuing training...")
     history = model.fit(
         train_generator,
         steps_per_epoch=steps_per_epoch,
         epochs=epochs,
-        verbose=1
+        verbose=1,
+        callbacks=[lr_scheduler, early_stopping]
     )
 
     print("\nSaving updated model...")
