@@ -217,17 +217,4 @@ def main():
 
 
 if __name__ == "__main__":
-    user = input("Would you like to start training? (y/n): ")
-    multi = input("Would you like to train multiple times? (y/n): ")
-
-    if user.lower() == 'y' and multi.lower() == 'y':
-        multiNum = int(input("How many times would you like to train? (int): "))
-        print(f"Training {multiNum} times")
-        for i in range(multiNum):
-            main()
-            print("training complete")
-    elif user.lower() == 'y' and multi.lower() == 'n':
-        main()
-        print("training complete")
-    else:
-        print("training aborted \nFinished")
+    main()
