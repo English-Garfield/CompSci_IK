@@ -218,3 +218,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+"""
+training round 1 -> time 912 minutes -> 50/50 epochs -> loss: 3.1480 -> accuracy: 0.2976 (started @ 0.2086) -> lr: 0.0010
+"""
