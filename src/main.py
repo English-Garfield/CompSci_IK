@@ -30,6 +30,7 @@ class Main:
         self.game = Game()
         self.running = True
         self.in_main_menu = True
+        self.ai_moving = False  # Flag to prevent multiple AI moves in a single frame
 
     def main_screen(self):
         while self.in_main_menu:
@@ -73,32 +74,105 @@ class Main:
             if self.game.dragger.dragging:
                 self.game.dragger.update_blit(self.screen)
 
-            if self.game.next_player == 'black':
-                ai_move = self.game.ai_player.get_move(self.game.board)
-                if ai_move:
-                    print(f"AI Move: {ai_move}")
+            if self.game.next_player == 'black' and not self.ai_moving:
+                self.ai_moving = True  # Set flag to prevent multiple AI moves
+                try:
+                    # Get AI move
+                    ai_move = self.game.ai_player.get_move(self.game.board)
 
-                    if isinstance(ai_move, Move):
-                        piece = ai_move.piece
-                        move = ai_move
+                    if ai_move:
+                        print(f"AI Move: {ai_move}")
 
-                        # Validate the move data
-                        if isinstance(piece, Piece) and isinstance(move, Move):
-                            self.game.board.move(piece, move)  # Perform the move
-                            self.game.next_turn()
-                            print(f"AI moved {piece} to {move.final.row}, {move.final.col}")
+                        if isinstance(ai_move, Move):
+                            piece = ai_move.piece
+                            move = ai_move
 
-                            # Update the display after the AI move
-                            self.game.show_bg(self.screen)
-                            self.game.show_last_move(self.screen)
-                            self.game.show_pieces(self.screen)
-                            pygame.display.update()
+                            # Validate the move data
+                            if isinstance(piece, Piece) and isinstance(move, Move):
+                                # Check if it's a valid move
+                                if self.game.board.valid_move(piece, move):
+                                    # Check if a piece is captured
+                                    captured = self.game.board.squares[move.final.row][move.final.col].has_piece()
+
+                                    # Perform the move
+                                    self.game.board.move(piece, move)
+
+                                    # Handle en passant
+                                    self.game.board.set_true_en_passant(piece)
+
+                                    # Play sound if a piece is captured
+                                    if captured:
+                                        self.game.play_sound(captured)
+                                    else:
+                                        self.game.play_sound(False)  # Play move sound
+
+                                    # Switch to next player
+                                    self.game.next_turn()
+
+                                    print(f"AI moved {piece} to {move.final.row}, {move.final.col}")
+
+                                    # Update the display after the AI move
+                                    self.game.show_bg(self.screen)
+                                    self.game.show_last_move(self.screen)
+                                    self.game.show_pieces(self.screen)
+                                    pygame.display.update()
+
+                                    # Add a small delay to ensure the display is updated
+                                    pygame.time.delay(500)
+                                else:
+                                    print(f"Invalid move: {move}")
+                                    # Try to calculate moves for this piece again
+                                    initial_row, initial_col = move.initial.row, move.initial.col
+                                    self.game.board.calc_moves(piece, initial_row, initial_col, bool=True)
+
+                                    # Try again with recalculated moves
+                                    if self.game.board.valid_move(piece, move):
+                                        # Check if a piece is captured
+                                        captured = self.game.board.squares[move.final.row][move.final.col].has_piece()
+
+                                        # Perform the move
+                                        self.game.board.move(piece, move)
+
+                                        # Handle en passant
+                                        self.game.board.set_true_en_passant(piece)
+
+                                        # Play sound if a piece is captured
+                                        if captured:
+                                            self.game.play_sound(captured)
+                                        else:
+                                            self.game.play_sound(False)  # Play move sound
+
+                                        # Switch to next player
+                                        self.game.next_turn()
+
+                                        print(f"AI moved {piece} to {move.final.row}, {move.final.col} after recalculating moves")
+
+                                        # Update the display after the AI move
+                                        self.game.show_bg(self.screen)
+                                        self.game.show_last_move(self.screen)
+                                        self.game.show_pieces(self.screen)
+                                        pygame.display.update()
+
+                                        # Add a small delay to ensure the display is updated
+                                        pygame.time.delay(500)
+                                    else:
+                                        print(f"Move still invalid after recalculating: {move}")
+                                        self.game.next_turn()  # Skip AI's turn if move is still invalid
+                            else:
+                                print("Invalid piece or move object returned by AI!")
+                                self.game.next_turn()  # Skip AI's turn if move is invalid
                         else:
-                            print("Invalid piece or move object returned by AI!")
+                            print(f"Unexpected AI move format: {ai_move}")
+                            self.game.next_turn()  # Skip AI's turn if move is invalid
                     else:
-                        print(f"Unexpected AI move format: {ai_move}")
-                else:
-                    print("AI did not return a valid move.")
+                        print("AI did not return a valid move.")
+                        self.game.next_turn()  # Skip AI's turn if no move is returned
+                except Exception as e:
+                    print(f"Error during AI move: {e}")
+                    # If AI fails, switch to player's turn
+                    self.game.next_turn()
+
+                self.ai_moving = False  # Reset flag after AI move is complete
 
             pygame.display.update()
 

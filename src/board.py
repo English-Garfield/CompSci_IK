@@ -116,7 +116,7 @@ class Board:
                         initial = Square(row, col)
                         final = Square(possible_move_row, col)
                         # create a new move
-                        move = Move(initial, final)
+                        move = Move(initial, final, piece)
 
                         # check potential checks
                         if bool:
@@ -144,7 +144,7 @@ class Board:
                         final_piece = self.squares[possible_move_row][possible_move_col].piece
                         final = Square(possible_move_row, possible_move_col, final_piece)
                         # create a new move
-                        move = Move(initial, final)
+                        move = Move(initial, final, piece)
 
                         # check potencial checks
                         if bool:
@@ -168,7 +168,7 @@ class Board:
                             initial = Square(row, col)
                             final = Square(fr, col - 1, p)
                             # create a new move
-                            move = Move(initial, final)
+                            move = Move(initial, final, piece)
 
                             # check potencial checks
                             if bool:
@@ -189,7 +189,7 @@ class Board:
                             initial = Square(row, col)
                             final = Square(fr, col + 1, p)
                             # create a new move
-                            move = Move(initial, final)
+                            move = Move(initial, final, piece)
 
                             # check potencial checks
                             if bool:
@@ -223,7 +223,7 @@ class Board:
                         final_piece = self.squares[possible_move_row][possible_move_col].piece
                         final = Square(possible_move_row, possible_move_col, final_piece)
                         # create new move
-                        move = Move(initial, final)
+                        move = Move(initial, final, piece)
 
                         # check potencial checks
                         if bool:
