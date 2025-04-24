@@ -58,7 +58,7 @@
  [],
  False,
  False,
- 1745423602,
+ 1745492974,
  [('run',
    '/Users/Isaac/CompSciNEA_IK/venv/lib/python3.10/site-packages/PyInstaller/bootloader/Darwin-64bit/run',
    'EXECUTABLE')],
