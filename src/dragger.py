@@ -1,6 +1,7 @@
 import pygame
 
 from const import *
+from resource_path import resource_path
 
 class Dragger:
 

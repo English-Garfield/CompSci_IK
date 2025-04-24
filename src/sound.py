@@ -1,4 +1,5 @@
 import pygame
+from resource_path import resource_path
 
 
 class Sound:

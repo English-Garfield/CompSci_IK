@@ -6,6 +6,7 @@ from dragger import Dragger
 from config import Config
 from square import Square
 from ai_player import AIPlayer
+from resource_path import resource_path
 
 
 class Game:

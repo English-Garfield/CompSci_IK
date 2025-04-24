@@ -5,6 +5,7 @@ from move import Move
 from sound import Sound
 import copy
 import os
+from resource_path import resource_path
 
 
 class Board:
@@ -35,7 +36,7 @@ class Board:
                 self.squares[final.row][final.col].piece = piece
                 if not testing:
                     sound = Sound(
-                        os.path.join('assets/sounds/capture.wav'))
+                        resource_path('assets/sounds/capture.wav'))
                     sound.play()
 
             # pawn promotion
