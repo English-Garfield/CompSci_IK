@@ -18,13 +18,17 @@ class Dragger:
         # texture
         self.piece.set_texture(size=128)
         texture = self.piece.texture
-        # img
-        img = pygame.image.load(texture)
-        # rect
-        img_center = (self.mouseX, self.mouseY)
-        self.piece.texture_rect = img.get_rect(center=img_center)
-        # blit
-        surface.blit(img, self.piece.texture_rect)
+        try:
+            # img
+            img = pygame.image.load(texture)
+            # rect
+            img_center = (self.mouseX, self.mouseY)
+            self.piece.texture_rect = img.get_rect(center=img_center)
+            # blit
+            surface.blit(img, self.piece.texture_rect)
+        except Exception as e:
+            print(f"Error loading image in dragger: {e}")
+            # Continue without blitting if image can't be loaded
 
     # other methods
 

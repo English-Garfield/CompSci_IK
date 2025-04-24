@@ -17,6 +17,7 @@ class Game:
         self.dragger = Dragger()
         self.config = Config()
         self.ai_player = AIPlayer()
+        self.checkmate = False
 
     # blit methods
 
@@ -62,10 +63,14 @@ class Game:
                     # all pieces except dragger piece
                     if piece is not self.dragger.piece:
                         piece.set_texture(size=80)
-                        img = pygame.image.load(piece.texture)
-                        img_center = col * SQSIZE + SQSIZE // 2, row * SQSIZE + SQSIZE // 2
-                        piece.texture_rect = img.get_rect(center=img_center)
-                        surface.blit(img, piece.texture_rect)
+                        try:
+                            img = pygame.image.load(piece.texture)
+                            img_center = col * SQSIZE + SQSIZE // 2, row * SQSIZE + SQSIZE // 2
+                            piece.texture_rect = img.get_rect(center=img_center)
+                            surface.blit(img, piece.texture_rect)
+                        except Exception as e:
+                            print(f"Error loading piece image: {e}")
+                            # Continue without blitting if image can't be loaded
 
     def show_moves(self, surface):
         theme = self.config.theme
@@ -125,3 +130,23 @@ class Game:
 
     def reset(self):
         self.__init__()
+
+    def show_checkmate_message(self, surface):
+        if self.checkmate:
+            # Create a semi-transparent overlay
+            overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
+            overlay.fill((0, 0, 0, 128))  # Black with 50% transparency
+            surface.blit(overlay, (0, 0))
+
+            # Render checkmate message
+            font = pygame.font.Font(None, 60)
+            checkmate_text = font.render('CHECKMATE!', True, WHITE)
+            restart_text = font.render('Press R to restart', True, WHITE)
+
+            # Position the text in the center of the screen
+            checkmate_rect = checkmate_text.get_rect(center=(WIDTH//2, HEIGHT//2 - 30))
+            restart_rect = restart_text.get_rect(center=(WIDTH//2, HEIGHT//2 + 30))
+
+            # Draw the text on the screen
+            surface.blit(checkmate_text, checkmate_rect)
+            surface.blit(restart_text, restart_rect)

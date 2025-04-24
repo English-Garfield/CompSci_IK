@@ -1,4 +1,5 @@
 import os
+from resource_path import resource_path
 
 
 class Piece:
@@ -15,8 +16,16 @@ class Piece:
         self.texture_rect = texture_rect
 
     def set_texture(self, size=80):
-        self.texture = os.path.join(
-            f'assets/images/imgs-{size}px/{self.color}_{self.name}.png')
+        try:
+            self.texture = resource_path(
+                f'assets/images/imgs-{size}px/{self.color}_{self.name}.png')
+            # Check if the file exists
+            if not os.path.exists(self.texture):
+                print(f"Warning: Texture file '{self.texture}' does not exist.")
+        except Exception as e:
+            print(f"Error setting texture for {self.color} {self.name}: {e}")
+            # Set a default texture path even if there's an error
+            self.texture = f'assets/images/imgs-{size}px/{self.color}_{self.name}.png'
 
     def add_move(self, move):
         self.moves.append(move)

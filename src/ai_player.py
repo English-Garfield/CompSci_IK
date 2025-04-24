@@ -1,6 +1,7 @@
 import numpy as np
 import os
 import random
+from resource_path import resource_path
 
 # Try different import strategies
 try:
@@ -29,7 +30,7 @@ class AIPlayer:
         self.model = None
 
         # Try different methods to load the model
-        model_path = 'assets/chessModel.keras'
+        model_path = resource_path('assets/chessModel.keras')
         if os.path.exists(model_path):
             if KERAS_AVAILABLE:
                 try:
@@ -56,7 +57,8 @@ class AIPlayer:
         print(f"Number of valid moves: {len(valid_moves)}")
 
         if not valid_moves:
-            raise ValueError("No valid moves available!")
+            print("No valid moves available! Assuming checkmate.")
+            return None
 
         # If model is not available, use random selection
         if self.model is None:
@@ -87,11 +89,20 @@ class AIPlayer:
                         # Find a valid move for this piece
                         if piece.moves:
                             selected_move = piece.moves[0]
+                            # Ensure the move has a valid piece
+                            if not isinstance(selected_move, Move) or not isinstance(selected_move.piece, Piece):
+                                print(f"Created move is invalid: {selected_move}")
+                                # Try to create a valid move manually
+                                from square import Square
+                                initial = Square(row, col, piece)
+                                final = Square(selected_move.final.row, selected_move.final.col)
+                                selected_move = Move(initial, final, piece)
                             print(f"Created new move: {selected_move}")
                             return selected_move
 
-            # If we still can't find a valid move, raise an error
-            raise ValueError("Could not find or create a valid move")
+            # If we still can't find a valid move, assume checkmate
+            print("Could not find or create a valid move. Assuming checkmate.")
+            return None
 
         try:
             # Convert the board state to an input suitable for the AI model
@@ -121,6 +132,17 @@ class AIPlayer:
                     print(f"Warning: Model selected an invalid move, using random move instead")
             else:
                 print(f"Warning: Invalid move object from model, using random move instead")
+                # Try to find a valid move with the same coordinates
+                if hasattr(selected_move, 'initial') and hasattr(selected_move, 'final'):
+                    for move in valid_moves:
+                        if (move.initial.row == selected_move.initial.row and 
+                            move.initial.col == selected_move.initial.col and 
+                            move.final.row == selected_move.final.row and 
+                            move.final.col == selected_move.final.col and
+                            isinstance(move, Move) and 
+                            isinstance(move.piece, Piece)):
+                            print(f"Found valid move with same coordinates: {move}")
+                            return move
 
             # Fall back to random selection if model selection fails
             random.shuffle(valid_moves)
@@ -128,8 +150,9 @@ class AIPlayer:
                 if isinstance(move, Move) and isinstance(move.piece, Piece) and board.valid_move(move.piece, move):
                     return move
 
-            # If we still can't find a valid move, raise an error
-            raise ValueError("Could not find a valid move after model prediction")
+            # If we still can't find a valid move, assume checkmate
+            print("Could not find a valid move after model prediction. Assuming checkmate.")
+            return None
 
         except Exception as e:
             print(f"Error during AI move selection: {e}")
@@ -141,8 +164,9 @@ class AIPlayer:
                 if isinstance(move, Move) and isinstance(move.piece, Piece) and board.valid_move(move.piece, move):
                     return move
 
-            # If we still can't find a valid move, raise an error
-            raise ValueError("Could not find a valid move after exception")
+            # If we still can't find a valid move, assume checkmate
+            print("Could not find a valid move after exception. Assuming checkmate.")
+            return None
 
     def convert_board_to_input(self, board):
         """Convert the board representation to a model-friendly format."""
@@ -225,6 +249,18 @@ class AIPlayer:
             raise RuntimeError(f"Selected move {best_move} is not in the list of valid moves!")
 
         if not isinstance(best_move, Move) or not isinstance(best_move.piece, Piece):
+            print(f"Invalid move or piece detected in: {best_move}")
+            # Try to find a valid move with the same coordinates
+            for move in valid_moves:
+                if (move.initial.row == best_move.initial.row and 
+                    move.initial.col == best_move.initial.col and 
+                    move.final.row == best_move.final.row and 
+                    move.final.col == best_move.final.col and
+                    isinstance(move, Move) and 
+                    isinstance(move.piece, Piece)):
+                    print(f"Found valid move with same coordinates: {move}")
+                    return move
+            # If we can't find a valid move with the same coordinates, raise an error
             raise ValueError(f"Invalid move or piece detected in: {best_move}")
 
         return best_move

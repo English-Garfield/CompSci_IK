@@ -51,6 +51,26 @@ the `requirements.txt` should first be installed to ensure that all the dependen
 pip install -r requirements.txt
 ```
 
+## Building with PyInstaller
+To create a standalone executable of the application, you can use PyInstaller:
+
+1. Install PyInstaller:
+```
+pip install pyinstaller
+```
+
+2. Navigate to the src directory:
+```
+cd src
+```
+
+3. Build the application using the provided spec file:
+```
+pyinstaller main.spec
+```
+
+4. The executable will be created in the `dist/main` directory.
+
 # Usage
 I don't mid how you use this as it was made for fun and for my A level computing NEA
 Coding should be accessible and open so if my work is of help to you then all i ask is that you credit me in your work
@@ -60,5 +80,3 @@ Coding should be accessible and open so if my work is of help to you then all i 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-

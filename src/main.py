@@ -74,6 +74,10 @@ class Main:
             if self.game.dragger.dragging:
                 self.game.dragger.update_blit(self.screen)
 
+            # Display checkmate message if in checkmate state
+            if self.game.checkmate:
+                self.game.show_checkmate_message(self.screen)
+
             if self.game.next_player == 'black' and not self.ai_moving:
                 self.ai_moving = True  # Set flag to prevent multiple AI moves
                 try:
@@ -165,7 +169,8 @@ class Main:
                             print(f"Unexpected AI move format: {ai_move}")
                             self.game.next_turn()  # Skip AI's turn if move is invalid
                     else:
-                        print("AI did not return a valid move.")
+                        print("AI did not return a valid move. Checkmate!")
+                        self.game.checkmate = True  # Set checkmate flag
                         self.game.next_turn()  # Skip AI's turn if no move is returned
                 except Exception as e:
                     print(f"Error during AI move: {e}")
@@ -236,9 +241,17 @@ class Main:
                     if event.key == pygame.K_r:
                         self.game.reset()
                         self.game = Game()
+                        # Ensure checkmate flag is reset
+                        self.game.checkmate = False
 
                 pygame.display.update()
 
 
-main = Main()
-main.mainloop()
+try:
+    main = Main()
+    main.mainloop()
+except Exception as e:
+    print(f"Unhandled exception in main script: {e}")
+    # Ensure pygame is properly quit before exiting
+    pygame.quit()
+    sys.exit(1)
