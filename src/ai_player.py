@@ -216,7 +216,7 @@ class AIPlayer:
             raise ValueError("No valid moves found for the AI!")
         return valid_moves
 
-# Python code to fix "Mismatch between predictions and valid moves count"
+# fix "Mismatch between predictions and valid moves count"
 
     def select_best_move(self, prediction, valid_moves):
         """

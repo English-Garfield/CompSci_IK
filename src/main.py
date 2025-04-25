@@ -247,11 +247,8 @@ class Main:
                 pygame.display.update()
 
 
-try:
+
+if __name__ == "__main__":
     main = Main()
     main.mainloop()
-except Exception as e:
-    print(f"Unhandled exception in main script: {e}")
-    # Ensure pygame is properly quit before exiting
     pygame.quit()
-    sys.exit(1)
