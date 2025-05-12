@@ -5,6 +5,7 @@ Main module for the chess game.
 # Add other necessary imports
 import pygame
 import sys
+
 from const import *
 from game import Game
 from square import Square
