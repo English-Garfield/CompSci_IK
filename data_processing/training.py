@@ -175,8 +175,8 @@ def main():
 
     MODEL_PATH = '../assets/chessModel.keras'
     FILE_PATH = '../assets/ChessData'
-    LIMIT_OF_FILES = 4
-    GAMES_LIMIT = 75000
+    LIMIT_OF_FILES = 10
+    GAMES_LIMIT = 100000
 
     print("\nLoading games...")
     games = load_games_threaded(FILE_PATH, LIMIT_OF_FILES)
