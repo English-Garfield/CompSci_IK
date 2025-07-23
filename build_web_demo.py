@@ -11,7 +11,7 @@ import webbrowser
 import time
 import argparse
 
-def main():
+def webDemo():
     parser = argparse.ArgumentParser(description='Build and run the web demo')
     parser.add_argument('--port', type=int, default=8000, help='Port to run the web server on')
     parser.add_argument('--no-browser', action='store_true', help='Do not open the browser automatically')
@@ -86,4 +86,4 @@ def main():
     return 0
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(webDemo() or 0)
