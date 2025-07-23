@@ -1,3 +1,4 @@
+"""
 name: Build Windows EXE
 
 on:
@@ -31,3 +32,4 @@ jobs:
       with:
         name: chess-exe
         path: dist/main.exe
+"""
