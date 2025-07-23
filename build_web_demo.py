@@ -11,7 +11,7 @@ import webbrowser
 import time
 import argparse
 
-def webDemo():
+def main():
     parser = argparse.ArgumentParser(description='Build and run the web demo')
     parser.add_argument('--port', type=int, default=8000, help='Port to run the web server on')
     parser.add_argument('--no-browser', action='store_true', help='Do not open the browser automatically')
@@ -29,13 +29,9 @@ def webDemo():
     # Build the web demo using Pygbag
     build_cmd = [
         sys.executable, "-m", "pygbag", 
-        "--ume_block", "0",  # Don't block the UI while loading
-        "--app_name", "Chess with Deep Learning Neural Network",
-        "--title", "Chess with Deep Learning Neural Network - Web Demo",
-        "--icon", "assets/images/black-knight.png",  # Assuming this path exists
-        "--html", "index.html",  # Use our custom HTML template
-        "--package", "web_build",  # Output directory
         "--build",  # Build only, don't serve
+        "--app_name", "Chess Game",
+        "--package", "web_build",  # Output directory
         "."  # Current directory (root of the project)
     ]
     
@@ -86,4 +82,4 @@ def webDemo():
     return 0
 
 if __name__ == "__main__":
-    sys.exit(webDemo() or 0)
+    sys.exit(main() or 0)
