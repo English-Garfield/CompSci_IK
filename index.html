@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess with Deep Learning Neural Network - Web Demo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        #canvas-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        #pygame-canvas {
+            border: 2px solid #666;
+            max-width: 100%;
+            max-height: 80vh;
+        }
+        
+        .loading {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        
+        .instructions {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #444;
+            border-radius: 5px;
+        }
+        
+        .instructions h2 {
+            margin-top: 0;
+        }
+        
+        .instructions ul {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chess with Deep Learning Neural Network</h1>
+    
+    <div id="canvas-container">
+        <canvas id="pygame-canvas"></canvas>
+    </div>
+    
+    <div id="loading" class="loading">Loading game...</div>
+    
+    <div class="instructions">
+        <h2>How to Play</h2>
+        <ul>
+            <li>Click on a piece to select it</li>
+            <li>Click on a highlighted square to move the piece</li>
+            <li>Press 'T' to change the theme</li>
+            <li>Press 'R' to reset the game</li>
+        </ul>
+        <p>You play as white, and the AI plays as black.</p>
+    </div>
+    
+    <script>
+        // This script will be replaced by Pygbag's generated code
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loading message when the game is loaded
+            window.addEventListener('pygbag-loaded', function() {
+                document.getElementById('loading').style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

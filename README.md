@@ -18,6 +18,7 @@
       </ul>
     </li>
     <li><a href="#Usage">Usage</a></li>
+    <li><a href="#Web-Demo">Web Demo</a></li>
     <li><a href="#Contact">Contact</a></li>
     <li><a href="#Documentation">Documentation</a></li>
   </ol>
@@ -57,6 +58,49 @@ Then the `main.py` or `main.exec` file can be run to start the game
 # Usage
 I don't mid how you use this as it was made for fun and for my A level computing NEA
 Coding should be accessible and open so if my work is of help to you then all i ask is that you credit me in your work
+
+# Web Demo
+You can try the chess game directly in your web browser without installing anything!
+
+## Play Online
+[Click here to play the chess game in your browser](https://isaackorda.github.io/CompSciNEA_IK/)
+
+## Building the Web Demo Locally
+If you want to build and run the web demo locally, follow these steps:
+
+1. Make sure you have installed all the requirements:
+   ```
+   pip install -r requirements.txt
+   pip install pygbag
+   ```
+
+2. Run the build script:
+   ```
+   python build_web_demo.py
+   ```
+   
+   This will:
+   - Build the web demo using Pygbag
+   - Start a local web server
+   - Open your default browser to play the game
+
+3. Additional options:
+   ```
+   python build_web_demo.py --help
+   ```
+   
+   - `--port PORT`: Specify a different port (default: 8000)
+   - `--no-browser`: Don't open the browser automatically
+   - `--build-only`: Only build the web demo, don't run it
+
+## How It Works
+The web demo uses [Pygbag](https://github.com/pygame-web/pygbag), which converts the Python/Pygame code to WebAssembly that can run in modern web browsers. This allows you to play the full chess game with AI directly in your browser without any installation.
+
+## Controls
+- Click on a piece to select it
+- Click on a highlighted square to move the piece
+- Press 'T' to change the theme
+- Press 'R' to reset the game
 
 # Documentation
 ![image](https://img.shields.io/badge/Microsoft_Word-2B579A?style=for-the-badge&logo=microsoft-word&logoColor=white)
