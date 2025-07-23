@@ -667,7 +667,7 @@ Usage:
        
        # Create a new model with default settings
        python training.py --mode new
-       
+             
        # Continue training an existing model
        python training.py --mode continue
        
