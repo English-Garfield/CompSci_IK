@@ -45,6 +45,23 @@ jobs:
         run: |
           python -m pygbag --build --app_name "Chess Game" --package build --archive .
       
+      - name: Ensure index.html is in build
+        run: |
+          # Copy your index.html to build directory if it's not there
+          if [ -f index.html ] && [ ! -f build/index.html ]; then
+            cp index.html build/
+          fi
+          # If index.html exists in root but build has a different name, copy it over
+          if [ -f index.html ]; then
+            cp index.html build/index.html
+          fi
+      
+      - name: Check build output
+        run: |
+          ls -la build/
+          echo "Contents of index.html:"
+          head -10 build/index.html || echo "No index.html found"
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
