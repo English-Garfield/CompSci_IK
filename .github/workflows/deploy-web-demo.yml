@@ -43,55 +43,34 @@ jobs:
       
       - name: Build with Pygbag
         run: |
-          python -m pygbag --build --width 800 --height 600 --app_name "Chess Game" --package build --archive main.py
+          python -m pygbag --build --width 800 --height 600 --app_name "Chess Game" main.py
       
-      - name: Integrate custom HTML with pygbag output
+      - name: Setup web files for GitHub Pages
         run: |
-          # Check what pygbag generated
-          ls -la build/
+          # Create build directory if it doesn't exist
+          mkdir -p build
           
-          # If pygbag created its own HTML file, we need to merge it with ours
-          if [ -f build/main.html ]; then
-            # Extract the pygbag script section from the generated HTML
-            echo "Found pygbag generated HTML, extracting scripts..."
-            
-            # Create a backup of your custom index.html
-            if [ -f index.html ]; then
-              cp index.html build/index.html
-              
-              # Try to extract and inject the pygbag script into your HTML
-              # This is a simple approach - replace the placeholder script
-              if grep -q "pygbag-loaded" build/index.html; then
-                # Find the script tags from pygbag's generated HTML and inject them
-                sed -i '/<script>/,/<\/script>/c\
-                <!-- Pygbag generated scripts will be injected here by build process -->' build/index.html
-                
-                # Extract scripts from pygbag HTML and append to our HTML
-                if [ -f build/main.html ]; then
-                  # Extract script content and append before closing body tag
-                  awk '/<script>/,/<\/script>/' build/main.html >> build/temp_scripts.html
-                  sed -i '/<\/body>/i\
-                  <script src="main.js"></script>' build/index.html
-                fi
-              fi
-            fi
-          else
-            # If no main.html, just copy our index.html
-            if [ -f index.html ]; then
-              cp index.html build/index.html
-            fi
+          # Copy all pygbag output to build directory
+          if [ -d dist ]; then
+            cp -r dist/* build/
           fi
           
-          # Ensure we have the necessary pygbag files
-          if [ -f build/main.js ]; then
-            echo "✓ Found main.js"
+          # If pygbag created files in current directory, move them
+          for file in *.js *.wasm *.data *.html; do
+            if [ -f "$file" ]; then
+              cp "$file" build/
+            fi
+          done
+          
+          # Use our custom HTML if pygbag generated one
+          if [ -f index.html ]; then
+            cp index.html build/index.html
+          elif [ -f build/main.html ]; then
+            mv build/main.html build/index.html
           fi
-          if [ -f build/main.wasm ]; then
-            echo "✓ Found main.wasm"  
-          fi
-          if [ -f build/main.data ]; then
-            echo "✓ Found main.data"
-          fi
+          
+          # Create .nojekyll to prevent Jekyll processing
+          touch build/.nojekyll
       
       - name: Debug build contents
         run: |
