@@ -43,24 +43,40 @@ jobs:
       
       - name: Build with Pygbag
         run: |
-          python -m pygbag --build --app_name "Chess Game" --package build --archive .
+          python -m pygbag --build --width 800 --height 600 --app_name "Chess Game" --package build --archive main.py
       
-      - name: Ensure index.html is in build
+      - name: Ensure proper web structure
         run: |
-          # Copy your index.html to build directory if it's not there
-          if [ -f index.html ] && [ ! -f build/index.html ]; then
-            cp index.html build/
-          fi
-          # If index.html exists in root but build has a different name, copy it over
+          # Make sure we have the right structure
+          mkdir -p build
+          
+          # Copy your index.html if it exists
           if [ -f index.html ]; then
-            cp index.html build/index.html
+            cp index.html build/
+            echo "Copied existing index.html"
           fi
+          
+          # Check if pygbag created its own HTML file
+          if [ -f build/*.html ] && [ ! -f build/index.html ]; then
+            # Rename pygbag's HTML to index.html
+            mv build/*.html build/index.html 2>/dev/null || true
+          fi
+          
+          # Ensure proper MIME types by creating .htaccess equivalent
+          cat > build/.nojekyll << EOF
+          # Disable Jekyll processing
+          EOF
       
-      - name: Check build output
+      - name: Debug build contents
         run: |
-          ls -la build/
-          echo "Contents of index.html:"
-          head -10 build/index.html || echo "No index.html found"
+          echo "=== Build directory structure ==="
+          find build/ -type f | head -20
+          echo ""
+          echo "=== index.html content (first 20 lines) ==="
+          head -20 build/index.html || echo "No index.html found"
+          echo ""
+          echo "=== Checking for required web files ==="
+          ls -la build/*.{js,wasm,html,data} 2>/dev/null || echo "Some web files missing"
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
