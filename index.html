@@ -253,11 +253,11 @@
             .container {
                 padding: 30px 20px;
             }
-
+            
             h1 {
                 font-size: 2em;
             }
-
+            
             .format-options {
                 flex-direction: column;
                 align-items: center;
@@ -290,8 +290,8 @@
                 English-Garfield/CompSciNEA_IK
             </div>
             <div class="project-description">
-                A comprehensive Computer Science NEA project demonstrating advanced programming concepts,
-                algorithms, and software development practices. This repository contains the complete
+                A comprehensive Computer Science NEA project demonstrating advanced programming concepts, 
+                algorithms, and software development practices. This repository contains the complete 
                 source code, documentation, and implementation details for academic assessment.
             </div>
             <div class="project-stats">
@@ -307,14 +307,18 @@
                     <span>🎓</span>
                     <span>Academic</span>
                 </div>
+                <div class="stat">
+                    <span>⭐</span>
+                    <span id="starCount">--</span>
+                </div>
             </div>
         </div>
 
         <div class="nea-info">
             <h3>About This NEA Project</h3>
-            <p>This repository contains a <span class="highlight">Computer Science NEA</span> (Non-Exam Assessment) project,
+            <p>This repository contains a <span class="highlight">Computer Science NEA</span> (Non-Exam Assessment) project, 
             which represents a significant portion of A-Level Computer Science coursework.</p>
-            <p>The project demonstrates practical programming skills, problem-solving abilities, and
+            <p>The project demonstrates practical programming skills, problem-solving abilities, and 
             understanding of computational thinking principles required for academic assessment.</p>
         </div>
 
@@ -365,7 +369,7 @@
             e.preventDefault();
             const cloneUrl = 'https://github.com/English-Garfield/CompSciNEA_IK.git';
             const command = `git clone ${cloneUrl}`;
-
+            
             navigator.clipboard.writeText(command).then(() => {
                 const btn = e.target;
                 const originalText = btn.textContent;
@@ -373,7 +377,7 @@
                 btn.style.background = '#2ea043';
                 btn.style.color = 'white';
                 btn.style.borderColor = '#2ea043';
-
+                
                 setTimeout(() => {
                     btn.textContent = originalText;
                     btn.style.background = '';
