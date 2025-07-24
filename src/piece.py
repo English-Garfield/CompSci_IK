@@ -8,12 +8,12 @@ class Piece:
         self.name = name
         self.color = color
         value_sign = 1 if color == 'white' else -1
+        self.texture_rect = texture_rect
         self.value = value * value_sign
         self.moves = []
         self.moved = False
         self.texture = texture
         self.set_texture()
-        self.texture_rect = texture_rect
 
     def set_texture(self, size=80):
         try:
