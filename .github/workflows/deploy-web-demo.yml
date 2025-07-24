@@ -34,7 +34,7 @@ jobs:
 
       - name: Build with Pygbag
         run: |
-          python -m pygbag --build --app_name "Chess Game" --package web_build .
+          python -m pygbag --build --app_name "Chess Game" --package web_build main.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
