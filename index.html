@@ -43,7 +43,7 @@
             width: 100px;
             height: 100px;
             margin: 0 auto 20px;
-            background: lir-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #667eea, #764ba2);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -60,7 +60,7 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            background: lir-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -121,7 +121,7 @@
         }
 
         .download-btn {
-            background: lir-gradient(45deg, #2ea043, #2c974b);
+            background: linear-gradient(45deg, #2ea043, #2c974b);
             color: white;
             border: none;
             padding: 18px 35px;
@@ -141,7 +141,7 @@
         .download-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(46, 160, 67, 0.4);
-            background: lir-gradient(45deg, #2c974b, #2ea043);
+            background: linear-gradient(45deg, #2c974b, #2ea043);
         }
 
         .download-btn:active {
@@ -176,15 +176,14 @@
             transform: translateY(-1px);
         }
 
-        .-info {
-            background: lir-gradient(45deg, rgba(103, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+        .repo-info {
+            background: linear-gradient(45deg, rgba(103, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
             border: 2px solid rgba(103, 126, 234, 0.3);
             border-radius: 15px;
             padding: 25px;
             margin: 30px 0;
             text-align: left;
         }
-        
 
         .instructions {
             margin-top: 30px;
@@ -288,11 +287,10 @@
                 <div class="stat">
                     <span>🎓</span>
                     <span>Academic</span>
-                </div
+                </div>
             </div>
         </div>
 
-    
         <div class="download-section">
             <a href="https://github.com/English-Garfield/CompSciNEA_IK/archive/refs/heads/main.zip" class="download-btn">
                 <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
@@ -366,10 +364,16 @@
                 const response = await fetch('https://api.github.com/repos/English-Garfield/CompSciNEA_IK');
                 if (response.ok) {
                     const data = await response.json();
-                    document.getElementById('starCount').textContent = data.stargazers_count || 0;
+                    const starElement = document.getElementById('starCount');
+                    if (starElement) {
+                        starElement.textContent = data.stargazers_count || 0;
+                    }
                 }
             } catch (error) {
-                document.getElementById('starCount').textContent = '0';
+                const starElement = document.getElementById('starCount');
+                if (starElement) {
+                    starElement.textContent = '0';
+                }
             }
         }
 
