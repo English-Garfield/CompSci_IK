@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chess with Deep Learning Neural Network - Web Demo</title>
     <style>
         body {
@@ -17,31 +17,31 @@
             justify-content: center;
             min-height: 100vh;
         }
-        
+
         h1 {
             text-align: center;
             margin-bottom: 20px;
         }
-        
+
         #canvas-container {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
         }
-        
+
         canvas {
             border: 2px solid #666;
             max-width: 100%;
             max-height: 80vh;
         }
-        
+
         .loading {
             font-size: 18px;
             margin-top: 20px;
             text-align: center;
         }
-        
+
         .instructions {
             max-width: 800px;
             margin: 20px auto;
@@ -49,16 +49,15 @@
             background-color: #444;
             border-radius: 5px;
         }
-        
+
         .instructions h2 {
             margin-top: 0;
         }
-        
+
         .instructions ul {
             text-align: left;
         }
-        
-        /* Hide the default pygbag canvas until we style it */
+
         #canvas {
             border: 2px solid #666;
             display: block;
@@ -68,16 +67,16 @@
 </head>
 <body>
     <h1>Chess with Deep Learning Neural Network</h1>
-    
+
     <div id="canvas-container">
-        <!-- Pygbag will inject its canvas here -->
+        <canvas id="canvas"></canvas>
     </div>
-    
+
     <div id="loading" class="loading">
         <p>Loading game...</p>
         <p><small>Please wait while the chess engine initializes</small></p>
     </div>
-    
+
     <div class="instructions">
         <h2>How to Play</h2>
         <ul>
@@ -88,56 +87,9 @@
         </ul>
         <p>You play as white, and the AI plays as black using a neural network.</p>
     </div>
-    
-    <script type="text/javascript">
-        // Configuration for pygbag
-        var Module = {
-            preRun: [],
-            postRun: [],
-            print: function(text) {
-                console.log(text);
-            },
-            printErr: function(text) {
-                console.error(text);
-            },
-            canvas: (function() {
-                var canvas = document.createElement('canvas');
-                canvas.id = 'canvas';
-                
-                // Move the canvas to our container
-                var container = document.getElementById('canvas-container');
-                container.appendChild(canvas);
-                
-                // Hide loading message once canvas is ready
-                canvas.addEventListener('webglcontextlost', function(e) {
-                    alert('WebGL context lost. You may need to reload the page.');
-                    e.preventDefault();
-                }, false);
-                
-                return canvas;
-            })(),
-            setStatus: function(text) {
-                var loadingDiv = document.getElementById('loading');
-                if (text) {
-                    loadingDiv.innerHTML = '<p>' + text + '</p>';
-                } else {
-                    loadingDiv.style.display = 'none';
-                }
-            },
-            totalDependencies: 0,
-            monitorRunDependencies: function(left) {
-                this.totalDependencies = Math.max(this.totalDependencies, left);
-                Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
-            }
-        };
-        
-        Module.setStatus('Downloading...');
-        
-        window.onerror = function() {
-            Module.setStatus('Exception thrown, see JavaScript console');
-        };
-        
-        // This will be replaced/augmented by pygbag's generated script
-    </script>
+
+    <!-- ✅ These scripts load the Pygbag runtime and start your game -->
+    <script src="pygbag.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
