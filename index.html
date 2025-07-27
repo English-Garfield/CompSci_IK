@@ -625,7 +625,7 @@
             position: relative;
         }
 
-        .checkmate-message::before {
+        .checkmate-message::before, .promotion-dialog::before {
             content: '';
             position: absolute;
             top: -3px;
@@ -642,6 +642,79 @@
         @keyframes border-gradient {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
+        }
+        
+        /* Pawn Promotion Styles */
+        .promotion-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: overlay-fade-in 0.5s ease-out;
+            backdrop-filter: blur(5px);
+        }
+        
+        .promotion-dialog {
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            animation: message-slide-up 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+        
+        .promotion-dialog h2 {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .promotion-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .promotion-option {
+            width: 80px;
+            height: 80px;
+            background: #f6f8fa;
+            border: 2px solid #d0d7de;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .promotion-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-color: #667eea;
+        }
+        
+        .promotion-option img {
+            width: 60px;
+            height: 60px;
+            transition: all 0.2s ease;
+        }
+        
+        .promotion-option:hover img {
+            transform: scale(1.1);
         }
 
         @keyframes message-slide-up {
@@ -1129,6 +1202,51 @@
             }
         }
 
+        // Show pawn promotion dialog
+        function showPromotionDialog(row, col, color, callback) {
+            const overlay = document.createElement('div');
+            overlay.className = 'promotion-overlay';
+            
+            const dialog = document.createElement('div');
+            dialog.className = 'promotion-dialog';
+            
+            dialog.innerHTML = `
+                <h2>Choose Promotion Piece</h2>
+                <div class="promotion-options">
+                    <div class="promotion-option" data-piece="queen">
+                        <img src="${imageSources[0]}${color}_queen.png" alt="${color} queen" 
+                             onerror="this.onerror=null; this.src='${imageSources[1]}${color}_queen.png';">
+                    </div>
+                    <div class="promotion-option" data-piece="rook">
+                        <img src="${imageSources[0]}${color}_rook.png" alt="${color} rook"
+                             onerror="this.onerror=null; this.src='${imageSources[1]}${color}_rook.png';">
+                    </div>
+                    <div class="promotion-option" data-piece="bishop">
+                        <img src="${imageSources[0]}${color}_bishop.png" alt="${color} bishop"
+                             onerror="this.onerror=null; this.src='${imageSources[1]}${color}_bishop.png';">
+                    </div>
+                    <div class="promotion-option" data-piece="knight">
+                        <img src="${imageSources[0]}${color}_knight.png" alt="${color} knight"
+                             onerror="this.onerror=null; this.src='${imageSources[1]}${color}_knight.png';">
+                    </div>
+                </div>
+                <p>Select a piece to promote your pawn</p>
+            `;
+            
+            overlay.appendChild(dialog);
+            document.body.appendChild(overlay);
+            
+            // Add event listeners to promotion options
+            const options = dialog.querySelectorAll('.promotion-option');
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    const selectedPiece = this.getAttribute('data-piece');
+                    overlay.remove();
+                    callback(selectedPiece);
+                });
+            });
+        }
+
         // Make a move with smooth animations
         function makeMove(fromRow, fromCol, toRow, toCol) {
             const piece = board[fromRow][fromCol];
@@ -1144,53 +1262,114 @@
                 }
             }
 
-            // Record move in history
-            gameHistory.push({
-                from: [fromRow, fromCol],
-                to: [toRow, toCol],
-                piece: piece,
-                captured: capturedPiece,
-                player: currentPlayer,
-                capturedColor: pieceColors[toRow][toCol] // Store captured piece color
-            });
-
             // Make the move - update both piece and color
             board[toRow][toCol] = piece;
             board[fromRow][fromCol] = null;
             pieceColors[toRow][toCol] = movingPieceColor;
             pieceColors[fromRow][fromCol] = null;
 
-            // Update move history display
-            updateMoveHistory();
-
-            // Switch players with smooth status transition
-            currentPlayer = currentPlayer === 'white' ? 'black' : 'white';
-            updateGameStatus();
-
-            // Recreate board with animation delay for smooth transition
-            setTimeout(() => {
-                createBoard();
-
-                // Highlight last move with enhanced animation
-                const fromSquare = document.querySelector(`[data-row="${fromRow}"][data-col="${fromCol}"]`);
-                const toSquare = document.querySelector(`[data-row="${toRow}"][data-col="${toCol}"]`);
-                if (fromSquare) fromSquare.classList.add('last-move');
-                if (toSquare) toSquare.classList.add('last-move');
-
-                // Check for checkmate
-                if (isCheckmate()) {
-                    gameOver = true;
-                    setTimeout(showCheckmateMessage, 500); // Delay for smooth transition
+            // Check for pawn promotion
+            let promotionInProgress = false;
+            if (piece === 'pawn') {
+                const promotionRank = movingPieceColor === 'white' ? 0 : 7;
+                if (toRow === promotionRank) {
+                    promotionInProgress = true;
+                    
+                    // Show promotion dialog
+                    showPromotionDialog(toRow, toCol, movingPieceColor, (selectedPiece) => {
+                        // Update the board with the selected piece
+                        board[toRow][toCol] = selectedPiece;
+                        
+                        // Record move in history with promotion
+                        gameHistory.push({
+                            from: [fromRow, fromCol],
+                            to: [toRow, toCol],
+                            piece: 'pawn',
+                            captured: capturedPiece,
+                            player: movingPieceColor,
+                            capturedColor: capturedPiece ? pieceColors[toRow][toCol] : null,
+                            promotion: selectedPiece
+                        });
+                        
+                        // Update move history display
+                        updateMoveHistory();
+                        
+                        // Switch players with smooth status transition
+                        currentPlayer = currentPlayer === 'white' ? 'black' : 'white';
+                        updateGameStatus();
+                        
+                        // Recreate board with animation delay for smooth transition
+                        setTimeout(() => {
+                            createBoard();
+                            
+                            // Highlight last move with enhanced animation
+                            const fromSquare = document.querySelector(`[data-row="${fromRow}"][data-col="${fromCol}"]`);
+                            const toSquare = document.querySelector(`[data-row="${toRow}"][data-col="${toCol}"]`);
+                            if (fromSquare) fromSquare.classList.add('last-move');
+                            if (toSquare) toSquare.classList.add('last-move');
+                            
+                            // Check for checkmate
+                            if (isCheckmate()) {
+                                gameOver = true;
+                                setTimeout(showCheckmateMessage, 500); // Delay for smooth transition
+                            }
+                            
+                            // Update game status to show check
+                            updateGameStatus();
+                            
+                            // AI move with smooth delay
+                            if (aiEnabled && currentPlayer === 'black' && !gameOver) {
+                                setTimeout(makeAIMove, 800); // Slightly longer delay for better UX
+                            }
+                        }, 200);
+                    });
                 }
+            }
+            
+            // If no promotion is happening, continue with normal move processing
+            if (!promotionInProgress) {
+                // Record move in history
+                gameHistory.push({
+                    from: [fromRow, fromCol],
+                    to: [toRow, toCol],
+                    piece: piece,
+                    captured: capturedPiece,
+                    player: movingPieceColor,
+                    capturedColor: capturedPiece ? pieceColors[toRow][toCol] : null
+                });
                 
-                // Update game status to show check
+                // Update move history display
+                updateMoveHistory();
+                
+                // Switch players with smooth status transition
+                currentPlayer = currentPlayer === 'white' ? 'black' : 'white';
                 updateGameStatus();
-
-                // AI move with smooth delay
-                if (aiEnabled && currentPlayer === 'black' && !gameOver) {
-                    setTimeout(makeAIMove, 800); // Slightly longer delay for better UX
-                }
-            }, capturedPiece ? 600 : 200); // Wait for capture animation if needed
+                
+                // Recreate board with animation delay for smooth transition
+                setTimeout(() => {
+                    createBoard();
+                    
+                    // Highlight last move with enhanced animation
+                    const fromSquare = document.querySelector(`[data-row="${fromRow}"][data-col="${fromCol}"]`);
+                    const toSquare = document.querySelector(`[data-row="${toRow}"][data-col="${toCol}"]`);
+                    if (fromSquare) fromSquare.classList.add('last-move');
+                    if (toSquare) toSquare.classList.add('last-move');
+                    
+                    // Check for checkmate
+                    if (isCheckmate()) {
+                        gameOver = true;
+                        setTimeout(showCheckmateMessage, 500); // Delay for smooth transition
+                    }
+                    
+                    // Update game status to show check
+                    updateGameStatus();
+                    
+                    // AI move with smooth delay
+                    if (aiEnabled && currentPlayer === 'black' && !gameOver) {
+                        setTimeout(makeAIMove, 800); // Slightly longer delay for better UX
+                    }
+                }, capturedPiece ? 600 : 200); // Wait for capture animation if needed
+            }
         }
 
         // Simple AI move (random valid move)
@@ -1337,7 +1516,17 @@
                 const fromSquare = String.fromCharCode(97 + move.from[1]) + (8 - move.from[0]);
                 const toSquare = String.fromCharCode(97 + move.to[1]) + (8 - move.to[0]);
                 const captureSymbol = move.captured ? 'x' : '-';
-                moveElement.textContent = `${index + 1}. ${move.piece} ${fromSquare}${captureSymbol}${toSquare}`;
+                
+                // Check if this move was a promotion
+                let moveText = `${index + 1}. ${move.piece} ${fromSquare}${captureSymbol}${toSquare}`;
+                if (move.promotion) {
+                    // Add promotion notation (e.g., "=Q" for queen)
+                    moveText += `=${move.promotion.charAt(0).toUpperCase()}`;
+                    moveElement.style.fontWeight = 'bold'; // Highlight promotion moves
+                    moveElement.style.background = 'linear-gradient(90deg, #e8f5e8, #f0e6ff)'; // Special background for promotions
+                }
+                
+                moveElement.textContent = moveText;
                 historyElement.appendChild(moveElement);
             });
 
@@ -1381,8 +1570,8 @@
 
             const lastMove = gameHistory.pop();
 
-            // Restore board state
-            board[lastMove.from[0]][lastMove.from[1]] = lastMove.piece;
+            // Restore board state - handle promotion specially
+            board[lastMove.from[0]][lastMove.from[1]] = lastMove.piece; // Always the original piece (pawn for promotions)
             board[lastMove.to[0]][lastMove.to[1]] = lastMove.captured;
 
             // Restore piece colors
