@@ -368,26 +368,26 @@
                 flex-direction: column;
                 align-items: center;
             }
-
+            
             .chess-board {
                 width: 320px;
                 height: 320px;
             }
-
+            
             .board-row {
                 height: 40px;
             }
-
+            
             .square {
                 width: 40px;
                 height: 40px;
             }
-
+            
             .piece {
                 width: 30px;
                 height: 30px;
             }
-
+            
             .piece:not(img) {
                 font-size: 24px;
             }
@@ -439,8 +439,8 @@
                     English-Garfield/CompSciNEA_IK
                 </div>
                 <div class="project-description">
-                    A comprehensive Computer Science project featuring an advanced chess game with AI capabilities using TensorFlow/Keras.
-                    The game includes sophisticated AI opponent, move validation, special moves (castling, en passant),
+                    A comprehensive Computer Science project featuring an advanced chess game with AI capabilities using TensorFlow/Keras. 
+                    The game includes sophisticated AI opponent, move validation, special moves (castling, en passant), 
                     sound effects, and multiple themes. Built with Python and Pygame for desktop deployment.
                 </div>
             </div>
@@ -470,7 +470,7 @@
                     <li><strong>AI Model:</strong> The AI requires the TensorFlow model file in the assets folder</li>
                     <li><strong>Features:</strong> Enjoy AI opponent, multiple themes, sound effects, and advanced chess rules</li>
                 </ol>
-
+                
                 <h3>🎮 Game Features:</h3>
                 <ul style="margin-left: 20px; margin-top: 10px;">
                     <li>Smart AI opponent with neural network decision making</li>
@@ -501,7 +501,7 @@
             'https://github.com/English-Garfield/CompSci_IK/raw/main/assets/images/imgs-80px/',
             'https://cdn.jsdelivr.net/gh/English-Garfield/CompSci_IK@main/assets/images/imgs-80px/'
         ];
-
+        
         // Piece image filenames
         const pieceImages = {
             'white': {
@@ -551,28 +551,28 @@
         function createBoard() {
             const boardElement = document.getElementById('chessBoard');
             boardElement.innerHTML = '';
-
+            
             for (let row = 0; row < 8; row++) {
                 const rowElement = document.createElement('div');
                 rowElement.className = 'board-row';
-
+                
                 for (let col = 0; col < 8; col++) {
                     const square = document.createElement('div');
                     square.className = `square ${(row + col) % 2 === 0 ? 'light' : 'dark'}`;
                     square.dataset.row = row;
                     square.dataset.col = col;
                     square.onclick = () => handleSquareClick(row, col);
-
+                    
                     const piece = board[row][col];
                     if (piece) {
                         const pieceElement = document.createElement('img');
                         pieceElement.className = 'piece';
                         const color = getPieceColor(row, col);
                         const filename = pieceImages[color][piece];
-
+                        
                         // Try multiple image sources
                         let currentSourceIndex = 0;
-
+                        
                         function tryNextImageSource() {
                             if (currentSourceIndex < imageSources.length) {
                                 pieceElement.src = imageSources[currentSourceIndex] + filename;
@@ -582,11 +582,11 @@
                                 console.warn(`All image sources failed for: ${color} ${piece}`);
                                 const fallbackPieces = {
                                     'white': {
-                                        'king': '♔', 'queen': '♕', 'rook': '♖',
+                                        'king': '♔', 'queen': '♕', 'rook': '♖', 
                                         'bishop': '♗', 'knight': '♘', 'pawn': '♙'
                                     },
                                     'black': {
-                                        'king': '♚', 'queen': '♛', 'rook': '♜',
+                                        'king': '♚', 'queen': '♛', 'rook': '♜', 
                                         'bishop': '♝', 'knight': '♞', 'pawn': '♟'
                                     }
                                 };
@@ -596,27 +596,27 @@
                                 pieceElement.parentNode.replaceChild(textElement, pieceElement);
                             }
                         }
-
+                        
                         pieceElement.alt = `${color} ${piece}`;
                         pieceElement.draggable = false;
-
+                        
                         // Set up error handling to try next source
                         pieceElement.onerror = function() {
                             console.warn(`Failed to load image from: ${this.src}`);
                             tryNextImageSource();
                         };
-
+                        
                         // Set up success handler
                         pieceElement.onload = function() {
                             console.log(`Successfully loaded: ${this.src}`);
                         };
-
+                        
                         // Start with first image source
                         tryNextImageSource();
-
+                        
                         square.appendChild(pieceElement);
                     }
-
+                    
                     rowElement.appendChild(square);
                 }
                 boardElement.appendChild(rowElement);
@@ -627,24 +627,24 @@
         function isValidMove(fromRow, fromCol, toRow, toCol) {
             if (toRow < 0 || toRow > 7 || toCol < 0 || toCol > 7) return false;
             if (fromRow === toRow && fromCol === toCol) return false;
-
+            
             const piece = board[fromRow][fromCol];
             const targetPiece = board[toRow][toCol];
             const pieceColor = getPieceColor(fromRow, fromCol);
             const targetColor = targetPiece ? getPieceColor(toRow, toCol) : null;
-
+            
             // Can't capture own pieces
             if (targetColor === pieceColor) return false;
-
+            
             // Simplified movement rules
             const rowDiff = Math.abs(toRow - fromRow);
             const colDiff = Math.abs(toCol - fromCol);
-
+            
             switch (piece) {
                 case 'pawn':
                     const direction = pieceColor === 'white' ? -1 : 1;
                     const startRow = pieceColor === 'white' ? 6 : 1;
-
+                    
                     // Forward movement
                     if (fromCol === toCol && !targetPiece) {
                         if (toRow === fromRow + direction) return true;
@@ -655,22 +655,22 @@
                         return true;
                     }
                     return false;
-
+                    
                 case 'rook':
                     return (rowDiff === 0 || colDiff === 0) && isPathClear(fromRow, fromCol, toRow, toCol);
-
+                    
                 case 'bishop':
                     return rowDiff === colDiff && isPathClear(fromRow, fromCol, toRow, toCol);
-
+                    
                 case 'queen':
                     return (rowDiff === 0 || colDiff === 0 || rowDiff === colDiff) && isPathClear(fromRow, fromCol, toRow, toCol);
-
+                    
                 case 'knight':
                     return (rowDiff === 2 && colDiff === 1) || (rowDiff === 1 && colDiff === 2);
-
+                    
                 case 'king':
                     return rowDiff <= 1 && colDiff <= 1;
-
+                    
                 default:
                     return false;
             }
@@ -680,40 +680,40 @@
         function isPathClear(fromRow, fromCol, toRow, toCol) {
             const rowStep = toRow > fromRow ? 1 : toRow < fromRow ? -1 : 0;
             const colStep = toCol > fromCol ? 1 : toCol < fromCol ? -1 : 0;
-
+            
             let currentRow = fromRow + rowStep;
             let currentCol = fromCol + colStep;
-
+            
             while (currentRow !== toRow || currentCol !== toCol) {
                 if (board[currentRow][currentCol] !== null) return false;
                 currentRow += rowStep;
                 currentCol += colStep;
             }
-
+            
             return true;
         }
 
         // Handle square clicks
         function handleSquareClick(row, col) {
             if (gameOver) return;
-
+            
             const clickedPiece = board[row][col];
             const clickedColor = clickedPiece ? getPieceColor(row, col) : null;
-
+            
             // Clear previous highlights
             document.querySelectorAll('.square').forEach(sq => {
                 sq.classList.remove('selected', 'possible-move');
             });
-
+            
             if (selectedSquare) {
                 const [fromRow, fromCol] = selectedSquare;
-
+                
                 if (fromRow === row && fromCol === col) {
                     // Deselect
                     selectedSquare = null;
                     return;
                 }
-
+                
                 if (isValidMove(fromRow, fromCol, row, col)) {
                     // Make the move
                     makeMove(fromRow, fromCol, row, col);
@@ -721,13 +721,13 @@
                     return;
                 }
             }
-
+            
             // Select piece if it belongs to current player
             if (clickedColor === currentPlayer) {
                 selectedSquare = [row, col];
                 const square = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
                 square.classList.add('selected');
-
+                
                 // Highlight possible moves (simplified)
                 highlightPossibleMoves(row, col);
             }
@@ -749,7 +749,7 @@
         function makeMove(fromRow, fromCol, toRow, toCol) {
             const piece = board[fromRow][fromCol];
             const capturedPiece = board[toRow][toCol];
-
+            
             // Record move in history
             gameHistory.push({
                 from: [fromRow, fromCol],
@@ -758,33 +758,33 @@
                 captured: capturedPiece,
                 player: currentPlayer
             });
-
+            
             // Make the move
             board[toRow][toCol] = piece;
             board[fromRow][fromCol] = null;
-
+            
             // Update move history display
             updateMoveHistory();
-
+            
             // Switch players
             currentPlayer = currentPlayer === 'white' ? 'black' : 'white';
             updateGameStatus();
-
+            
             // Recreate board
             createBoard();
-
+            
             // Highlight last move
             const fromSquare = document.querySelector(`[data-row="${fromRow}"][data-col="${fromCol}"]`);
             const toSquare = document.querySelector(`[data-row="${toRow}"][data-col="${toCol}"]`);
             fromSquare.classList.add('last-move');
             toSquare.classList.add('last-move');
-
+            
             // Simple checkmate detection
             if (isCheckmate()) {
                 gameOver = true;
                 showCheckmateMessage();
             }
-
+            
             // AI move
             if (aiEnabled && currentPlayer === 'black' && !gameOver) {
                 setTimeout(makeAIMove, 1000);
@@ -794,7 +794,7 @@
         // Simple AI move (random valid move)
         function makeAIMove() {
             const validMoves = [];
-
+            
             for (let fromRow = 0; fromRow < 8; fromRow++) {
                 for (let fromCol = 0; fromCol < 8; fromCol++) {
                     const piece = board[fromRow][fromCol];
@@ -809,7 +809,7 @@
                     }
                 }
             }
-
+            
             if (validMoves.length > 0) {
                 const randomMove = validMoves[Math.floor(Math.random() * validMoves.length)];
                 makeMove(...randomMove);
@@ -837,7 +837,7 @@
         function updateMoveHistory() {
             const historyElement = document.getElementById('moveHistory');
             historyElement.innerHTML = '';
-
+            
             gameHistory.forEach((move, index) => {
                 const moveElement = document.createElement('div');
                 moveElement.className = 'move';
@@ -847,7 +847,7 @@
                 moveElement.textContent = `${index + 1}. ${move.piece} ${fromSquare}${captureSymbol}${toSquare}`;
                 historyElement.appendChild(moveElement);
             });
-
+            
             historyElement.scrollTop = historyElement.scrollHeight;
         }
 
@@ -879,17 +879,17 @@
         // Undo move
         function undoMove() {
             if (gameHistory.length === 0) return;
-
+            
             const lastMove = gameHistory.pop();
-
+            
             // Restore board state
             board[lastMove.from[0]][lastMove.from[1]] = lastMove.piece;
             board[lastMove.to[0]][lastMove.to[1]] = lastMove.captured;
-
+            
             // Switch back player
             currentPlayer = lastMove.player;
             gameOver = false;
-
+            
             updateGameStatus();
             updateMoveHistory();
             createBoard();
@@ -900,7 +900,7 @@
             aiEnabled = !aiEnabled;
             const toggleText = document.getElementById('aiToggleText');
             toggleText.textContent = aiEnabled ? 'Disable AI' : 'Enable AI';
-
+            
             // If AI is enabled and it's black's turn, make AI move
             if (aiEnabled && currentPlayer === 'black' && !gameOver) {
                 setTimeout(makeAIMove, 1000);
@@ -914,7 +914,7 @@
                 tab.classList.remove('active');
             });
             event.target.classList.add('active');
-
+            
             // Update tab content
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
@@ -927,7 +927,7 @@
             e.preventDefault();
             const cloneUrl = 'https://github.com/English-Garfield/CompSciNEA_IK.git';
             const command = `git clone ${cloneUrl}`;
-
+            
             navigator.clipboard.writeText(command).then(() => {
                 const btn = e.target;
                 const originalText = btn.textContent;
@@ -935,7 +935,7 @@
                 btn.style.background = '#2ea043';
                 btn.style.color = 'white';
                 btn.style.borderColor = '#2ea043';
-
+                
                 setTimeout(() => {
                     btn.textContent = originalText;
                     btn.style.background = '';
