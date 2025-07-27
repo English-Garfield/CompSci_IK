@@ -141,7 +141,24 @@
             justify-content: center;
             cursor: pointer;
             position: relative;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .square::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .square:hover::before {
+            opacity: 1;
         }
 
         .square.light {
@@ -153,13 +170,23 @@
         }
 
         .square.selected {
-            background-color: #7fb069 !important;
-            box-shadow: inset 0 0 0 3px #5a8a47;
+            background: linear-gradient(135deg, #7fb069, #6ea055) !important;
+            box-shadow:
+                inset 0 0 0 3px #5a8a47,
+                0 0 20px rgba(127, 176, 105, 0.6),
+                0 4px 15px rgba(0,0,0,0.2);
+            transform: scale(0.95);
+            animation: pulse-select 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-select {
+            0%, 100% { box-shadow: inset 0 0 0 3px #5a8a47, 0 0 20px rgba(127, 176, 105, 0.6), 0 4px 15px rgba(0,0,0,0.2); }
+            50% { box-shadow: inset 0 0 0 3px #5a8a47, 0 0 30px rgba(127, 176, 105, 0.8), 0 6px 20px rgba(0,0,0,0.3); }
         }
 
         .square.possible-move {
-            background-color: #7fb069 !important;
-            opacity: 0.8;
+            background: linear-gradient(135deg, rgba(127, 176, 105, 0.3), rgba(110, 160, 85, 0.3)) !important;
+            animation: shimmer 2s ease-in-out infinite;
         }
 
         .square.possible-move::after {
@@ -167,26 +194,89 @@
             position: absolute;
             width: 20px;
             height: 20px;
-            background: #5a8a47;
+            background: radial-gradient(circle, #5a8a47, #4a7a37);
             border-radius: 50%;
-            opacity: 0.8;
+            opacity: 0.9;
+            animation: dot-pulse 1.5s ease-in-out infinite;
+            box-shadow: 0 2px 8px rgba(90, 138, 71, 0.4);
+        }
+
+        @keyframes dot-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         .square.last-move {
-            background-color: #f4d03f !important;
+            background: linear-gradient(135deg, #f4d03f, #f1c40f) !important;
+            box-shadow: 0 0 15px rgba(244, 208, 63, 0.5);
+            animation: last-move-glow 3s ease-in-out;
+        }
+
+        @keyframes last-move-glow {
+            0% { box-shadow: 0 0 15px rgba(244, 208, 63, 0.8); }
+            50% { box-shadow: 0 0 25px rgba(244, 208, 63, 0.6); }
+            100% { box-shadow: 0 0 15px rgba(244, 208, 63, 0.5); }
         }
 
         .piece {
             width: 45px;
             height: 45px;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             user-select: none;
-            pointer-events: none; /* Prevent interference with square clicks */
+            pointer-events: none;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            position: relative;
+            z-index: 2;
         }
 
-        .piece:hover {
-            transform: scale(1.05);
+        .square:hover .piece {
+            transform: scale(1.1) translateY(-2px);
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+        }
+
+        .square.selected .piece {
+            transform: scale(1.15) translateY(-3px);
+            filter: drop-shadow(0 6px 20px rgba(127, 176, 105, 0.6));
+            animation: piece-float 2s ease-in-out infinite;
+        }
+
+        @keyframes piece-float {
+            0%, 100% { transform: scale(1.15) translateY(-3px); }
+            50% { transform: scale(1.18) translateY(-5px); }
+        }
+
+        /* Smooth piece movement animation */
+        .piece.moving {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 10;
+            transform: scale(1.2);
+            filter: drop-shadow(0 8px 25px rgba(0,0,0,0.5));
+        }
+
+        /* Capture animation */
+        .piece.captured {
+            animation: capture-fade 0.6s ease-out forwards;
+        }
+
+        @keyframes capture-fade {
+            0% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.3) rotate(180deg);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(0) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         /* Fallback for text pieces if images fail */
@@ -197,6 +287,36 @@
             justify-content: center;
             width: 100%;
             height: 100%;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Smooth board appearance */
+        .chess-board {
+            animation: board-fade-in 0.8s ease-out;
+        }
+
+        @keyframes board-fade-in {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Enhanced square interactions */
+        .square {
+            background-size: 200% 200%;
+        }
+
+        .square.light:hover {
+            background: linear-gradient(135deg, #f0d9b5, #f5e4c0);
+        }
+
+        .square.dark:hover {
+            background: linear-gradient(135deg, #b58863, #c19875);
         }
 
         .game-info {
@@ -216,12 +336,72 @@
             border-radius: 10px;
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
+            box-shadow: 0 4px 15px rgba(103, 126, 234, 0.3);
+            transition: all 0.3s ease;
         }
 
-        .game-controls {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        .game-status.white-turn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            animation: status-pulse-white 2s ease-in-out infinite;
+        }
+
+        .game-status.black-turn {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            animation: status-pulse-black 2s ease-in-out infinite;
+        }
+
+        .game-status.game-over {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            animation: victory-flash 1s ease-in-out 3;
+        }
+        
+        .game-status.in-check {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            animation: check-pulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes check-pulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); }
+            50% { box-shadow: 0 6px 25px rgba(243, 156, 18, 0.5); }
+        }
+        
+        .king-in-check {
+            position: relative;
+            animation: king-check-pulse 1.5s ease-in-out infinite;
+        }
+        
+        .king-in-check::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px solid #f39c12;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(243, 156, 18, 0.7);
+            pointer-events: none;
+            z-index: 3;
+        }
+        
+        @keyframes king-check-pulse {
+            0%, 100% { box-shadow: inset 0 0 20px rgba(243, 156, 18, 0.5); }
+            50% { box-shadow: inset 0 0 30px rgba(243, 156, 18, 0.8); }
+        }
+
+        @keyframes status-pulse-white {
+            0%, 100% { box-shadow: 0 4px 15px rgba(103, 126, 234, 0.3); }
+            50% { box-shadow: 0 6px 25px rgba(103, 126, 234, 0.5); }
+        }
+
+        @keyframes status-pulse-black {
+            0%, 100% { box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3); }
+            50% { box-shadow: 0 6px 25px rgba(44, 62, 80, 0.5); }
+        }
+
+        @keyframes victory-flash {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .control-btn {
@@ -233,18 +413,44 @@
             font-weight: 600;
             border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 5px 15px rgba(46, 160, 67, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .control-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .control-btn:hover::before {
+            left: 100%;
         }
 
         .control-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(46, 160, 67, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(46, 160, 67, 0.4);
+        }
+
+        .control-btn:active {
+            transform: translateY(-1px);
+            transition: transform 0.1s ease;
         }
 
         .control-btn.secondary {
             background: linear-gradient(45deg, #6c757d, #5a6268);
             box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+        }
+
+        .control-btn.secondary:hover {
+            box-shadow: 0 8px 25px rgba(108, 117, 125, 0.4);
         }
 
         .move-history {
@@ -255,12 +461,51 @@
             padding: 15px;
             margin-top: 20px;
             border: 1px solid #d0d7de;
+            transition: all 0.3s ease;
+        }
+
+        .move-history:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .move {
             padding: 5px 0;
             border-bottom: 1px solid #f0f0f0;
             font-family: monospace;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+            margin: 2px 0;
+            padding: 8px;
+        }
+
+        .move:hover {
+            background: #f8f9fa;
+            transform: translateX(5px);
+        }
+
+        .move:last-child {
+            border-bottom: none;
+            background: linear-gradient(90deg, #e8f5e8, transparent);
+            font-weight: bold;
+        }
+
+        /* Smooth scrollbar for move history */
+        .move-history::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .move-history::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .move-history::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 3px;
+        }
+
+        .move-history::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #5a6fd8, #6a4190);
         }
 
         /* Download Section Styles */
@@ -353,14 +598,106 @@
             align-items: center;
             justify-content: center;
             z-index: 1000;
+            animation: overlay-fade-in 0.5s ease-out;
+            backdrop-filter: blur(5px);
+        }
+
+        @keyframes overlay-fade-in {
+            from {
+                opacity: 0;
+                backdrop-filter: blur(0px);
+            }
+            to {
+                opacity: 1;
+                backdrop-filter: blur(5px);
+            }
         }
 
         .checkmate-message {
-            background: white;
-            padding: 40px;
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            padding: 50px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            animation: message-slide-up 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .checkmate-message::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
+            border-radius: 23px;
+            z-index: -1;
+            background-size: 200% 200%;
+            animation: border-gradient 3s ease infinite;
+        }
+
+        @keyframes border-gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes message-slide-up {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .checkmate-message h2 {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            animation: title-bounce 0.8s ease-out 0.3s both;
+        }
+
+        @keyframes title-bounce {
+            0% { transform: translateY(-20px); opacity: 0; }
+            60% { transform: translateY(5px); opacity: 1; }
+            100% { transform: translateY(0); }
+        }
+
+        .checkmate-message p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            animation: text-fade-in 0.6s ease-out 0.6s both;
+        }
+
+        @keyframes text-fade-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .checkmate-message .control-btn {
+            animation: button-pop-in 0.4s ease-out 0.9s both;
+            font-size: 1.2em;
+            padding: 18px 35px;
+        }
+
+        @keyframes button-pop-in {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         @media (max-width: 768px) {
@@ -368,26 +705,26 @@
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .chess-board {
                 width: 320px;
                 height: 320px;
             }
-            
+
             .board-row {
                 height: 40px;
             }
-            
+
             .square {
                 width: 40px;
                 height: 40px;
             }
-            
+
             .piece {
                 width: 30px;
                 height: 30px;
             }
-            
+
             .piece:not(img) {
                 font-size: 24px;
             }
@@ -439,8 +776,8 @@
                     English-Garfield/CompSciNEA_IK
                 </div>
                 <div class="project-description">
-                    A comprehensive Computer Science project featuring an advanced chess game with AI capabilities using TensorFlow/Keras. 
-                    The game includes sophisticated AI opponent, move validation, special moves (castling, en passant), 
+                    A comprehensive Computer Science project featuring an advanced chess game with AI capabilities using TensorFlow/Keras.
+                    The game includes sophisticated AI opponent, move validation, special moves (castling, en passant),
                     sound effects, and multiple themes. Built with Python and Pygame for desktop deployment.
                 </div>
             </div>
@@ -470,7 +807,7 @@
                     <li><strong>AI Model:</strong> The AI requires the TensorFlow model file in the assets folder</li>
                     <li><strong>Features:</strong> Enjoy AI opponent, multiple themes, sound effects, and advanced chess rules</li>
                 </ol>
-                
+
                 <h3>🎮 Game Features:</h3>
                 <ul style="margin-left: 20px; margin-top: 10px;">
                     <li>Smart AI opponent with neural network decision making</li>
@@ -486,6 +823,7 @@
     <script>
         // Chess game state
         let board = [];
+        let pieceColors = []; // Array to track the color of each piece
         let currentPlayer = 'white';
         let selectedSquare = null;
         let gameHistory = [];
@@ -501,7 +839,7 @@
             'https://github.com/English-Garfield/CompSci_IK/raw/main/assets/images/imgs-80px/',
             'https://cdn.jsdelivr.net/gh/English-Garfield/CompSci_IK@main/assets/images/imgs-80px/'
         ];
-        
+
         // Piece image filenames
         const pieceImages = {
             'white': {
@@ -534,6 +872,19 @@
                 ['pawn', 'pawn', 'pawn', 'pawn', 'pawn', 'pawn', 'pawn', 'pawn'],
                 ['rook', 'knight', 'bishop', 'queen', 'king', 'bishop', 'knight', 'rook']
             ];
+            
+            // Initialize pieceColors array to match the board
+            pieceColors = [
+                ['black', 'black', 'black', 'black', 'black', 'black', 'black', 'black'],
+                ['black', 'black', 'black', 'black', 'black', 'black', 'black', 'black'],
+                [null, null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null, null],
+                ['white', 'white', 'white', 'white', 'white', 'white', 'white', 'white'],
+                ['white', 'white', 'white', 'white', 'white', 'white', 'white', 'white']
+            ];
+            
             currentPlayer = 'white';
             selectedSquare = null;
             gameHistory = [];
@@ -544,35 +895,35 @@
         // Get piece color based on position
         function getPieceColor(row, col) {
             if (board[row][col] === null) return null;
-            return row < 2 ? 'black' : 'white';
+            return pieceColors[row][col]; // Use the pieceColors array instead of position-based logic
         }
 
         // Create the visual board
         function createBoard() {
             const boardElement = document.getElementById('chessBoard');
             boardElement.innerHTML = '';
-            
+
             for (let row = 0; row < 8; row++) {
                 const rowElement = document.createElement('div');
                 rowElement.className = 'board-row';
-                
+
                 for (let col = 0; col < 8; col++) {
                     const square = document.createElement('div');
                     square.className = `square ${(row + col) % 2 === 0 ? 'light' : 'dark'}`;
                     square.dataset.row = row;
                     square.dataset.col = col;
                     square.onclick = () => handleSquareClick(row, col);
-                    
+
                     const piece = board[row][col];
                     if (piece) {
                         const pieceElement = document.createElement('img');
                         pieceElement.className = 'piece';
                         const color = getPieceColor(row, col);
                         const filename = pieceImages[color][piece];
-                        
+
                         // Try multiple image sources
                         let currentSourceIndex = 0;
-                        
+
                         function tryNextImageSource() {
                             if (currentSourceIndex < imageSources.length) {
                                 pieceElement.src = imageSources[currentSourceIndex] + filename;
@@ -582,11 +933,11 @@
                                 console.warn(`All image sources failed for: ${color} ${piece}`);
                                 const fallbackPieces = {
                                     'white': {
-                                        'king': '♔', 'queen': '♕', 'rook': '♖', 
+                                        'king': '♔', 'queen': '♕', 'rook': '♖',
                                         'bishop': '♗', 'knight': '♘', 'pawn': '♙'
                                     },
                                     'black': {
-                                        'king': '♚', 'queen': '♛', 'rook': '♜', 
+                                        'king': '♚', 'queen': '♛', 'rook': '♜',
                                         'bishop': '♝', 'knight': '♞', 'pawn': '♟'
                                     }
                                 };
@@ -596,27 +947,27 @@
                                 pieceElement.parentNode.replaceChild(textElement, pieceElement);
                             }
                         }
-                        
+
                         pieceElement.alt = `${color} ${piece}`;
                         pieceElement.draggable = false;
-                        
+
                         // Set up error handling to try next source
                         pieceElement.onerror = function() {
                             console.warn(`Failed to load image from: ${this.src}`);
                             tryNextImageSource();
                         };
-                        
+
                         // Set up success handler
                         pieceElement.onload = function() {
                             console.log(`Successfully loaded: ${this.src}`);
                         };
-                        
+
                         // Start with first image source
                         tryNextImageSource();
-                        
+
                         square.appendChild(pieceElement);
                     }
-                    
+
                     rowElement.appendChild(square);
                 }
                 boardElement.appendChild(rowElement);
@@ -624,96 +975,129 @@
         }
 
         // Basic move validation (simplified)
-        function isValidMove(fromRow, fromCol, toRow, toCol) {
+        function isValidMove(fromRow, fromCol, toRow, toCol, checkingForCheck = false) {
             if (toRow < 0 || toRow > 7 || toCol < 0 || toCol > 7) return false;
             if (fromRow === toRow && fromCol === toCol) return false;
-            
+
             const piece = board[fromRow][fromCol];
             const targetPiece = board[toRow][toCol];
-            const pieceColor = getPieceColor(fromRow, fromCol);
-            const targetColor = targetPiece ? getPieceColor(toRow, toCol) : null;
-            
+            const pieceColor = pieceColors[fromRow][fromCol]; // Use pieceColors array
+            const targetColor = targetPiece ? pieceColors[toRow][toCol] : null; // Use pieceColors array
+
             // Can't capture own pieces
             if (targetColor === pieceColor) return false;
-            
+
             // Simplified movement rules
             const rowDiff = Math.abs(toRow - fromRow);
             const colDiff = Math.abs(toCol - fromCol);
-            
+
+            let validBasicMove = false;
+
             switch (piece) {
                 case 'pawn':
                     const direction = pieceColor === 'white' ? -1 : 1;
                     const startRow = pieceColor === 'white' ? 6 : 1;
-                    
+
                     // Forward movement
                     if (fromCol === toCol && !targetPiece) {
-                        if (toRow === fromRow + direction) return true;
-                        if (fromRow === startRow && toRow === fromRow + 2 * direction) return true;
+                        if (toRow === fromRow + direction) validBasicMove = true;
+                        if (fromRow === startRow && toRow === fromRow + 2 * direction) validBasicMove = true;
                     }
                     // Diagonal capture
                     if (Math.abs(fromCol - toCol) === 1 && toRow === fromRow + direction && targetPiece) {
-                        return true;
+                        validBasicMove = true;
                     }
-                    return false;
-                    
+                    break;
+
                 case 'rook':
-                    return (rowDiff === 0 || colDiff === 0) && isPathClear(fromRow, fromCol, toRow, toCol);
-                    
+                    validBasicMove = (rowDiff === 0 || colDiff === 0) && isPathClear(fromRow, fromCol, toRow, toCol);
+                    break;
+
                 case 'bishop':
-                    return rowDiff === colDiff && isPathClear(fromRow, fromCol, toRow, toCol);
-                    
+                    validBasicMove = rowDiff === colDiff && isPathClear(fromRow, fromCol, toRow, toCol);
+                    break;
+
                 case 'queen':
-                    return (rowDiff === 0 || colDiff === 0 || rowDiff === colDiff) && isPathClear(fromRow, fromCol, toRow, toCol);
-                    
+                    validBasicMove = (rowDiff === 0 || colDiff === 0 || rowDiff === colDiff) && isPathClear(fromRow, fromCol, toRow, toCol);
+                    break;
+
                 case 'knight':
-                    return (rowDiff === 2 && colDiff === 1) || (rowDiff === 1 && colDiff === 2);
-                    
+                    validBasicMove = (rowDiff === 2 && colDiff === 1) || (rowDiff === 1 && colDiff === 2);
+                    break;
+
                 case 'king':
-                    return rowDiff <= 1 && colDiff <= 1;
-                    
+                    validBasicMove = rowDiff <= 1 && colDiff <= 1;
+                    break;
+
                 default:
                     return false;
             }
+
+            // If we're just checking for check (used by isKingInCheck), return the basic move validity
+            if (checkingForCheck || !validBasicMove) return validBasicMove;
+
+            // If it's a valid move by piece movement rules, check if it would leave the king in check
+            // Simulate the move
+            const originalPiece = board[toRow][toCol];
+            const originalColor = pieceColors[toRow][toCol];
+            
+            // Make temporary move
+            board[toRow][toCol] = piece;
+            pieceColors[toRow][toCol] = pieceColor;
+            board[fromRow][fromCol] = null;
+            pieceColors[fromRow][fromCol] = null;
+            
+            // Check if king is in check after this move
+            const kingInCheck = isKingInCheck(pieceColor);
+            
+            // Undo the move
+            board[fromRow][fromCol] = piece;
+            pieceColors[fromRow][fromCol] = pieceColor;
+            board[toRow][toCol] = originalPiece;
+            pieceColors[toRow][toCol] = originalColor;
+            
+            // A move is valid only if it doesn't leave the king in check
+            return validBasicMove && !kingInCheck;
         }
 
         // Check if path is clear (for sliding pieces)
         function isPathClear(fromRow, fromCol, toRow, toCol) {
             const rowStep = toRow > fromRow ? 1 : toRow < fromRow ? -1 : 0;
             const colStep = toCol > fromCol ? 1 : toCol < fromCol ? -1 : 0;
-            
+
             let currentRow = fromRow + rowStep;
             let currentCol = fromCol + colStep;
-            
+
             while (currentRow !== toRow || currentCol !== toCol) {
                 if (board[currentRow][currentCol] !== null) return false;
                 currentRow += rowStep;
                 currentCol += colStep;
             }
-            
+
             return true;
         }
 
         // Handle square clicks
         function handleSquareClick(row, col) {
             if (gameOver) return;
-            
+
             const clickedPiece = board[row][col];
-            const clickedColor = clickedPiece ? getPieceColor(row, col) : null;
-            
+            const clickedColor = clickedPiece ? pieceColors[row][col] : null; // Use pieceColors array
+
             // Clear previous highlights
             document.querySelectorAll('.square').forEach(sq => {
                 sq.classList.remove('selected', 'possible-move');
             });
-            
+
             if (selectedSquare) {
                 const [fromRow, fromCol] = selectedSquare;
-                
+
                 if (fromRow === row && fromCol === col) {
                     // Deselect
                     selectedSquare = null;
                     return;
                 }
-                
+
                 if (isValidMove(fromRow, fromCol, row, col)) {
                     // Make the move
                     makeMove(fromRow, fromCol, row, col);
@@ -721,13 +1105,13 @@
                     return;
                 }
             }
-            
+
             // Select piece if it belongs to current player
             if (clickedColor === currentPlayer) {
                 selectedSquare = [row, col];
                 const square = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
                 square.classList.add('selected');
-                
+
                 // Highlight possible moves (simplified)
                 highlightPossibleMoves(row, col);
             }
@@ -745,60 +1129,78 @@
             }
         }
 
-        // Make a move
+        // Make a move with smooth animations
         function makeMove(fromRow, fromCol, toRow, toCol) {
             const piece = board[fromRow][fromCol];
             const capturedPiece = board[toRow][toCol];
-            
+            const movingPieceColor = pieceColors[fromRow][fromCol];
+
+            // Add capture animation if there's a piece being captured
+            if (capturedPiece) {
+                const capturedSquare = document.querySelector(`[data-row="${toRow}"][data-col="${toCol}"]`);
+                const capturedPieceElement = capturedSquare.querySelector('.piece');
+                if (capturedPieceElement) {
+                    capturedPieceElement.classList.add('captured');
+                }
+            }
+
             // Record move in history
             gameHistory.push({
                 from: [fromRow, fromCol],
                 to: [toRow, toCol],
                 piece: piece,
                 captured: capturedPiece,
-                player: currentPlayer
+                player: currentPlayer,
+                capturedColor: pieceColors[toRow][toCol] // Store captured piece color
             });
-            
-            // Make the move
+
+            // Make the move - update both piece and color
             board[toRow][toCol] = piece;
             board[fromRow][fromCol] = null;
-            
+            pieceColors[toRow][toCol] = movingPieceColor;
+            pieceColors[fromRow][fromCol] = null;
+
             // Update move history display
             updateMoveHistory();
-            
-            // Switch players
+
+            // Switch players with smooth status transition
             currentPlayer = currentPlayer === 'white' ? 'black' : 'white';
             updateGameStatus();
-            
-            // Recreate board
-            createBoard();
-            
-            // Highlight last move
-            const fromSquare = document.querySelector(`[data-row="${fromRow}"][data-col="${fromCol}"]`);
-            const toSquare = document.querySelector(`[data-row="${toRow}"][data-col="${toCol}"]`);
-            fromSquare.classList.add('last-move');
-            toSquare.classList.add('last-move');
-            
-            // Simple checkmate detection
-            if (isCheckmate()) {
-                gameOver = true;
-                showCheckmateMessage();
-            }
-            
-            // AI move
-            if (aiEnabled && currentPlayer === 'black' && !gameOver) {
-                setTimeout(makeAIMove, 1000);
-            }
+
+            // Recreate board with animation delay for smooth transition
+            setTimeout(() => {
+                createBoard();
+
+                // Highlight last move with enhanced animation
+                const fromSquare = document.querySelector(`[data-row="${fromRow}"][data-col="${fromCol}"]`);
+                const toSquare = document.querySelector(`[data-row="${toRow}"][data-col="${toCol}"]`);
+                if (fromSquare) fromSquare.classList.add('last-move');
+                if (toSquare) toSquare.classList.add('last-move');
+
+                // Check for checkmate
+                if (isCheckmate()) {
+                    gameOver = true;
+                    setTimeout(showCheckmateMessage, 500); // Delay for smooth transition
+                }
+                
+                // Update game status to show check
+                updateGameStatus();
+
+                // AI move with smooth delay
+                if (aiEnabled && currentPlayer === 'black' && !gameOver) {
+                    setTimeout(makeAIMove, 800); // Slightly longer delay for better UX
+                }
+            }, capturedPiece ? 600 : 200); // Wait for capture animation if needed
         }
 
         // Simple AI move (random valid move)
         function makeAIMove() {
             const validMoves = [];
-            
+
             for (let fromRow = 0; fromRow < 8; fromRow++) {
                 for (let fromCol = 0; fromCol < 8; fromCol++) {
                     const piece = board[fromRow][fromCol];
-                    if (piece && getPieceColor(fromRow, fromCol) === 'black') {
+                    if (piece && pieceColors[fromRow][fromCol] === 'black') { // Use pieceColors array
                         for (let toRow = 0; toRow < 8; toRow++) {
                             for (let toCol = 0; toCol < 8; toCol++) {
                                 if (isValidMove(fromRow, fromCol, toRow, toCol)) {
@@ -809,27 +1211,118 @@
                     }
                 }
             }
-            
+
             if (validMoves.length > 0) {
                 const randomMove = validMoves[Math.floor(Math.random() * validMoves.length)];
                 makeMove(...randomMove);
             }
         }
 
-        // Simple checkmate detection
-        function isCheckmate() {
-            // This is a very simplified version - in a real game you'd need proper check/checkmate detection
-            const kingExists = board.flat().some(piece => piece === 'king');
-            return !kingExists;
+        // Find king position for a given color
+        function findKingPosition(color) {
+            for (let row = 0; row < 8; row++) {
+                for (let col = 0; col < 8; col++) {
+                    if (board[row][col] === 'king' && pieceColors[row][col] === color) {
+                        return [row, col];
+                    }
+                }
+            }
+            return null; // King not found
         }
 
-        // Update game status
+        // Check if a king is in check
+        function isKingInCheck(color) {
+            const kingPosition = findKingPosition(color);
+            if (!kingPosition) return false;
+            
+            const [kingRow, kingCol] = kingPosition;
+            const opponentColor = color === 'white' ? 'black' : 'white';
+            
+            // Check if any opponent piece can capture the king
+            for (let row = 0; row < 8; row++) {
+                for (let col = 0; col < 8; col++) {
+                    if (board[row][col] && pieceColors[row][col] === opponentColor) {
+                        // Use the basic move validation to see if this piece can attack the king
+                        if (isValidMove(row, col, kingRow, kingCol, true)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+            
+            return false;
+        }
+
+        // Check if a player is in checkmate
+        function isCheckmate() {
+            const color = currentPlayer;
+            
+            // First, check if the king is in check
+            if (!isKingInCheck(color)) return false;
+            
+            // Then check if any move can get the king out of check
+            for (let fromRow = 0; fromRow < 8; fromRow++) {
+                for (let fromCol = 0; fromCol < 8; fromCol++) {
+                    if (board[fromRow][fromCol] && pieceColors[fromRow][fromCol] === color) {
+                        for (let toRow = 0; toRow < 8; toRow++) {
+                            for (let toCol = 0; toCol < 8; toCol++) {
+                                // Check if this is a valid move that would get the king out of check
+                                // The isValidMove function already checks if the move would leave the king in check
+                                if (isValidMove(fromRow, fromCol, toRow, toCol)) {
+                                    // If we found a valid move, it's not checkmate
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            // If we've checked all possible moves and none are valid, it's checkmate
+            return true;
+        }
+
+        // Update game status with smooth transitions
         function updateGameStatus() {
             const statusElement = document.getElementById('gameStatus');
+
+            // Remove existing classes
+            statusElement.className = 'game-status';
+
+            // Remove check highlight from all kings
+            document.querySelectorAll('.king-in-check').forEach(el => {
+                el.classList.remove('king-in-check');
+            });
+
             if (gameOver) {
-                statusElement.textContent = `Game Over - ${currentPlayer === 'white' ? 'Black' : 'White'} Wins!`;
+                statusElement.textContent = `Checkmate! ${currentPlayer === 'white' ? 'Black' : 'White'} Wins!`;
+                statusElement.classList.add('game-over');
             } else {
-                statusElement.textContent = `${currentPlayer.charAt(0).toUpperCase() + currentPlayer.slice(1)}'s Turn`;
+                // Check if the current player is in check
+                const inCheck = isKingInCheck(currentPlayer);
+                
+                if (inCheck) {
+                    statusElement.textContent = `${currentPlayer.charAt(0).toUpperCase() + currentPlayer.slice(1)} is in Check!`;
+                    statusElement.classList.add('in-check');
+                    
+                    // Highlight the king that's in check
+                    highlightKingInCheck(currentPlayer);
+                } else {
+                    statusElement.textContent = `${currentPlayer.charAt(0).toUpperCase() + currentPlayer.slice(1)}'s Turn`;
+                    statusElement.classList.add(currentPlayer === 'white' ? 'white-turn' : 'black-turn');
+                }
+            }
+        }
+        
+        // Highlight the king that's in check
+        function highlightKingInCheck(color) {
+            const kingPosition = findKingPosition(color);
+            if (kingPosition) {
+                const [row, col] = kingPosition;
+                const kingSquare = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
+                if (kingSquare) {
+                    kingSquare.classList.add('king-in-check');
+                }
             }
         }
 
@@ -837,7 +1330,7 @@
         function updateMoveHistory() {
             const historyElement = document.getElementById('moveHistory');
             historyElement.innerHTML = '';
-            
+
             gameHistory.forEach((move, index) => {
                 const moveElement = document.createElement('div');
                 moveElement.className = 'move';
@@ -847,19 +1340,25 @@
                 moveElement.textContent = `${index + 1}. ${move.piece} ${fromSquare}${captureSymbol}${toSquare}`;
                 historyElement.appendChild(moveElement);
             });
-            
+
             historyElement.scrollTop = historyElement.scrollHeight;
         }
 
         // Show checkmate message
         function showCheckmateMessage() {
+            const winner = currentPlayer === 'white' ? 'Black' : 'White';
+            const loser = currentPlayer === 'white' ? 'White' : 'Black';
+            
             const overlay = document.createElement('div');
             overlay.className = 'checkmate-overlay';
             overlay.innerHTML = `
                 <div class="checkmate-message">
                     <h2 style="color: #d73a49; margin-bottom: 20px;">🏆 CHECKMATE!</h2>
                     <p style="font-size: 1.2em; margin-bottom: 20px;">
-                        ${currentPlayer === 'white' ? 'Black' : 'White'} Wins!
+                        ${winner} has checkmated ${loser}'s king!
+                    </p>
+                    <p style="font-size: 1em; margin-bottom: 30px; color: #666;">
+                        ${loser}'s king is in check and has no legal moves.
                     </p>
                     <button class="control-btn" onclick="newGame(); this.parentElement.parentElement.remove();">
                         Play Again
@@ -879,17 +1378,21 @@
         // Undo move
         function undoMove() {
             if (gameHistory.length === 0) return;
-            
+
             const lastMove = gameHistory.pop();
-            
+
             // Restore board state
             board[lastMove.from[0]][lastMove.from[1]] = lastMove.piece;
             board[lastMove.to[0]][lastMove.to[1]] = lastMove.captured;
-            
+
+            // Restore piece colors
+            pieceColors[lastMove.from[0]][lastMove.from[1]] = lastMove.player;
+            pieceColors[lastMove.to[0]][lastMove.to[1]] = lastMove.capturedColor || null;
+
             // Switch back player
             currentPlayer = lastMove.player;
             gameOver = false;
-            
+
             updateGameStatus();
             updateMoveHistory();
             createBoard();
@@ -900,7 +1403,7 @@
             aiEnabled = !aiEnabled;
             const toggleText = document.getElementById('aiToggleText');
             toggleText.textContent = aiEnabled ? 'Disable AI' : 'Enable AI';
-            
+
             // If AI is enabled and it's black's turn, make AI move
             if (aiEnabled && currentPlayer === 'black' && !gameOver) {
                 setTimeout(makeAIMove, 1000);
@@ -914,7 +1417,7 @@
                 tab.classList.remove('active');
             });
             event.target.classList.add('active');
-            
+
             // Update tab content
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
@@ -927,7 +1430,7 @@
             e.preventDefault();
             const cloneUrl = 'https://github.com/English-Garfield/CompSciNEA_IK.git';
             const command = `git clone ${cloneUrl}`;
-            
+
             navigator.clipboard.writeText(command).then(() => {
                 const btn = e.target;
                 const originalText = btn.textContent;
@@ -935,7 +1438,7 @@
                 btn.style.background = '#2ea043';
                 btn.style.color = 'white';
                 btn.style.borderColor = '#2ea043';
-                
+
                 setTimeout(() => {
                     btn.textContent = originalText;
                     btn.style.background = '';
