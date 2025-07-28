@@ -642,7 +642,7 @@ Usage:
        
        B. Command-line Mode (For automation or advanced users):
           python training.py [options]
-          
+          6758yu
           Available options:
           --mode {auto,new,continue}  Choose whether to create a new model or train an existing one
                                       - auto: Automatically detect (default)
