@@ -1,4 +1,5 @@
 import os
+import sys
 import tensorflow as tf
 import numpy as np
 import time
@@ -132,17 +133,6 @@ def parallel_load_games(file_paths, queue):
 
 
 def load_games_threaded(file_path, limit_of_files):
-    """
-    Load chess games from PGN files with memory optimization.
-    
-    Args:
-        file_path: Path to directory containing PGN files
-        limit_of_files: Maximum number of files to load
-        
-    Returns:
-        List of loaded chess games
-    """
-    # Get list of PGN files
     files = [f"{file_path}/{file}" for file in os.listdir(file_path) if file.endswith('.pgn')]
     
     # Limit number of files to process
@@ -179,18 +169,6 @@ def load_games_threaded(file_path, limit_of_files):
 
 
 def data_generator(X, y, batch_size, num_classes):
-    """
-    Memory-efficient data generator for training.
-    
-    Args:
-        X: Input data
-        y: Target data
-        batch_size: Size of batches to yield
-        num_classes: Number of classes for one-hot encoding
-        
-    Yields:
-        Batches of (X, y) data for training
-    """
     num_samples = len(X)
     indices = np.arange(num_samples)
     
@@ -217,22 +195,10 @@ def data_generator(X, y, batch_size, num_classes):
 
 
 def create_new_model(input_shape, num_classes, batch_size=64, epochs=50):
-    """
-    Create a new chess model from scratch.
-    
-    Args:
-        input_shape: Shape of the input data (8, 8, 12)
-        num_classes: Number of possible chess moves
-        batch_size: Batch size for training
-        epochs: Number of training epochs
-        
-    Returns:
-        The trained model and training history
-    """
     print("\nCreating new chess model...")
     from tensorflow.keras.models import Sequential
     from tensorflow.keras.layers import Conv2D, Flatten
-    
+
     model = Sequential([
         Conv2D(64, (3, 3), activation='relu', input_shape=input_shape, padding='same'),
         Conv2D(128, (3, 3), activation='relu', padding='same'),
@@ -300,20 +266,6 @@ def train_existing_model(model_path, X, y, num_classes, batch_size=64, epochs=50
 
 
 def train_model(model, X, y, num_classes, batch_size=64, epochs=50):
-    """
-    Train a model with the given data.
-    
-    Args:
-        model: The model to train
-        X: Input data
-        y: Target data
-        num_classes: Number of possible chess moves
-        batch_size: Batch size for training
-        epochs: Number of training epochs
-        
-    Returns:
-        The trained model and training history
-    """
     steps_per_epoch = len(X) // batch_size
     train_generator = data_generator(X, y, batch_size, num_classes)
 
@@ -493,8 +445,6 @@ def parse_arguments():
     parser.add_argument('--data-path', type=str, default='../assets/ChessData',
                         help='Path to the directory containing PGN files (default: ../assets/ChessData)')
     
-    # Check if any arguments were provided
-    import sys
     if len(sys.argv) > 1:
         return parser.parse_args()
     else:
@@ -519,7 +469,6 @@ def main():
     CHUNK_SIZE = args.chunk_size
     MODE = args.mode
     
-    # Create assets directory if it doesn't exist
     os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
 
     print("\nLoading games...")
@@ -546,7 +495,6 @@ def main():
         print("\nNo training data available.")
         return
 
-    # Encode moves and save mapping
     y, move_to_int, num_classes = encode_moves(y, save_path=MOVE_MAP_PATH)
 
     print(f"\nTraining data shapes:")
@@ -555,7 +503,6 @@ def main():
     print(f"Number of unique moves (classes): {num_classes}")
     print(f"Estimated memory usage: {X.nbytes / (1024 * 1024):.2f} MB for X, {y.nbytes / (1024 * 1024):.2f} MB for y")
 
-    # Check if model exists
     model_exists = os.path.exists(MODEL_PATH)
     
     # Determine whether to create new model or train existing based on user choice
@@ -592,7 +539,6 @@ def main():
             # Train the new model
             model, history = train_model(model, X, y, num_classes, batch_size=BATCH_SIZE, epochs=EPOCHS)
             
-            # Save the new model
             print(f"\nSaving model to {MODEL_PATH}")
             model.save(MODEL_PATH)
             
@@ -619,30 +565,12 @@ if __name__ == "__main__":
 """
 Chess Intelligence Model Training Script
 
-Script is used to create, train, and save a chess intelligence model. 
-It can either create a new model from scratch or continue training an existing model.
+The script is used to create, train, and save the chess model. 
+It can either create a new model from scratch or continue training the existing model.
 The script is optimized to work with limited memory
-
-Usage:
-    1. Ensure you have the required dependencies installed:
-       - tensorflow
-       - numpy
-       - chess
-       - tqdm
-       
-    2. Make sure you have chess game data in PGN format in the '../assets/ChessData' directory.
-       
-    3. Run the script in one of two ways:
-    
-       A. Interactive Mode (Recommended for new users):
-          Simply run the script without any arguments:
-          python training.py
-          
-          The script will guide you through setting up all parameters with interactive prompts.
-       
-       B. Command-line Mode (For automation or advanced users):
+      
+        Command-line Mode (For automation or advanced users):
           python training.py [options]
-          6758yu
           Available options:
           --mode {auto,new,continue}  Choose whether to create a new model or train an existing one
                                       - auto: Automatically detect (default)
@@ -661,7 +589,7 @@ Usage:
           --move-map-path PATH        Path to save/load the move mapping (default: move_map.json)
           --data-path PATH            Path to the directory containing PGN files (default: ../assets/ChessData)
        
-    4. Examples:
+    Examples:
        # Run in interactive mode
        python training.py
        
@@ -674,20 +602,8 @@ Usage:
        # Use even more memory-efficient settings for very limited RAM
        python training.py --batch-size 16 --file-limit 2 --games-limit 20000 --chunk-size 200
        
-    5. The script will:
-       - Load chess games from the specified directory
-       - Prepare training data in memory-efficient chunks
-       - Create a new model or continue training an existing one based on the mode
-       - Save the model and move mapping
-       
-    6. Memory Optimization:
-       - The script uses incremental data processing to minimize memory usage
-       - Garbage collection is performed at key points to free memory
-       - Smaller batch sizes and chunk sizes can be used for machines with limited RAM
-       - The default settings are optimized for a 16GB RAM M4 Mac Mini
-       
-    7. The trained model will be saved to the specified model path (default: '../assets/chessModel.keras')
-       
+  
 Training History:
 - training round 1 -> time 912 minutes -> 50/50 epochs -> loss: 3.1480 -> accuracy: 0.2976 (started @ 0.2086) -> lr: 0.0010
+- training round 2 (New Model)-> time 2820 minutes -> 100/100 epochs -> loss: 3.1480 -> accuracy: 0.2524 (started @ 0.2000) -> lr: 0.0010
 """
