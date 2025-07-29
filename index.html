@@ -855,7 +855,7 @@
             </div>
 
             <div style="text-align: center; margin: 30px 0;">
-                <a href="https:
+                <a class="download-btn" href="https://github.com/English-Garfield/CompSciNEA_IK/archive/refs/heads/main.zip" target="_blank">
                     <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
                         <path d="M7.47 10.78a.75.75 0 001.06 0l3.75-3.75a.75.75 0 00-1.06-1.06L8.75 8.44V1.75a.75.75 0 00-1.5 0v6.69L4.78 5.97a.75.75 0 00-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5z"/>
                     </svg>
@@ -863,12 +863,9 @@
                 </a>
 
                 <div style="margin-top: 20px;">
-                    <a href="https:
-                    <a href="https:
                     <button class="format-btn" id="cloneBtn">Git Clone</button>
                 </div>
             </div>
-
             <div class="instructions">
                 <h3>🚀 Setup Instructions:</h3>
                 <ol>
@@ -906,7 +903,7 @@
         const imageSources = [
             './assets/images/imgs-80px/',     
             'assets/images/imgs-80px/',       
-            '/assets/images/imgs-80px/',      
+            '/assets/images/imgs-80px/',
         ];
 
         
@@ -1613,7 +1610,7 @@
         
         document.getElementById('cloneBtn').addEventListener('click', function(e) {
             e.preventDefault();
-            const cloneUrl = 'https:
+            const cloneUrl = 'https:';
             const command = `git clone ${cloneUrl}`;
 
             navigator.clipboard.writeText(command).then(() => {
