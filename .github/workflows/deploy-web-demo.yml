@@ -1,4 +1,4 @@
-name: Deploy CompSci NEA Web Demo
+name: Deploy Web Demo
 
 on:
   # Runs on pushes targeting the default branch
