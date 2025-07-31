@@ -1137,6 +1137,16 @@ if __name__ == "__main__":
 """
 Chess Intelligence Model Training Script with Advanced Architecture
 
+explained bellow is the new architectures (CGPT helped me with this):
+
+    | Architecture           | Purpose                                                      | Pros                                 | Cons                                        |
+    | ---------------------- | ------------------------------------------------------------ | ------------------------------------ | ------------------------------------------- |
+    | ResNet + Attention     | Deep CNN with residual blocks + attention                    | Deep, stable, attention-guided focus | More complex and compute-heavy              |
+    | Transformer-based      | Pure transformer self-attention layers                       | Strong global reasoning, flexible    | Data/computation heavy, tricky input design |
+    | EfficientNet-style     | Scaled efficient CNN                                         | Lightweight, efficient, accurate     | May miss long-range dependencies            |
+    | Hybrid CNN-Transformer | CNN extracts local features + transformer for global context | Balances local & global info         | More architectural complexity               |
+
+
 The script is used to create, train, and save a chess model for my project for comp sci / SoM. 
 It can create a new model from scratch or continue training the existing model(s).
 The script is optimized to work with limited memory aprox 16GB and M4 architecture.
