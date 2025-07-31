@@ -29,7 +29,7 @@
  <!--- ABOUT THE PROJECT -->
 # About the project
 This is my attempt at building a chess game that allows a user to play against another user in a  pass and play style or
-against a engine using a deep learning neural network for my A level computing NEA.
+against a engine using a deep learning neural network for my A level computing project and SoM.
 
 ## Built with
 this project utilises the following technologies:
