@@ -44,23 +44,19 @@ this project utilises the following technologies:
 
 
 # Getting started
-inset instructions here on how to get started with the project
+instructions here on how to get started with the project either through the web or loaclly 
 
 # Installation
 the `requirements.txt` should first be installed to ensure that all the dependencies are met
+
 ```
 pip install -r requirements.txt
 ```
 
 Then the `main.py` or `main.exec` file can be run to start the game
 
-
-# Usage
-I don't mid how you use this as it was made for fun and for my A level computing NEA
-Coding should be accessible and open so if my work is of help to you then all i ask is that you credit me in your work
-
 # Web Demo
-You can try the chess game directly in your web browser without installing anything!
+You can try the chess game directly in your web browser 
 
 ## Play Online
 [Click here to play the chess game in your browser](https://isaackorda.github.io/CompSci_IK/)
@@ -93,17 +89,17 @@ If you want to build and run the web demo locally, follow these steps:
    - `--no-browser`: Don't open the browser automatically
    - `--build-only`: Only build the web demo, don't run it
 
-## How It Works
-The web demo uses [Pygbag](https://github.com/pygame-web/pygbag), which converts the Python/Pygame code to WebAssembly that can run in modern web browsers. This allows you to play the full chess game with AI directly in your browser without any installation.
-
 ## Controls
 - Click on a piece to select it
 - Click on a highlighted square to move the piece
 - Press 'T' to change the theme
 - Press 'R' to reset the game
 
-# Documentation
-![image](https://img.shields.io/badge/Microsoft_Word-2B579A?style=for-the-badge&logo=microsoft-word&logoColor=white)
+
+# Usage
+I don't mid how you use this as it was made for fun and for my A level computing project and Summer of making
+Coding should be accessible and open so if my work is of help to you then all i ask is that you credit me in your work
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
