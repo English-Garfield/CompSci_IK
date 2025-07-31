@@ -59,7 +59,7 @@ Then the `main.py` or `main.exec` file can be run to start the game
 You can try the chess game directly in your web browser 
 
 ## Play Online
-[Click here to play the chess game in your browser](https://isaackorda.github.io/CompSci_IK/)
+[Click here to play the chess game in your browser](https://english-garfield.github.io/CompSci_IK/)
 
 ## Building the Web Demo Locally
 If you want to build and run the web demo locally, follow these steps:
