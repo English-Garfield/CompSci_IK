@@ -1,5 +1,7 @@
 import os
 import sys
+
+import math
 import tensorflow as tf
 import numpy as np
 import time
@@ -16,15 +18,15 @@ from queue import Queue
 # tensorflow modules
 from keras.src.layers import GlobalAveragePooling1D
 from tensorflow.keras.models import load_model
-from tensorflow.keras.optimizers import Adam, AdamW
+from tensorflow.keras.optimizers import AdamW
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.callbacks import ReduceLROnPlateau, EarlyStopping, LearningRateScheduler, ModelCheckpoint
-from tensorflow.keras.models import Sequential, Model
+from tensorflow.keras.models import Model
 from tensorflow.keras.layers import (
     Conv2D, GlobalAveragePooling2D, Dense, Dropout, BatchNormalization,
-    LeakyReLU, Add, Input, Multiply, Lambda, Attention, MultiHeadAttention,
-    LayerNormalization, Concatenate, SeparableConv2D, DepthwiseConv2D,
-    GlobalMaxPooling2D, Reshape, Permute, Activation
+    LeakyReLU, Add, Input, Multiply, Lambda, MultiHeadAttention,
+    LayerNormalization, Concatenate, DepthwiseConv2D,
+    GlobalMaxPooling2D, Reshape
 )
 from tensorflow.keras.regularizers import l2
 from tensorflow.keras import backend as K
@@ -515,7 +517,7 @@ def create_learning_rate_scheduler(initial_lr, schedule_type='exponential'):
     elif schedule_type == 'cosine':
         def cosine_decay(epoch, lr):
             alpha = 0.0001
-            cosine_decay = 0.5 * (1 + tf.math.cos(tf.math.pi * epoch / 50))
+            cosine_decay = 0.5 * (1 + tf.math.cos(math.pi * epoch / 50))
             decayed = (1 - alpha) * cosine_decay + alpha
             return initial_lr * decayed
 
@@ -530,7 +532,7 @@ def create_learning_rate_scheduler(initial_lr, schedule_type='exponential'):
                 return initial_lr * (epoch + 1) / warmup_epochs
             else:
                 progress = (epoch - warmup_epochs) / (total_epochs - warmup_epochs)
-                return initial_lr * 0.5 * (1 + tf.math.cos(tf.math.pi * progress))
+                return initial_lr * 0.5 * (1 + tf.math.cos(math.pi * progress))
 
         return LearningRateScheduler(warmup_cosine_decay)
 
@@ -570,7 +572,7 @@ def get_user_input():
     use_enhanced_features = use_enhanced in ['y', 'yes', '1', 'true']
 
     # Rest of the existing input collection...
-    # (keeping the same structure as original get_user_input function)
+    # (keeping the same structure as the original get_user_input function)
 
     print("\n--- Model Mode ---")
     print("Choose the training mode:")
@@ -1184,6 +1186,21 @@ Command-line examples:
     # EfficientNet-style for resource efficiency
     python enhanced_training.py --model-type efficientnet_style --batch-size 64
     
+Recommended learning rates:
+- Conservative: 0.002-0.003 (good starting point)
+- Moderate: 0.005-0.007 (if training is too slow)
+- Aggressive: 0.01-0.02 (if you want faster convergence, monitor for instability)
+
+LRS options 
+| Schedule                  | Pros                                                                          | Cons                                                                         |
+| ------------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **None (constant LR)**    | - Simple to implement<br>- Stable if well-tuned                               | - May converge slowly<br>- Can get stuck in suboptimal minima                |
+| **ReduceLROnPlateau**     | - Adapts automatically to training progress<br>- Helps escape plateaus        | - Requires monitoring validation metric<br>- May reduce LR too late or early |
+| **Exponential decay**     | - Smooth, continuous decay<br>- Easy to tune                                  | - Decay rate hard to choose<br>- LR may become too small too soon            |
+| **Step decay**            | - Simple and effective<br>- Reduces LR at key points                          | - Sudden drops may destabilize training<br>- Needs manual tuning of steps    |
+| **Cosine decay**          | - Smooth, non-linear decay<br>- Often improves final accuracy                 | - More complex to implement<br>- LR can get very low towards end             |
+| **Warmup + Cosine decay** | - Stabilizes early training<br>- Combines benefits of warmup and cosine decay | - Adds extra complexity<br>- Requires tuning warmup length                   |
+
 Training History:
 - training round 1 -> time 912 minutes -> 50/50 epochs -> loss: 3.1480 -> accuracy: 0.2976 (started @ 0.2086) -> lr: 0.0010
 - training round 2 (New Model)-> time 2820 minutes -> 100/100 epochs -> loss: 3.1480 -> accuracy: 0.2524 (started @ 0.2000) -> lr: 0.0010
