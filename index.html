@@ -899,14 +899,15 @@
         let aiEnabled = false;
         let gameOver = false;
 
-        
+        // Updated GitHub Pages URLs - try multiple sources
         const imageSources = [
-            './assets/images/imgs-80px/',     
-            'assets/images/imgs-80px/',       
-            '/assets/images/imgs-80px/',
+            'https://english-garfield.github.io/CompSci_IK/assets/images/imgs-80px/',
+            'https://raw.githubusercontent.com/English-Garfield/CompSci_IK/main/assets/images/imgs-80px/',
+            './assets/images/imgs-80px/',
+            'assets/images/imgs-80px/'
         ];
 
-        
+
         const pieceImages = {
             'white': {
                 'king': 'white_king.png',
@@ -926,7 +927,7 @@
             }
         };
 
-        
+
         function initBoard() {
             board = [
                 ['rook', 'knight', 'bishop', 'queen', 'king', 'bishop', 'knight', 'rook'],
@@ -938,8 +939,8 @@
                 ['pawn', 'pawn', 'pawn', 'pawn', 'pawn', 'pawn', 'pawn', 'pawn'],
                 ['rook', 'knight', 'bishop', 'queen', 'king', 'bishop', 'knight', 'rook']
             ];
-            
-            
+
+
             pieceColors = [
                 ['black', 'black', 'black', 'black', 'black', 'black', 'black', 'black'],
                 ['black', 'black', 'black', 'black', 'black', 'black', 'black', 'black'],
@@ -950,7 +951,7 @@
                 ['white', 'white', 'white', 'white', 'white', 'white', 'white', 'white'],
                 ['white', 'white', 'white', 'white', 'white', 'white', 'white', 'white']
             ];
-            
+
             currentPlayer = 'white';
             selectedSquare = null;
             gameHistory = [];
@@ -958,13 +959,13 @@
             updateGameStatus();
         }
 
-        
+
         function getPieceColor(row, col) {
             if (board[row][col] === null) return null;
-            return pieceColors[row][col]; 
+            return pieceColors[row][col];
         }
 
-        
+
         function createBoard() {
             const boardElement = document.getElementById('chessBoard');
             boardElement.innerHTML = '';
@@ -987,7 +988,7 @@
                         const color = getPieceColor(row, col);
                         const filename = pieceImages[color][piece];
 
-                        
+
                         let currentSourceIndex = 0;
 
                         function tryNextImageSource() {
@@ -995,7 +996,7 @@
                                 pieceElement.src = imageSources[currentSourceIndex] + filename;
                                 currentSourceIndex++;
                             } else {
-                                
+
                                 console.warn(`All image sources failed for: ${color} ${piece}`);
                                 const fallbackPieces = {
                                     'white': {
@@ -1017,18 +1018,18 @@
                         pieceElement.alt = `${color} ${piece}`;
                         pieceElement.draggable = false;
 
-                        
+
                         pieceElement.onerror = function() {
                             console.warn(`Failed to load image from: ${this.src}`);
                             tryNextImageSource();
                         };
 
-                        
+
                         pieceElement.onload = function() {
                             console.log(`Successfully loaded: ${this.src}`);
                         };
 
-                        
+
                         tryNextImageSource();
 
                         square.appendChild(pieceElement);
@@ -1040,20 +1041,20 @@
             }
         }
 
-        
+
         function isValidMove(fromRow, fromCol, toRow, toCol, checkingForCheck = false) {
             if (toRow < 0 || toRow > 7 || toCol < 0 || toCol > 7) return false;
             if (fromRow === toRow && fromCol === toCol) return false;
 
             const piece = board[fromRow][fromCol];
             const targetPiece = board[toRow][toCol];
-            const pieceColor = pieceColors[fromRow][fromCol]; 
-            const targetColor = targetPiece ? pieceColors[toRow][toCol] : null; 
+            const pieceColor = pieceColors[fromRow][fromCol];
+            const targetColor = targetPiece ? pieceColors[toRow][toCol] : null;
 
-            
+
             if (targetColor === pieceColor) return false;
 
-            
+
             const rowDiff = Math.abs(toRow - fromRow);
             const colDiff = Math.abs(toCol - fromCol);
 
@@ -1064,12 +1065,12 @@
                     const direction = pieceColor === 'white' ? -1 : 1;
                     const startRow = pieceColor === 'white' ? 6 : 1;
 
-                    
+
                     if (fromCol === toCol && !targetPiece) {
                         if (toRow === fromRow + direction) validBasicMove = true;
                         if (fromRow === startRow && toRow === fromRow + 2 * direction) validBasicMove = true;
                     }
-                    
+
                     if (Math.abs(fromCol - toCol) === 1 && toRow === fromRow + direction && targetPiece) {
                         validBasicMove = true;
                     }
@@ -1099,34 +1100,34 @@
                     return false;
             }
 
-            
+
             if (checkingForCheck || !validBasicMove) return validBasicMove;
 
-            
-            
+
+
             const originalPiece = board[toRow][toCol];
             const originalColor = pieceColors[toRow][toCol];
-            
-            
+
+
             board[toRow][toCol] = piece;
             pieceColors[toRow][toCol] = pieceColor;
             board[fromRow][fromCol] = null;
             pieceColors[fromRow][fromCol] = null;
-            
-            
+
+
             const kingInCheck = isKingInCheck(pieceColor);
-            
-            
+
+
             board[fromRow][fromCol] = piece;
             pieceColors[fromRow][fromCol] = pieceColor;
             board[toRow][toCol] = originalPiece;
             pieceColors[toRow][toCol] = originalColor;
-            
-            
+
+
             return validBasicMove && !kingInCheck;
         }
 
-        
+
         function isPathClear(fromRow, fromCol, toRow, toCol) {
             const rowStep = toRow > fromRow ? 1 : toRow < fromRow ? -1 : 0;
             const colStep = toCol > fromCol ? 1 : toCol < fromCol ? -1 : 0;
@@ -1143,14 +1144,14 @@
             return true;
         }
 
-        
+
         function handleSquareClick(row, col) {
             if (gameOver) return;
 
             const clickedPiece = board[row][col];
-            const clickedColor = clickedPiece ? pieceColors[row][col] : null; 
+            const clickedColor = clickedPiece ? pieceColors[row][col] : null;
 
-            
+
             document.querySelectorAll('.square').forEach(sq => {
                 sq.classList.remove('selected', 'possible-move');
             });
@@ -1159,31 +1160,31 @@
                 const [fromRow, fromCol] = selectedSquare;
 
                 if (fromRow === row && fromCol === col) {
-                    
+
                     selectedSquare = null;
                     return;
                 }
 
                 if (isValidMove(fromRow, fromCol, row, col)) {
-                    
+
                     makeMove(fromRow, fromCol, row, col);
                     selectedSquare = null;
                     return;
                 }
             }
 
-            
+
             if (clickedColor === currentPlayer) {
                 selectedSquare = [row, col];
                 const square = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
                 square.classList.add('selected');
 
-                
+
                 highlightPossibleMoves(row, col);
             }
         }
 
-        
+
         function highlightPossibleMoves(row, col) {
             for (let r = 0; r < 8; r++) {
                 for (let c = 0; c < 8; c++) {
@@ -1195,19 +1196,19 @@
             }
         }
 
-        
+
         function showPromotionDialog(row, col, color, callback) {
             const overlay = document.createElement('div');
             overlay.className = 'promotion-overlay';
-            
+
             const dialog = document.createElement('div');
             dialog.className = 'promotion-dialog';
-            
+
             dialog.innerHTML = `
                 <h2>Choose Promotion Piece</h2>
                 <div class="promotion-options">
                     <div class="promotion-option" data-piece="queen">
-                        <img src="${imageSources[0]}${color}_queen.png" alt="${color} queen" 
+                        <img src="${imageSources[0]}${color}_queen.png" alt="${color} queen"
                              onerror="this.onerror=null; this.src='${imageSources[1]}${color}_queen.png';">
                     </div>
                     <div class="promotion-option" data-piece="rook">
@@ -1225,11 +1226,11 @@
                 </div>
                 <p>Select a piece to promote your pawn</p>
             `;
-            
+
             overlay.appendChild(dialog);
             document.body.appendChild(overlay);
-            
-            
+
+
             const options = dialog.querySelectorAll('.promotion-option');
             options.forEach(option => {
                 option.addEventListener('click', function() {
@@ -1240,13 +1241,13 @@
             });
         }
 
-        
+
         function makeMove(fromRow, fromCol, toRow, toCol) {
             const piece = board[fromRow][fromCol];
             const capturedPiece = board[toRow][toCol];
             const movingPieceColor = pieceColors[fromRow][fromCol];
 
-            
+
             if (capturedPiece) {
                 const capturedSquare = document.querySelector(`[data-row="${toRow}"][data-col="${toCol}"]`);
                 const capturedPieceElement = capturedSquare.querySelector('.piece');
@@ -1255,25 +1256,25 @@
                 }
             }
 
-            
+
             board[toRow][toCol] = piece;
             board[fromRow][fromCol] = null;
             pieceColors[toRow][toCol] = movingPieceColor;
             pieceColors[fromRow][fromCol] = null;
 
-            
+
             let promotionInProgress = false;
             if (piece === 'pawn') {
                 const promotionRank = movingPieceColor === 'white' ? 0 : 7;
                 if (toRow === promotionRank) {
                     promotionInProgress = true;
-                    
-                    
+
+
                     showPromotionDialog(toRow, toCol, movingPieceColor, (selectedPiece) => {
-                        
+
                         board[toRow][toCol] = selectedPiece;
-                        
-                        
+
+
                         gameHistory.push({
                             from: [fromRow, fromCol],
                             to: [toRow, toCol],
@@ -1283,45 +1284,45 @@
                             capturedColor: capturedPiece ? pieceColors[toRow][toCol] : null,
                             promotion: selectedPiece
                         });
-                        
-                        
+
+
                         updateMoveHistory();
-                        
-                        
+
+
                         currentPlayer = currentPlayer === 'white' ? 'black' : 'white';
                         updateGameStatus();
-                        
-                        
+
+
                         setTimeout(() => {
                             createBoard();
-                            
-                            
+
+
                             const fromSquare = document.querySelector(`[data-row="${fromRow}"][data-col="${fromCol}"]`);
                             const toSquare = document.querySelector(`[data-row="${toRow}"][data-col="${toCol}"]`);
                             if (fromSquare) fromSquare.classList.add('last-move');
                             if (toSquare) toSquare.classList.add('last-move');
-                            
-                            
+
+
                             if (isCheckmate()) {
                                 gameOver = true;
-                                setTimeout(showCheckmateMessage, 500); 
+                                setTimeout(showCheckmateMessage, 500);
                             }
-                            
-                            
+
+
                             updateGameStatus();
-                            
-                            
+
+
                             if (aiEnabled && currentPlayer === 'black' && !gameOver) {
-                                setTimeout(makeAIMove, 800); 
+                                setTimeout(makeAIMove, 800);
                             }
                         }, 200);
                     });
                 }
             }
-            
-            
+
+
             if (!promotionInProgress) {
-                
+
                 gameHistory.push({
                     from: [fromRow, fromCol],
                     to: [toRow, toCol],
@@ -1330,49 +1331,49 @@
                     player: movingPieceColor,
                     capturedColor: capturedPiece ? pieceColors[toRow][toCol] : null
                 });
-                
-                
+
+
                 updateMoveHistory();
-                
-                
+
+
                 currentPlayer = currentPlayer === 'white' ? 'black' : 'white';
                 updateGameStatus();
-                
-                
+
+
                 setTimeout(() => {
                     createBoard();
-                    
-                    
+
+
                     const fromSquare = document.querySelector(`[data-row="${fromRow}"][data-col="${fromCol}"]`);
                     const toSquare = document.querySelector(`[data-row="${toRow}"][data-col="${toCol}"]`);
                     if (fromSquare) fromSquare.classList.add('last-move');
                     if (toSquare) toSquare.classList.add('last-move');
-                    
-                    
+
+
                     if (isCheckmate()) {
                         gameOver = true;
-                        setTimeout(showCheckmateMessage, 500); 
+                        setTimeout(showCheckmateMessage, 500);
                     }
-                    
-                    
+
+
                     updateGameStatus();
-                    
-                    
+
+
                     if (aiEnabled && currentPlayer === 'black' && !gameOver) {
-                        setTimeout(makeAIMove, 800); 
+                        setTimeout(makeAIMove, 800);
                     }
-                }, capturedPiece ? 600 : 200); 
+                }, capturedPiece ? 600 : 200);
             }
         }
 
-        
+
         function makeAIMove() {
             const validMoves = [];
 
             for (let fromRow = 0; fromRow < 8; fromRow++) {
                 for (let fromCol = 0; fromCol < 8; fromCol++) {
                     const piece = board[fromRow][fromCol];
-                    if (piece && pieceColors[fromRow][fromCol] === 'black') { 
+                    if (piece && pieceColors[fromRow][fromCol] === 'black') {
                         for (let toRow = 0; toRow < 8; toRow++) {
                             for (let toCol = 0; toCol < 8; toCol++) {
                                 if (isValidMove(fromRow, fromCol, toRow, toCol)) {
@@ -1390,7 +1391,7 @@
             }
         }
 
-        
+
         function findKingPosition(color) {
             for (let row = 0; row < 8; row++) {
                 for (let col = 0; col < 8; col++) {
@@ -1399,49 +1400,49 @@
                     }
                 }
             }
-            return null; 
+            return null;
         }
 
-        
+
         function isKingInCheck(color) {
             const kingPosition = findKingPosition(color);
             if (!kingPosition) return false;
-            
+
             const [kingRow, kingCol] = kingPosition;
             const opponentColor = color === 'white' ? 'black' : 'white';
-            
-            
+
+
             for (let row = 0; row < 8; row++) {
                 for (let col = 0; col < 8; col++) {
                     if (board[row][col] && pieceColors[row][col] === opponentColor) {
-                        
+
                         if (isValidMove(row, col, kingRow, kingCol, true)) {
                             return true;
                         }
                     }
                 }
             }
-            
+
             return false;
         }
 
-        
+
         function isCheckmate() {
             const color = currentPlayer;
-            
-            
+
+
             if (!isKingInCheck(color)) return false;
-            
-            
+
+
             for (let fromRow = 0; fromRow < 8; fromRow++) {
                 for (let fromCol = 0; fromCol < 8; fromCol++) {
                     if (board[fromRow][fromCol] && pieceColors[fromRow][fromCol] === color) {
                         for (let toRow = 0; toRow < 8; toRow++) {
                             for (let toCol = 0; toCol < 8; toCol++) {
-                                
-                                
+
+
                                 if (isValidMove(fromRow, fromCol, toRow, toCol)) {
-                                    
+
                                     return false;
                                 }
                             }
@@ -1449,19 +1450,19 @@
                     }
                 }
             }
-            
-            
+
+
             return true;
         }
 
-        
+
         function updateGameStatus() {
             const statusElement = document.getElementById('gameStatus');
 
-            
+
             statusElement.className = 'game-status';
 
-            
+
             document.querySelectorAll('.king-in-check').forEach(el => {
                 el.classList.remove('king-in-check');
             });
@@ -1470,14 +1471,14 @@
                 statusElement.textContent = `Checkmate! ${currentPlayer === 'white' ? 'Black' : 'White'} Wins!`;
                 statusElement.classList.add('game-over');
             } else {
-                
+
                 const inCheck = isKingInCheck(currentPlayer);
-                
+
                 if (inCheck) {
                     statusElement.textContent = `${currentPlayer.charAt(0).toUpperCase() + currentPlayer.slice(1)} is in Check!`;
                     statusElement.classList.add('in-check');
-                    
-                    
+
+
                     highlightKingInCheck(currentPlayer);
                 } else {
                     statusElement.textContent = `${currentPlayer.charAt(0).toUpperCase() + currentPlayer.slice(1)}'s Turn`;
@@ -1485,8 +1486,8 @@
                 }
             }
         }
-        
-        
+
+
         function highlightKingInCheck(color) {
             const kingPosition = findKingPosition(color);
             if (kingPosition) {
@@ -1498,7 +1499,7 @@
             }
         }
 
-        
+
         function updateMoveHistory() {
             const historyElement = document.getElementById('moveHistory');
             historyElement.innerHTML = '';
@@ -1509,16 +1510,16 @@
                 const fromSquare = String.fromCharCode(97 + move.from[1]) + (8 - move.from[0]);
                 const toSquare = String.fromCharCode(97 + move.to[1]) + (8 - move.to[0]);
                 const captureSymbol = move.captured ? 'x' : '-';
-                
-                
+
+
                 let moveText = `${index + 1}. ${move.piece} ${fromSquare}${captureSymbol}${toSquare}`;
                 if (move.promotion) {
-                    
+
                     moveText += `=${move.promotion.charAt(0).toUpperCase()}`;
-                    moveElement.style.fontWeight = 'bold'; 
-                    moveElement.style.background = 'linear-gradient(90deg, #e8f5e8, #f0e6ff)'; 
+                    moveElement.style.fontWeight = 'bold';
+                    moveElement.style.background = 'linear-gradient(90deg, #e8f5e8, #f0e6ff)';
                 }
-                
+
                 moveElement.textContent = moveText;
                 historyElement.appendChild(moveElement);
             });
@@ -1526,11 +1527,11 @@
             historyElement.scrollTop = historyElement.scrollHeight;
         }
 
-        
+
         function showCheckmateMessage() {
             const winner = currentPlayer === 'white' ? 'Black' : 'White';
             const loser = currentPlayer === 'white' ? 'White' : 'Black';
-            
+
             const overlay = document.createElement('div');
             overlay.className = 'checkmate-overlay';
             overlay.innerHTML = `
@@ -1550,28 +1551,28 @@
             document.body.appendChild(overlay);
         }
 
-        
+
         function newGame() {
             initBoard();
             createBoard();
             document.querySelectorAll('.checkmate-overlay').forEach(el => el.remove());
         }
 
-        
+
         function undoMove() {
             if (gameHistory.length === 0) return;
 
             const lastMove = gameHistory.pop();
 
-            
-            board[lastMove.from[0]][lastMove.from[1]] = lastMove.piece; 
+
+            board[lastMove.from[0]][lastMove.from[1]] = lastMove.piece;
             board[lastMove.to[0]][lastMove.to[1]] = lastMove.captured;
 
-            
+
             pieceColors[lastMove.from[0]][lastMove.from[1]] = lastMove.player;
             pieceColors[lastMove.to[0]][lastMove.to[1]] = lastMove.capturedColor || null;
 
-            
+
             currentPlayer = lastMove.player;
             gameOver = false;
 
@@ -1580,37 +1581,37 @@
             createBoard();
         }
 
-        
+
         function toggleAI() {
             aiEnabled = !aiEnabled;
             const toggleText = document.getElementById('aiToggleText');
             toggleText.textContent = aiEnabled ? 'Disable AI' : 'Enable AI';
 
-            
+
             if (aiEnabled && currentPlayer === 'black' && !gameOver) {
                 setTimeout(makeAIMove, 1000);
             }
         }
 
-        
+
         function switchTab(tabName) {
-            
+
             document.querySelectorAll('.tab').forEach(tab => {
                 tab.classList.remove('active');
             });
             event.target.classList.add('active');
 
-            
+
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
             });
             document.getElementById(`${tabName}-tab`).classList.add('active');
         }
 
-        
+
         document.getElementById('cloneBtn').addEventListener('click', function(e) {
             e.preventDefault();
-            const cloneUrl = 'https:';
+            const cloneUrl = 'https://github.com/English-Garfield/CompSci_IK.git';
             const command = `git clone ${cloneUrl}`;
 
             navigator.clipboard.writeText(command).then(() => {
