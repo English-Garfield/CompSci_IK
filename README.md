@@ -63,7 +63,7 @@ Coding should be accessible and open so if my work is of help to you then all i 
 You can try the chess game directly in your web browser without installing anything!
 
 ## Play Online
-[Click here to play the chess game in your browser](https://isaackorda.github.io/CompSciNEA_IK/)
+[Click here to play the chess game in your browser](https://isaackorda.github.io/CompSci_IK/)
 
 ## Building the Web Demo Locally
 If you want to build and run the web demo locally, follow these steps:
