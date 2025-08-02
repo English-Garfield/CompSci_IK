@@ -1,6 +1,6 @@
 import os
 import sys
-
+import datetime
 import math
 import tensorflow as tf
 import numpy as np
@@ -9,7 +9,8 @@ import json
 import gc
 import argparse
 import threading
-
+import random as rdm
+''
 from chess import pgn, Board
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor
@@ -577,7 +578,7 @@ def get_user_input():
     print("\n--- Model Mode ---")
     print("Choose the training mode:")
     print("1. Auto (automatically detect whether to create new model or continue training)")
-    print("2. New (create a new model, overwriting any existing one)")
+    print("2. New (create a new model)")
     print("3. Continue (continue training an existing model)")
 
     while True:
@@ -718,7 +719,7 @@ def get_user_input():
         except ValueError:
             print("Please enter a valid integer.")
 
-    model_path = input("Path to save/load the model [default: ../assets/chessModel.keras]: ").strip()
+    model_path = input("Path to save/load the model [default: ../assets]: ").strip()
     if model_path == "":
         model_path = "../assets/chessModel.keras"
 
@@ -754,8 +755,9 @@ def get_user_input():
 
 def load_games_threaded(file_path, limit_of_files):
     files = [f"{file_path}/{file}" for file in os.listdir(file_path) if file.endswith('.pgn')]
+    rdm.shuffle(files)
     files = files[:limit_of_files]
-    print(f"\nLoading {len(files)} PGN files from {file_path}")
+    print(f"\nLoading {len(files)} random PGN files from {file_path}")
 
     num_threads = min(2, len(files))
     chunks = np.array_split(files, num_threads)
@@ -775,7 +777,7 @@ def load_games_threaded(file_path, limit_of_files):
 
     # Collect results
     all_games = []
-    for _ in threads:
+    for i in threads:
         games = queue.get()
         all_games.extend(games)
         gc.collect()
@@ -962,8 +964,8 @@ def parse_arguments():
     # Training parameters
     parser.add_argument('--epochs', type=int, default=50,
                         help='Number of training epochs (default: 50)')
-    parser.add_argument('--model-path', type=str, default='../assets/chessModel.keras',
-                        help='Path to save/load the model (default: ../assets/chessModel.keras)')
+    parser.add_argument('--model-path', type=str, default='../assets',
+                        help='Path to save/load the model (default: ../assets)')
     parser.add_argument('--move-map-path', type=str, default='move_map.json',
                         help='Path to save/load the move mapping (default: move_map.json)')
     parser.add_argument('--data-path', type=str, default='../assets/ChessData',
@@ -1066,6 +1068,15 @@ def main():
     else:  # MODE == 'auto'
         create_new = not model_exists
         print(f"\nAuto mode: {'Creating new model' if create_new else 'Continuing training existing model'}")
+
+    if create_new:
+        base_path = os.path.dirname(MODEL_PATH)
+        base_name = os.path.splitext(os.path.basename(MODEL_PATH))[0]
+        ext = os.path.splitext(MODEL_PATH)[1]
+        if os.path.exists(MODEL_PATH):
+            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            MODEL_PATH = os.path.join(base_path, f"{base_name}_{timestamp}{ext}")
+            print(f"Saving new model to unique path: {MODEL_PATH}")
 
     try:
         if not create_new and model_exists:
@@ -1184,7 +1195,7 @@ Command-line examples:
     python enhanced_training.py --model-type hybrid --use-enhanced-features --lr-schedule warmup_cosine
 
     # EfficientNet-style for resource efficiency
-    python enhanced_training.py --model-type efficientnet_style --batch-size 64
+    python enhanced_training.py --model-type efficientnet_style --batch-size 64 
     
 Recommended learning rates:
 - Conservative: 0.002-0.003 (good starting point)
@@ -1204,4 +1215,6 @@ LRS options
 Training History:
 - training round 1 -> time 912 minutes -> 50/50 epochs -> loss: 3.1480 -> accuracy: 0.2976 (started @ 0.2086) -> lr: 0.0010
 - training round 2 (New Model)-> time 2820 minutes -> 100/100 epochs -> loss: 3.1480 -> accuracy: 0.2524 (started @ 0.2000) -> lr: 0.0010
+
+
 """
